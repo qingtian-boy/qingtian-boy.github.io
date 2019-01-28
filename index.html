@@ -152,6 +152,214 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-微信小程序03" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/27/微信小程序03/">微信小程序03</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/27/微信小程序03/" class="archive-article-date">
+  	<time datetime="2019-01-27T11:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code># 目录
+</code></pre><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>能够使用事件</p>
+<p>​    事件分为几种？  2种，bind 与 catch</p>
+<p>​    bind:tap  冒泡</p>
+<p>​    catch:tap 非冒泡</p>
+<p>能够修改配置文件实现底部导航</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>: &#123;</span><br><span class="line">    <span class="string">"color"</span>:<span class="string">"#00B26A"</span>,</span><br><span class="line">    <span class="string">"list"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>:<span class="string">"/icon/home.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>:<span class="string">"/icon/home_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"首页"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/category/category"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/createtask.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/createtask_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"分类"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/find/find"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/browse.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/browse_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"发现"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/catr/catr"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/cat.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/cat_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"购物车"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/user/user"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/user.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/user_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"我的"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>​能够实现下拉刷新(实现上拉)</p>
+<p>使用scroll-view组件</p>
+<p>scroll-y=”true“</p>
+<p>bindscrolltolower=”“</p>
+<p>必须给一个高度</p>
+<p>能够了解Flex布局</p>
+<p>​    弹性布局</p>
+<p>​    display:flex</p>
+<h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><p>数据缓存</p>
+<p>==目标：能够使用数据缓存==</p>
+<p>交互反馈</p>
+<p>动态设置当前页面标题</p>
+<p>小程序用户登陆</p>
+<p>用户授权</p>
+<p>==目标：能够获得用户的 openid 并且获得用户授权后的头像昵称等信息==</p>
+<h1 id="三、今日课程内容"><a href="#三、今日课程内容" class="headerlink" title="三、今日课程内容"></a>三、今日课程内容</h1><h2 id="1、数据缓存"><a href="#1、数据缓存" class="headerlink" title="1、数据缓存"></a>1、数据缓存</h2><p>​    每个微信小程序都可以自己的本地缓存，即对本地缓存进行设置、获取和清理。同一个微信用户，同一个小程序  storage 上限为 ==100MB==。</p>
+<p>==<strong>注意：</strong>==如果用户储存空间不足，小程序会清空最近久未使用的小程序的本地缓存。我们不建议将关键信息全部缓存起来，以防储存空间不足或用户换设备的情况。</p>
+<h3 id="1-1、设置缓存"><a href="#1-1、设置缓存" class="headerlink" title="1.1、设置缓存"></a>1.1、设置缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.setStorage(OBJECT)  同步</span><br><span class="line">wx.setStorageSync(KEY,DATA) 异步</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548552861556.png" alt="1548552861556"></p>
+<p><strong>示例：</strong></p>
+<p>1.首先在index.js中构建代码</p>
+<p><img src="/2019/01/27/微信小程序03/1548552598844.png" alt="1548552598844"></p>
+<h3 id="1-2、获取缓存"><a href="#1-2、获取缓存" class="headerlink" title="1.2、获取缓存"></a>1.2、获取缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.getStorage(OBJECT)  异步</span><br><span class="line">wx.getStorageSync(KEY) 同步</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548552661954.png" alt="1548552661954"></p>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548552768366.png" alt="1548552768366"></p>
+<h3 id="1-3、移除缓存"><a href="#1-3、移除缓存" class="headerlink" title="1.3、移除缓存"></a>1.3、移除缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.removeStorage(OBJECT)       同步</span><br><span class="line">wx.removeStorageSync(KEY)      异步</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548552955683.png" alt="1548552955683"></p>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548553072326.png" alt="1548553072326"></p>
+<h3 id="1-4、清除缓存"><a href="#1-4、清除缓存" class="headerlink" title="1.4、清除缓存"></a>1.4、清除缓存</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.clearStorage()</span><br><span class="line">wx.clearStorageSync()</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548553139476.png" alt="1548553139476"></p>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548553217352.png" alt="1548553217352"></p>
+<h2 id="2、交互反馈"><a href="#2、交互反馈" class="headerlink" title="2、交互反馈"></a>2、交互反馈</h2><h3 id="2-1、显示或隐藏加载框"><a href="#2-1、显示或隐藏加载框" class="headerlink" title="2.1、显示或隐藏加载框"></a>2.1、显示或隐藏加载框</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.showLoading(<span class="built_in">Object</span> object)      显示</span><br><span class="line">wx.hideLoading(<span class="built_in">Object</span> object)      隐藏</span><br></pre></td></tr></table></figure>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548553479985.png" alt="1548553479985"></p>
+<h3 id="2-2、显示或隐藏消息提示框"><a href="#2-2、显示或隐藏消息提示框" class="headerlink" title="2.2、显示或隐藏消息提示框"></a>2.2、显示或隐藏消息提示框</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.showToast(OBJECT)     显示</span><br><span class="line">wx.hideToast()      	隐藏</span><br></pre></td></tr></table></figure>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548553730187.png" alt="1548553730187"></p>
+<h3 id="2-3、显示模态弹窗"><a href="#2-3、显示模态弹窗" class="headerlink" title="2.3、显示模态弹窗"></a>2.3、显示模态弹窗</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx.showModal(OBJECT)</span><br></pre></td></tr></table></figure>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548553892368.png" alt="1548553892368"></p>
+<h3 id="2-4、显示操作菜单"><a href="#2-4、显示操作菜单" class="headerlink" title="2.4、显示操作菜单"></a>2.4、显示操作菜单</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx.showActionSheet(OBJECT)</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548553938356.png" alt="1548553938356"></p>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548554048332.png" alt="1548554048332"></p>
+<h2 id="3、动态设置当前页面标题"><a href="#3、动态设置当前页面标题" class="headerlink" title="3、动态设置当前页面标题"></a>3、动态设置当前页面标题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx.setNavigationBarTitle(OBJECT)</span><br></pre></td></tr></table></figure>
+<p><strong>示例：</strong></p>
+<p><img src="/2019/01/27/微信小程序03/1548555287467.png" alt="1548555287467"></p>
+<h2 id="4、小程序用户登录（获取用户openid）"><a href="#4、小程序用户登录（获取用户openid）" class="headerlink" title="4、小程序用户登录（获取用户openid）"></a>4、小程序用户登录（获取用户openid）</h2><p>开发基于接口的项目重点在于搞清楚三个东西：</p>
+<ul>
+<li>你请求谁（这个“谁”指的就是 url 链接地址）</li>
+<li>怎么请求（比如微信小程序使用 wx.request 来请求，而如果在php中则使用 curl/file_get_contents 发起请求）</li>
+<li>请求这后将会得到什么数据</li>
+</ul>
+<p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识(openid)，快速建立小程序内的用户体系。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx.login(<span class="built_in">Object</span> object)</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548555589632.png" alt="1548555589632"></p>
+<p>1.在微信小程序的某个页面 js 文件中，调用 wx.login 接口，获取 code值</p>
+<p>2.接收到 code 值后，立即请求自己提供的一个接口，将 code 值传递给这个接口文件</p>
+<p>3.在接口程序文件中接收微信 get 方式传递过来的 code 值</p>
+<p>4.然后想办法得到 appid、appsecret 的值，并且通过 appid、appsecret、code 的值构建出新的请求 api 链接地址</p>
+<p>5.跟着再使用 file_get_contents 函数请求这个新链接地址，如果请求成功，则将会直接获得一个 json 格式的数据，这个数据可以直接通过 echo 的形式返回给微信</p>
+<p><strong>示例：</strong></p>
+<p>1.首先新建一个页面</p>
+<p><img src="/2019/01/27/微信小程序03/1548555706597.png" alt="1548555706597"></p>
+<p>2.首先在getopenid.js中调用wx.login获取code值，并且调用发起网络请求，获得openid的值</p>
+<p><img src="/2019/01/27/微信小程序03/1548556837510.png" alt="1548556837510"></p>
+<p>3.在项目目录code目录下创建一个名为code2.php的程序文件，代码如下，请求小程序提供给我们的接口获取openid的值，最终将获取的结果返回给微信请求的方法</p>
+<p><img src="/2019/01/27/微信小程序03/1548556853691.png" alt="1548556853691"></p>
+<p>4.所以，当页面加载时，如果成功发出了请求，则最终将会获得openid的值，如下图所示</p>
+<p><img src="/2019/01/27/微信小程序03/1548556874407.png" alt="1548556874407"></p>
+<h3 id="4-1、用户授权"><a href="#4-1、用户授权" class="headerlink" title="4.1、用户授权"></a>4.1、用户授权</h3><p><strong>示例：</strong></p>
+<p>1.首先新建一个页面</p>
+<p><img src="/2019/01/27/微信小程序03/1548557023596.png" alt="1548557023596"></p>
+<p>2.在getuser.wxml中构建一个button，注意，现在的小程序需要通过按钮才能够获取用户信息</p>
+<p><img src="/2019/01/27/微信小程序03/1548557638736.png" alt="1548557638736"></p>
+<p>3.然后在getuser.js中创建出相应的getinfo函数，直接打印出传递给函数的参数</p>
+<p><img src="/2019/01/27/微信小程序03/1548557668434.png" alt="1548557668434"></p>
+<p>4.测试页面效果</p>
+<p>当首次点击按钮时将会出现授权界面</p>
+<p><img src="/2019/01/27/微信小程序03/1548557693506.png" alt="1548557693506"></p>
+<h3 id="4-2、获取-unionid"><a href="#4-2、获取-unionid" class="headerlink" title="4.2、获取 unionid"></a>4.2、获取 unionid</h3><p>官方开发文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/api/code2Session.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/api/code2Session.html</a></p>
+<p>1.首先在 getuser.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">getUser:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log( e );</span><br><span class="line">    <span class="keyword">var</span> _userInfo = e.detail.userInfo;</span><br><span class="line">    <span class="keyword">var</span> _encryptedData = e.detail.encryptedData;</span><br><span class="line">    <span class="keyword">var</span> _iv = e.detail.iv;</span><br><span class="line">    <span class="keyword">this</span>.setData(&#123; <span class="attr">avatarUrl</span>: _userInfo.avatarUrl, <span class="attr">username</span>: _userInfo.nickName&#125;);</span><br><span class="line">    wx.login(&#123;</span><br><span class="line">      success(res)&#123;</span><br><span class="line">        <span class="keyword">var</span> _code = res.code;</span><br><span class="line">        wx.request(&#123;</span><br><span class="line">          url: <span class="string">'http://127.0.0.1/getunionId/code.php'</span>,</span><br><span class="line">          data: &#123;</span><br><span class="line">            code: _code,</span><br><span class="line">            encryptedData: _encryptedData,</span><br><span class="line">            iv: _iv</span><br><span class="line">          &#125;,</span><br><span class="line">          method: <span class="string">"post"</span>,</span><br><span class="line">          header: &#123;</span><br><span class="line">            <span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          success(req) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(req.data);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>2.PHP代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="keyword">include_once</span> <span class="string">"wxBizDataCrypt.php"</span>;</span><br><span class="line">	<span class="comment">// $str = file_get_contents("php://input");</span></span><br><span class="line">	<span class="comment">// $str =  json_decode($str, true);</span></span><br><span class="line">	<span class="comment">// exit( json_encode([$str['code']]) );</span></span><br><span class="line">	$code = <span class="keyword">isset</span>($_POST[<span class="string">'code'</span>])?$_POST[<span class="string">'code'</span>]:<span class="string">''</span>;</span><br><span class="line">	$encryptedData = <span class="keyword">isset</span>($_POST[<span class="string">'encryptedData'</span>])?$_POST[<span class="string">'encryptedData'</span>]:<span class="string">''</span>;</span><br><span class="line">	$iv = <span class="keyword">isset</span>($_POST[<span class="string">'iv'</span>])?$_POST[<span class="string">'iv'</span>]:<span class="string">''</span>;</span><br><span class="line">	$appid = <span class="string">'wx6ce35112bf74e6ca96'</span>;</span><br><span class="line">	$secret = <span class="string">'bca1e62bb0156339b9f411a8c6a792af'</span>;</span><br><span class="line">	$url = <span class="string">"https://api.weixin.qq.com/sns/jscode2session?appid=$appid&amp;secret=$secret&amp;js_code=$code&amp;grant_type=authorization_code"</span>;</span><br><span class="line">	<span class="comment">//发送请求</span></span><br><span class="line">	$res = file_get_contents($url);</span><br><span class="line">	$json = json_decode($res, <span class="keyword">true</span>);</span><br><span class="line">	$sessionKey = $json[<span class="string">'session_key'</span>];</span><br><span class="line">	$pc = <span class="keyword">new</span> WXBizDataCrypt($appid, $sessionKey);</span><br><span class="line">	$errCode = $pc-&gt;decryptData($encryptedData, $iv, $data );</span><br><span class="line">	$data = json_decode($data, <span class="keyword">true</span>);</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 可以处理业务逻辑</span></span><br><span class="line"><span class="comment">	 * 1.判断这个用户的unionid是否存在，不存在添加到数据库</span></span><br><span class="line"><span class="comment">	 * 2.如果存在就不操作数据库</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="keyword">exit</span>(json_encode($data));</span><br></pre></td></tr></table></figure>
+<h2 id="5、商城首页"><a href="#5、商城首页" class="headerlink" title="5、商城首页"></a>5、商城首页</h2><h3 id="5-1、首页轮播图"><a href="#5-1、首页轮播图" class="headerlink" title="5.1、首页轮播图"></a>5.1、首页轮播图</h3><h4 id="5-1-1、首先在-index-wxml-中构建代码"><a href="#5-1-1、首先在-index-wxml-中构建代码" class="headerlink" title="5.1.1、首先在 index.wxml 中构建代码"></a>5.1.1、首先在 index.wxml 中构建代码</h4><p><img src="/2019/01/27/微信小程序03/1548571773157.png" alt="1548571773157"></p>
+<h4 id="5-1-2、然后在-index-wxss-中定义样式"><a href="#5-1-2、然后在-index-wxss-中定义样式" class="headerlink" title="5.1.2、然后在 index.wxss 中定义样式"></a>5.1.2、然后在 index.wxss 中定义样式</h4><p><img src="/2019/01/27/微信小程序03/1548571792483.png" alt="1548571792483"></p>
+<h4 id="5-1-3、然后在-index-js-初始数据"><a href="#5-1-3、然后在-index-js-初始数据" class="headerlink" title="5.1.3、然后在 index.js 初始数据"></a>5.1.3、然后在 index.js 初始数据</h4><p><img src="/2019/01/27/微信小程序03/1548571830141.png" alt="1548571830141"></p>
+<p>效果如下图所示：</p>
+<p><img src="/2019/01/27/微信小程序03/1548571864580.png" alt="1548571864580"></p>
+<h3 id="5-2、实现超值推荐"><a href="#5-2、实现超值推荐" class="headerlink" title="5.2、实现超值推荐"></a>5.2、实现超值推荐</h3><h4 id="5-2-1、首先在-index-wxml-中构建代码"><a href="#5-2-1、首先在-index-wxml-中构建代码" class="headerlink" title="5.2.1、首先在 index.wxml 中构建代码"></a>5.2.1、首先在 index.wxml 中构建代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 超值推荐 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'more'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span>超值推荐<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span>更多&gt;&gt;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/1.jpg'</span> <span class="attr">class</span>=<span class="string">'list-img'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-box'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-goods'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-img'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/2.jpg'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-title'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-1'</span>&gt;</span>小米MIX 3<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-2'</span>&gt;</span>磁动力滑盖全面屏丨前后旗舰 AI 双摄四曲面彩色陶瓷机身丨故宫特别版<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-3'</span>&gt;</span>￥899<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-goods'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-img'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/2.jpg'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-title'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-1'</span>&gt;</span>小米8<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-2'</span>&gt;</span>四曲面玻璃机身， 超轻 7 系铝金属中框，水滴弧收腰设计。四曲面玻璃机身， 超轻 7 系铝金属中框，水滴弧收腰设计。<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-3'</span>&gt;</span>￥899<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-2-2、然后在-index-wxss-中定义样式"><a href="#5-2-2、然后在-index-wxss-中定义样式" class="headerlink" title="5.2.2、然后在 index.wxss 中定义样式"></a>5.2.2、然后在 index.wxss 中定义样式</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 超值推荐 */</span></span><br><span class="line"><span class="selector-class">.more</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">68</span>rpx;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">68</span>rpx;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-between;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">10</span>rpx;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">28</span>rpx;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">rgba</span>(0,0,0,.5);</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#e2e2e3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.list</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">20</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-img</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-box</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">justify-content</span>: space-around;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.list-goods</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5</span>rpx <span class="number">0</span> <span class="number">5</span>rpx <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">flex-direction</span>: column;</span><br><span class="line">  <span class="attribute">justify-content</span>: center;</span><br><span class="line">  <span class="attribute">align-content</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.goods-img</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">98%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">350</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.goods-img</span> <span class="selector-tag">image</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.goods-title</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">98%</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">25</span>rpx;</span><br><span class="line">  <span class="attribute">margin-left</span>: <span class="number">15</span>rpx;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">27</span>rpx;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.title-info-1</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.title-info-2</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">10</span>rpx <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">white-space</span>: nowrap;</span><br><span class="line">  <span class="attribute">text-overflow</span>: ellipsis;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.title-info-3</span>&#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">36</span>rpx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3、实现新品上市"><a href="#5-3、实现新品上市" class="headerlink" title="5.3、实现新品上市"></a>5.3、实现新品上市</h3><h4 id="5-3-1、创建目录，如下图所示"><a href="#5-3-1、创建目录，如下图所示" class="headerlink" title="5.3.1、创建目录，如下图所示"></a>5.3.1、创建目录，如下图所示</h4><p><img src="/2019/01/27/微信小程序03/1548575960042.png" alt="1548575960042"></p>
+<p>代码如下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 定义模板 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">name</span>=<span class="string">"index-goods"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 新品上市 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'more'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;name&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span>&gt;</span>更多&gt;&gt;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list'</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/1.jpg'</span> <span class="attr">class</span>=<span class="string">'list-img'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-box'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-goods'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-img'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/2.jpg'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-title'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-1'</span>&gt;</span>小米MIX 3<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-2'</span>&gt;</span>磁动力滑盖全面屏丨前后旗舰 AI 双摄四曲面彩色陶瓷机身丨故宫特别版<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-3'</span>&gt;</span>￥899<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'list-goods'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-img'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">'/images/2.jpg'</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">view</span> <span class="attr">class</span>=<span class="string">'goods-title'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-1'</span>&gt;</span>小米8<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-2'</span>&gt;</span>四曲面玻璃机身， 超轻 7 系铝金属中框，水滴弧收腰设计。四曲面玻璃机身， 超轻 7 系铝金属中框，水滴弧收腰设计。<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">text</span> <span class="attr">class</span>=<span class="string">'title-info-3'</span>&gt;</span>￥899<span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-3-2、调用模板"><a href="#5-3-2、调用模板" class="headerlink" title="5.3.2、调用模板"></a>5.3.2、调用模板</h4><p><img src="/2019/01/27/微信小程序03/1548576017689.png" alt="1548576017689"></p>
+<p><img src="/2019/01/27/微信小程序03/1548576044890.png" alt="1548576044890"></p>
+<h2 id="6、API"><a href="#6、API" class="headerlink" title="6、API"></a>6、API</h2><h3 id="6-1、下载TP5-1模型"><a href="#6-1、下载TP5-1模型" class="headerlink" title="6.1、下载TP5.1模型"></a>6.1、下载TP5.1模型</h3><p><img src="/2019/01/27/微信小程序03/1548578676713.png" alt="1548578676713"></p>
+<h3 id="6-2、配置数据库"><a href="#6-2、配置数据库" class="headerlink" title="6.2、配置数据库"></a>6.2、配置数据库</h3><p><img src="/2019/01/27/微信小程序03/1548578785014.png" alt="1548578785014"></p>
+<p><img src="/2019/01/27/微信小程序03/1548578967766.png" alt="1548578967766"></p>
+<h3 id="6-3、开启debug"><a href="#6-3、开启debug" class="headerlink" title="6.3、开启debug"></a>6.3、开启debug</h3><p><img src="/2019/01/27/微信小程序03/1548579011921.png" alt="1548579011921"></p>
+<h4 id="6-4、修改控制器后缀名"><a href="#6-4、修改控制器后缀名" class="headerlink" title="6.4、修改控制器后缀名"></a>6.4、修改控制器后缀名</h4><p><img src="/2019/01/27/微信小程序03/1548579060412.png" alt="1548579060412"></p>
+<h4 id="6-5、启动项目"><a href="#6-5、启动项目" class="headerlink" title="6.5、启动项目"></a>6.5、启动项目</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">项目根目录&gt;php tink run</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/01/27/微信小程序03/1548579110814.png" alt="1548579110814"></p>
+<h4 id="6-6、Tp为我们提供的工匠指令有哪些"><a href="#6-6、Tp为我们提供的工匠指令有哪些" class="headerlink" title="6.6、Tp为我们提供的工匠指令有哪些"></a>6.6、Tp为我们提供的工匠指令有哪些</h4><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">项目根目录&gt; php think</span><br><span class="line">Think Console version <span class="number">0</span>.<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function">Usage:</span></span><br><span class="line"><span class="function">  <span class="title">command</span> [<span class="title">options</span>] [<span class="title">arguments</span>]</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">Options</span>:</span></span><br><span class="line"><span class="function">  -<span class="title">h</span>, --<span class="title">help</span>            <span class="title">Display</span> <span class="title">this</span> <span class="title">help</span> <span class="title">message</span>   查看工匠指令的帮助信息</span></span><br><span class="line"><span class="function">  -<span class="title">V</span>, --<span class="title">version</span>         <span class="title">Display</span> <span class="title">this</span> <span class="title">console</span> <span class="title">version</span>  查看版本号</span></span><br><span class="line"><span class="function">  -<span class="title">q</span>, --<span class="title">quiet</span>           <span class="title">Do</span> <span class="title">not</span> <span class="title">output</span> <span class="title">any</span> <span class="title">message</span></span></span><br><span class="line"><span class="function">      --<span class="title">ansi</span>            <span class="title">Force</span> <span class="title">ANSI</span> <span class="title">output</span></span></span><br><span class="line"><span class="function">      --<span class="title">no</span>-<span class="title">ansi</span>         <span class="title">Disable</span> <span class="title">ANSI</span> <span class="title">output</span></span></span><br><span class="line"><span class="function">  -<span class="title">n</span>, --<span class="title">no</span>-<span class="title">interaction</span>  <span class="title">Do</span> <span class="title">not</span> <span class="title">ask</span> <span class="title">any</span> <span class="title">interactive</span> <span class="title">question</span></span></span><br><span class="line"><span class="function">  -<span class="title">v</span>|<span class="title">vv</span>|<span class="title">vvv</span>, --<span class="title">verbose</span>  <span class="title">Increase</span> <span class="title">the</span> <span class="title">verbosity</span> <span class="title">of</span> <span class="title">messages</span>: 1 <span class="title">for</span> <span class="title">normal</span> <span class="title">output</span>, 2 <span class="title">for</span> <span class="title">more</span> <span class="title">verbose</span> <span class="title">output</span> <span class="title">and</span> 3 <span class="title">for</span> <span class="title">debug</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">Available</span> <span class="title">commands</span>:</span></span><br><span class="line"><span class="function">  <span class="title">build</span>              <span class="title">Build</span> <span class="title">Application</span> <span class="title">Dirs</span></span></span><br><span class="line"><span class="function">  <span class="title">clear</span>              <span class="title">Clear</span> <span class="title">runtime</span> <span class="title">file</span></span></span><br><span class="line"><span class="function">  <span class="title">help</span>               <span class="title">Displays</span> <span class="title">help</span> <span class="title">for</span> <span class="title">a</span> <span class="title">command</span></span></span><br><span class="line"><span class="function">  <span class="title">list</span>               <span class="title">Lists</span> <span class="title">commands</span></span></span><br><span class="line"><span class="function">  <span class="title">run</span>                <span class="title">PHP</span> <span class="title">Built</span>-<span class="title">in</span> <span class="title">Server</span> <span class="title">for</span> <span class="title">ThinkPHP</span>   启动我们的项目</span></span><br><span class="line"><span class="function">  <span class="title">version</span>            <span class="title">show</span> <span class="title">thinkphp</span> <span class="title">framework</span> <span class="title">version</span>    查看框架版本号</span></span><br><span class="line"><span class="function"> <span class="title">make</span></span></span><br><span class="line"><span class="function">  <span class="title">make:command</span>       <span class="title">Create</span> <span class="title">a</span> <span class="title">new</span> <span class="title">command</span> <span class="title">class</span></span></span><br><span class="line"><span class="function">  <span class="title">make:controller</span>    <span class="title">Create</span> <span class="title">a</span> <span class="title">new</span> <span class="title">resource</span> <span class="title">controller</span> <span class="title">class</span>  创建一个控制器</span></span><br><span class="line"><span class="function">  <span class="title">make:middleware</span>    <span class="title">Create</span> <span class="title">a</span> <span class="title">new</span> <span class="title">middleware</span> <span class="title">class</span>		创建一个中间件</span></span><br><span class="line"><span class="function">  <span class="title">make:model</span>         <span class="title">Create</span> <span class="title">a</span> <span class="title">new</span> <span class="title">model</span> <span class="title">class</span>		创建一个模型</span></span><br><span class="line"><span class="function">  <span class="title">make:validate</span>      <span class="title">Create</span> <span class="title">a</span> <span class="title">validate</span> <span class="title">class</span>		创建一个验证</span></span><br><span class="line"><span class="function"> <span class="title">optimize</span></span></span><br><span class="line"><span class="function">  <span class="title">optimize:autoload</span>  <span class="title">Optimizes</span> <span class="title">PSR0</span> <span class="title">and</span> <span class="title">PSR4</span> <span class="title">packages</span> <span class="title">to</span> <span class="title">be</span> <span class="title">loaded</span> <span class="title">with</span> <span class="title">classmaps</span> <span class="title">too</span>, <span class="title">good</span> <span class="title">for</span> <span class="title">production</span>.</span></span><br><span class="line"><span class="function">  <span class="title">optimize:config</span>    <span class="title">Build</span> <span class="title">config</span> <span class="title">and</span> <span class="title">common</span> <span class="title">file</span> <span class="title">cache</span>.</span></span><br><span class="line"><span class="function">  <span class="title">optimize:route</span>     <span class="title">Build</span> <span class="title">route</span> <span class="title">cache</span>.</span></span><br><span class="line"><span class="function">  <span class="title">optimize:schema</span>    <span class="title">Build</span> <span class="title">database</span> <span class="title">schema</span> <span class="title">cache</span>.</span></span><br><span class="line"><span class="function"> <span class="title">route</span></span></span><br><span class="line"><span class="function">  <span class="title">route:list</span>         <span class="title">show</span> <span class="title">route</span> <span class="title">list</span>.   查看路由列表</span></span><br></pre></td></tr></table></figure>
+<h4 id="6-7、开启路由模式"><a href="#6-7、开启路由模式" class="headerlink" title="6.7、开启路由模式"></a>6.7、开启路由模式</h4><p><img src="/2019/01/27/微信小程序03/1548579537963.png" alt="1548579537963"></p>
+<h4 id="6-8、创建一个控制器"><a href="#6-8、创建一个控制器" class="headerlink" title="6.8、创建一个控制器"></a>6.8、创建一个控制器</h4><p><img src="/2019/01/27/微信小程序03/1548579731827.png" alt="1548579731827"></p>
+<p>代码如下：</p>
+<p><img src="/2019/01/27/微信小程序03/1548581103440.png" alt="1548581103440"></p>
+<h2 id="7、总结"><a href="#7、总结" class="headerlink" title="7、总结"></a>7、总结</h2><p>1.数据缓存（10M）：</p>
+<p>设置（新增或修改）缓存数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.setStorage 异步的</span><br><span class="line">wx.setStorageSync 同步的</span><br></pre></td></tr></table></figure>
+<p>2.获取缓存数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.getStorage    异步的</span><br><span class="line">wx.getStorageSync   同步的</span><br></pre></td></tr></table></figure>
+<p>3.删除缓存数据：(一个一个删)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.removeStorage   异步</span><br><span class="line">wx.removeStorageSync    同步</span><br></pre></td></tr></table></figure>
+<p>4.清除缓存：（一次性清楚所有）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wx.clearStorage   异步</span><br><span class="line">wx.clearStorageSync   同步</span><br></pre></td></tr></table></figure>
+<p>5.小程序用户登录（获取用户openid）</p>
+<p>1）首先要通过wx.login获取code值</p>
+<p>2）然后请求自定义的接口程序文件，传递code值给这个接口程序文件</p>
+<p>3）在接口程序文件当中接收传递过来的code值，同时在小程序后台获得开发者的appid和appsecret的值，构建微信的接口链接地址</p>
+<p>4）直接使用 file_get_contents 函数请求这个微信接口链接地址，得到其返回的结果（封装curl）</p>
+<p>5）直接将微信接口返回的结果通过当前程序返回给小程序，最终小程序得到的信息中就包含openid的值</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/27/微信小程序03/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-列表样式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -944,223 +1152,6 @@
 
 
   
-    <article id="post-初识css" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/初识css/">初识css</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/初识css/" class="archive-article-date">
-  	<time datetime="2019-01-25T08:09:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS字体样式属性"><a href="#CSS字体样式属性" class="headerlink" title="CSS字体样式属性"></a>CSS字体样式属性</h1><h2 id="font-size-字号大小"><a href="#font-size-字号大小" class="headerlink" title="font-size:字号大小"></a>font-size:字号大小</h2><p>font-size属性用于设置字号，该属性的值可以使用相对长度单位，也可以使用绝对长度单位。其中，相对长度单位比较常用，推荐使用像素单位px，绝对长度单位使用较少。具体如下：</p>
-<p><img src="/2019/01/25/初识css/dd.png"></p>
-<h2 id="font-family-字体"><a href="#font-family-字体" class="headerlink" title="font-family:字体"></a>font-family:字体</h2><p>font-family属性用于设置字体。网页中常用的字体有宋体、微软雅黑、黑体等，例如将网页中所有段落文本的字体设置为微软雅黑，可以使用如下CSS样式代码：</p>
-<p>p{ font-family:”微软雅黑”;}</p>
-<p>可以同时指定多个字体，中间以逗号隔开，表示如果浏览器不支持第一个字体，则会尝试下一个，直到找到合适的字体。</p>
-<blockquote>
-<p><img src="/2019/01/25/初识css/good.png">常用技巧：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 现在网页中普遍使用14px+。</span><br><span class="line">2. 尽量使用偶数的数字字号。ie6等老式浏览器支持奇数会有bug。</span><br><span class="line">3. 各种字体之间必须使用英文状态下的逗号隔开。</span><br><span class="line">4. 中文字体需要加英文状态下的引号，英文字体一般不需要加引号。当需要设置英文字体时，英文字体名必须位于中文字体名之前。</span><br><span class="line">5. 如果字体名中包含空格、#、$等符号，则该字体必须加英文状态下的单引号或双引号，例如font-family: &quot;Times New Roman&quot;;。</span><br><span class="line">6. 尽量使用系统默认字体，保证在任何用户的浏览器中都能正确显示。</span><br></pre></td></tr></table></figure>
-<h2 id="CSS-Unicode字体"><a href="#CSS-Unicode字体" class="headerlink" title="CSS Unicode字体"></a>CSS Unicode字体</h2><p>在 CSS 中设置字体名称，直接写中文是可以的。但是在文件编码（GB2312、UTF-8 等）不匹配时会产生乱码的错误。xp 系统不支持 类似微软雅黑的中文。</p>
-<p>方案一： 你可以使用英文来替代。 比如 font-family:”Microsoft Yahei”。,”simsun”</p>
-<p>方案二： 在 CSS 直接使用 Unicode 编码来写字体名称可以避免这些错误。使用 Unicode 写中文字体名称，浏览器是可以正确的解析的。<br>font-family: “\5FAE\8F6F\96C5\9ED1”，表示设置字体为“微软雅黑”。</p>
-<p><img src="/2019/01/25/初识css/shs.png"></p>
-<p>可以通过escape()  来测试属于什么字体。</p>
-<table>
-<thead>
-<tr>
-<th>字体名称</th>
-<th>英文名称</th>
-<th>Unicode 编码</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>宋体</td>
-<td>SimSun</td>
-<td>\5B8B\4F53</td>
-</tr>
-<tr>
-<td>新宋体</td>
-<td>NSimSun</td>
-<td>\65B0\5B8B\4F53</td>
-</tr>
-<tr>
-<td>黑体</td>
-<td>SimHei</td>
-<td>\9ED1\4F53</td>
-</tr>
-<tr>
-<td>微软雅黑</td>
-<td>Microsoft YaHei</td>
-<td>\5FAE\8F6F\96C5\9ED1</td>
-</tr>
-<tr>
-<td>楷体_GB2312</td>
-<td>KaiTi_GB2312</td>
-<td>\6977\4F53_GB2312</td>
-</tr>
-<tr>
-<td>隶书</td>
-<td>LiSu</td>
-<td>\96B6\4E66</td>
-</tr>
-<tr>
-<td>幼园</td>
-<td>YouYuan</td>
-<td>\5E7C\5706</td>
-</tr>
-<tr>
-<td>华文细黑</td>
-<td>STXihei</td>
-<td>\534E\6587\7EC6\9ED1</td>
-</tr>
-<tr>
-<td>细明体</td>
-<td>MingLiU</td>
-<td>\7EC6\660E\4F53</td>
-</tr>
-<tr>
-<td>新细明体</td>
-<td>PMingLiU</td>
-<td>\65B0\7EC6\660E\4F53</td>
-</tr>
-</tbody>
-</table>
-<p>为了照顾不同电脑的字体安装问题，我们尽量只使用宋体和微软雅黑中文字体</p>
-<h2 id="font-weight-字体粗细"><a href="#font-weight-字体粗细" class="headerlink" title="font-weight:字体粗细"></a>font-weight:字体粗细</h2><p>字体加粗除了用 b  和 strong 标签之外，可以使用CSS 来实现，但是CSS 是没有语义的。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">font-weight属性用于定义字体的粗细，其可用属性值：normal、bold、bolder、lighter、100~900（100的整数倍）。</span><br></pre></td></tr></table></figure>
-<p><img src="/2019/01/25/初识css/good.png">小技巧： </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数字 400 等价于 <span class="selector-tag">normal</span>，而 700 等价于 <span class="selector-tag">bold</span>。  但是我们更喜欢用数字来表示。</span><br></pre></td></tr></table></figure>
-<h2 id="font-style-字体风格"><a href="#font-style-字体风格" class="headerlink" title="font-style:字体风格"></a>font-style:字体风格</h2><p>字体倾斜除了用 i  和 em 标签之外，可以使用CSS 来实现，但是CSS 是没有语义的。</p>
-<p>font-style属性用于定义字体风格，如设置斜体、倾斜或正常字体，其可用属性值如下：</p>
-<p>normal：默认值，浏览器会显示标准的字体样式。</p>
-<p>italic：浏览器会显示斜体的字体样式。</p>
-<p>oblique：浏览器会显示倾斜的字体样式。</p>
-<p><img src="/2019/01/25/初识css/good.png">小技巧： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">平时我们很少给文字加斜体，反而喜欢给斜体标签（em，i）改为普通模式。</span><br></pre></td></tr></table></figure>
-<h2 id="font-综合设置字体样式-非重点"><a href="#font-综合设置字体样式-非重点" class="headerlink" title="font:综合设置字体样式 (非重点)"></a>font:综合设置字体样式 (非重点)</h2><p>font属性用于对字体样式进行综合设置，其基本语法格式如下：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;<span class="attribute">font</span>: font-style  font-weight  font-size/line-height  font-family;&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">使用font属性时，必须按上面语法格式中的顺序书写，不能更换顺序，各个属性以空格隔开。</span><br><span class="line">注意：其中不需要设置的属性可以省略（取默认值），但必须保留font-size和font-family属性，否则font属性将不起作用。</span><br><span class="line">一次可以多个针对于字体的属性样式</span><br><span class="line">font:设置字体是否倾斜 设置是否加粗 设置字体大小 设置字体;</span><br><span class="line">font属性它在书写的时候有先后顺序 </span><br><span class="line">注意细节：前两个可以交换位置 并且前两个可以省略不写  </span><br><span class="line">后两个不可以交换位置  同时它们不能省略不写</span><br></pre></td></tr></table></figure>
-<h1 id="CSS外观属性"><a href="#CSS外观属性" class="headerlink" title="CSS外观属性"></a>CSS外观属性</h1><h2 id="color-文本颜色"><a href="#color-文本颜色" class="headerlink" title="color:文本颜色"></a>color:文本颜色</h2><p>color属性用于定义文本的颜色，其取值方式有如下3种：</p>
-<p>1.预定义的颜色值，如red，green，blue等。</p>
-<p>2.十六进制，如#FF0000，#FF6600，#29D794等。实际工作中，十六进制是最常用的定义颜色的方式。</p>
-<p>3.RGB代码，如红色可以表示为rgb(255,0,0)或rgb(100%,0%,0%)。</p>
-<p>需要注意的是，如果使用RGB代码的百分比颜色值，取值为0时也不能省略百分号，必须写为0%。</p>
-<h2 id="line-height-行间距"><a href="#line-height-行间距" class="headerlink" title="line-height:行间距"></a>line-height:行间距</h2><p>ine-height属性用于设置行间距，就是行与行之间的距离，即字符的垂直间距，一般称为行高。line-height常用的属性值单位有三种，分别为像素px，相对值em和百分比%，实际工作中使用最多的是像素px</p>
-<p>一般情况下，行距比字号大7.8像素左右就可以了。</p>
-<h2 id="text-align-文本水平对齐方式"><a href="#text-align-文本水平对齐方式" class="headerlink" title="text-align:文本水平对齐方式"></a>text-align:文本水平对齐方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text-align属性用于设置文本内容的水平对齐，相当于html中的align对齐属性。其可用属性值如下：</span><br></pre></td></tr></table></figure>
-<p>left：左对齐（默认值）</p>
-<p>right：右对齐</p>
-<p>center：居中对齐</p>
-<p>是让盒子里面的内容水平居中， 而不是让盒子居中对齐</p>
-<h2 id="text-indent-首行缩进"><a href="#text-indent-首行缩进" class="headerlink" title="text-indent:首行缩进"></a>text-indent:首行缩进</h2><p>text-indent属性用于设置首行文本的缩进，其属性值可为不同单位的数值、em字符宽度的倍数、或相对于浏览器窗口宽度的百分比%，<code>允许使用负值</code>, 建议使用em作为设置单位。<br>text-indent属性值 如果是正数 往右走  如果是负数就是往左走！</p>
-<p>1em 就是一个字的宽度   如果是汉字的段落， 1em 就是一个汉字的宽度</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">      <span class="comment">/*行间距*/</span></span><br><span class="line">      <span class="attribute">line-height</span>: <span class="number">25px</span>;</span><br><span class="line">      <span class="comment">/*首行缩进2个字  em  1个em 就是1个字的大小*/</span></span><br><span class="line">      <span class="attribute">text-indent</span>: <span class="number">2em</span>;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="text-decoration-文本的装饰线"><a href="#text-decoration-文本的装饰线" class="headerlink" title="text-decoration 文本的装饰线"></a>text-decoration 文本的装饰线</h2><p>text-decoration   通常我们用于给链接修改装饰效果</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>none</strong></td>
-<td>默认。定义标准的文本。 取消下划线</td>
-</tr>
-<tr>
-<td>underline</td>
-<td>定义文本下的一条线。下划线 也是我们链接自带的</td>
-</tr>
-<tr>
-<td>overline</td>
-<td>定义文本上的一条线。</td>
-</tr>
-<tr>
-<td><strong>line-through</strong></td>
-<td>定义穿过文本下的一条线。</td>
-</tr>
-</tbody>
-</table>
-<h1 id="开发者工具（chrome）"><a href="#开发者工具（chrome）" class="headerlink" title="开发者工具（chrome）"></a>开发者工具（chrome）</h1><p>此工具是我们的必备工具，以后代码出了问题，我们首先第一反应就是：</p>
-<p>“按F12”或者是 “shift+ctrl+i”   打开 开发者工具。</p>
-<p>菜单：   右击网页空白出—检查</p>
-<p><img src="/2019/01/25/初识css/chrome.png"></p>
-<p><img src="/2019/01/25/初识css/good.png">小技巧：</p>
-<ol>
-<li>ctrl+滚轮 可以 放大开发者工具代码大小。</li>
-<li>左边是HTML元素结构   右边是CSS样式。</li>
-<li>右边CSS样式可以改动数值和颜色查看更改后效果。</li>
-<li>ctrl + 0  复原浏览器大小</li>
-</ol>
-<h1 id="综合案例"><a href="#综合案例" class="headerlink" title="综合案例"></a>综合案例</h1><p># </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/初识css/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1262,11 +1253,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
