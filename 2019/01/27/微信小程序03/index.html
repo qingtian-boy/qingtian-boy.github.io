@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>微信小程序03 | 晴天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航 1234567891011121314151617181920212223242526272829303132333435&quot;tabBar&quot;: &amp;#123;    &quot;color&quot;">
+  <meta name="description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航">
 <meta name="keywords" content="小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序03">
 <meta property="og:url" content="http://yoursite.com/2019/01/27/微信小程序03/index.html">
 <meta property="og:site_name" content="晴天的博客">
-<meta property="og:description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航 1234567891011121314151617181920212223242526272829303132333435&quot;tabBar&quot;: &amp;#123;    &quot;color&quot;">
+<meta property="og:description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548552861556.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548552598844.png">
@@ -55,10 +55,10 @@
 <meta property="og:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548579537963.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548579731827.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548581103440.png">
-<meta property="og:updated_time" content="2019-01-27T11:02:36.682Z">
+<meta property="og:updated_time" content="2019-01-28T03:15:16.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微信小程序03">
-<meta name="twitter:description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航 1234567891011121314151617181920212223242526272829303132333435&quot;tabBar&quot;: &amp;#123;    &quot;color&quot;">
+<meta name="twitter:description" content="# 目录 [TOC] 一、昨日回顾1、知识回顾能够使用事件 ​    事件分为几种？  2种，bind 与 catch ​    bind:tap  冒泡 ​    catch:tap 非冒泡 能够修改配置文件实现底部导航">
 <meta name="twitter:image" content="http://yoursite.com/2019/01/27/微信小程序03/1548552861556.png">
   
     <link rel="alternative" href="/atom.xml" title="晴天的博客" type="application/atom+xml">
@@ -221,8 +221,7 @@
 <p>​    事件分为几种？  2种，bind 与 catch</p>
 <p>​    bind:tap  冒泡</p>
 <p>​    catch:tap 非冒泡</p>
-<p>能够修改配置文件实现底部导航</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>: &#123;</span><br><span class="line">    <span class="string">"color"</span>:<span class="string">"#00B26A"</span>,</span><br><span class="line">    <span class="string">"list"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>:<span class="string">"/icon/home.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>:<span class="string">"/icon/home_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"首页"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/category/category"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/createtask.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/createtask_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"分类"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/find/find"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/browse.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/browse_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"发现"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/catr/catr"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/cat.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/cat_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"购物车"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/user/user"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/user.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/user_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"我的"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>能够修改配置文件实现底部导航<br><a id="more"></a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"tabBar"</span>: &#123;</span><br><span class="line">    <span class="string">"color"</span>:<span class="string">"#00B26A"</span>,</span><br><span class="line">    <span class="string">"list"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/index/index"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>:<span class="string">"/icon/home.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>:<span class="string">"/icon/home_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"首页"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/category/category"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/createtask.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/createtask_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"分类"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/find/find"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/browse.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/browse_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"发现"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/catr/catr"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/cat.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/cat_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"购物车"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="string">"pagePath"</span>: <span class="string">"pages/user/user"</span>,</span><br><span class="line">        <span class="string">"iconPath"</span>: <span class="string">"/icon/user.png"</span>,</span><br><span class="line">        <span class="string">"selectedIconPath"</span>: <span class="string">"/icon/user_fill.png"</span>,</span><br><span class="line">        <span class="string">"text"</span>: <span class="string">"我的"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></p>
 <p>​能够实现下拉刷新(实现上拉)</p>
 <p>使用scroll-view组件</p>
 <p>scroll-y=”true“</p>
@@ -382,6 +381,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/01/28/微信小程序04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          微信小程序04
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/01/27/列表样式/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">列表样式</div>
@@ -536,6 +544,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
             
             <div class="clearfix"></div>
