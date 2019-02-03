@@ -152,6 +152,856 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/js01/">js01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/js01/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
+<li>理解数据类型的转换</li>
+<li>能够理解表达式和语句</li>
+<li>能够使用if语句、switch语句、for循环、while循环</li>
+<li>能够理解do..while循环</li>
+<li>能够理解break和continue关键字</li>
+</ul>
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="变量数据类型转换"><a href="#变量数据类型转换" class="headerlink" title="变量数据类型转换"></a>变量数据类型转换</h2><blockquote>
+<p>为什么会有数据类型的转换</p>
+</blockquote>
+<p><img src="/2019/02/03/js01/1537147442236.png" alt="1537147442236"></p>
+<h3 id="转换成字符串类型"><a href="#转换成字符串类型" class="headerlink" title="转换成字符串类型"></a>转换成字符串类型</h3><ul>
+<li><p>变量.toString()</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//强制转换</span></span><br><span class="line">      <span class="comment">//1.格式： 变量名.toString()   将其它的类型转换为string类型</span></span><br><span class="line">      <span class="comment">//        var v1 = 1234;</span></span><br><span class="line">      <span class="keyword">var</span> v1 = <span class="literal">true</span>;</span><br><span class="line">      <span class="keyword">var</span> res =  v1.toString(); <span class="comment">//将v1变量的类型转换为字符串类型</span></span><br><span class="line">      <span class="built_in">document</span>.write(<span class="keyword">typeof</span> res);</span><br><span class="line">      <span class="built_in">document</span>.write(<span class="string">"&lt;hr/&gt;"</span>);</span><br><span class="line">      <span class="built_in">document</span>.write(<span class="keyword">typeof</span> v1);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/03/js01/1537147836048.png" alt="1537147836048"></p>
+</li>
+<li><p>String(要转换的变量名)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>()函数存在的意义：有些值没有toString()，这个时候可以使用<span class="built_in">String</span>()。比如：<span class="literal">undefined</span>和<span class="literal">null</span></span><br><span class="line"><span class="comment">//2.格式  String(要转换的变量名);</span></span><br><span class="line"><span class="comment">//        var v1 = null;</span></span><br><span class="line">        <span class="keyword">var</span> v1 = <span class="literal">NaN</span>; </span><br><span class="line">        <span class="keyword">var</span> res = <span class="built_in">String</span>(v1); <span class="comment">//将变量v1 转换为字符串类型</span></span><br><span class="line">        <span class="built_in">document</span>.write(<span class="keyword">typeof</span> res); <span class="comment">//</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/03/js01/1537148164976.png" alt="1537148164976"></p>
+</li>
+<li><p>拼接字符串方式</p>
+<p>num  +  “”，当 + 两边一个操作符是字符串类型，一个操作符是其它类型的时候，会先把其它类型转换成字符串再进行字符串拼接，返回字符串</p>
+</li>
+</ul>
+<h3 id="将其它转换成数值类型"><a href="#将其它转换成数值类型" class="headerlink" title="将其它转换成数值类型"></a>将其它转换成数值类型</h3><ul>
+<li><p>Number(要转换的变量)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Number()可以把任意类型转换成数值型，如果要转换的字符串中有一个不是数值的字符，返回NaN</span></span><br><span class="line"><span class="comment">//Number(要转换的变量) </span></span><br><span class="line"><span class="keyword">var</span> v1 = <span class="literal">true</span>;   <span class="number">1</span>      <span class="number">1</span> &lt;=====&gt;   <span class="literal">true</span></span><br><span class="line"><span class="comment">//        var v1 = false;  0      0 &lt;=====&gt;   false</span></span><br><span class="line"><span class="comment">//        var v1 = null;  //null转换为数值型   0</span></span><br><span class="line"><span class="comment">//        var v1 = undefined; //将 undefined类型转换为 number类型   NaN</span></span><br><span class="line"><span class="comment">//        var v1 = "1234";</span></span><br><span class="line">          <span class="keyword">var</span> v1 = <span class="string">"a1234"</span>;</span><br><span class="line">        <span class="keyword">var</span> res = <span class="built_in">Number</span>(v1); <span class="comment">//将v1这个变量转换为Number类型</span></span><br><span class="line">        <span class="built_in">document</span>.write(res);</span><br><span class="line">        <span class="keyword">var</span> type = <span class="keyword">typeof</span> res; <span class="comment">//检测res变量的类型</span></span><br><span class="line">        <span class="built_in">document</span>.write(<span class="string">"&lt;hr&gt;得到res变量的类型："</span> + type)</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/03/js01/1537149002920.png" alt="1537149002920"></p>
+</li>
+<li><p>parseInt(要转换的变量)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从其它类型中提取整数  </span></span><br><span class="line"> <span class="comment">// parse 解析 </span></span><br><span class="line">        <span class="comment">// Int 整数  </span></span><br><span class="line">        <span class="comment">// parseInt() 从字符串中提取整数   将字符串转换为number类型</span></span><br><span class="line">        <span class="keyword">var</span> v1 = <span class="string">"12.34abcd"</span>;</span><br><span class="line">        <span class="comment">//如果该字符串的第一个字符不是数字 就会得到 NaN</span></span><br><span class="line">        <span class="comment">//如果该字符串的第一个字符是数字 接下来从它里面将整数提取出来 遇到了非数字的以后就停止提取</span></span><br><span class="line">        <span class="keyword">var</span> res = <span class="built_in">parseInt</span>(v1);</span><br><span class="line">        <span class="built_in">document</span>.write(res);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>parseFloat(要转换的变量)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//parseFloat() 从一个字符串中提取小数  如果该字符串的第一个字符不是数字 会得到NaN　 如果第一个是数字则会往后进行提取  遇到了除了.以外的非数字则会停止提取    </span></span><br><span class="line">  <span class="comment">// parseFloat() 从字符串中提取小数  将字符串转换为number类型</span></span><br><span class="line">        <span class="keyword">var</span> v1 = <span class="string">"12.3.4abcd"</span>;</span><br><span class="line">        <span class="comment">// 从一个字符串提取小数 如果第一个字符不是数字会得到NaN 如果是会进行提取 提取规则 如果遇到了除了第一个.以外的非数字 就会停止提取   12.3.4 </span></span><br><span class="line">        <span class="keyword">var</span> res = <span class="built_in">parseFloat</span>(v1);</span><br><span class="line">        <span class="built_in">document</span>.write(res);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>+，-0等运算</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'500'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(+str);		<span class="comment">// 取正</span></span><br><span class="line"><span class="built_in">console</span>.log(-str);		<span class="comment">// 取负</span></span><br><span class="line"><span class="built_in">console</span>.log(str - <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="转换成布尔类型-重点-true-false"><a href="#转换成布尔类型-重点-true-false" class="headerlink" title="转换成布尔类型 重点 true | false"></a>转换成布尔类型 重点 true | false</h3><ul>
+<li><p>Boolean(要转换的变量)  可以实现将其它的类型转换为布尔类型 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//    var v1 = 1;  // true    将number类型转换为布尔类型  除了0与NaN以后  其它的都是true</span></span><br><span class="line"><span class="comment">//    var v1 = 0;   // false</span></span><br><span class="line"><span class="comment">//    var v1 = NaN;  // false   null与undefined转换为布尔类型的false </span></span><br><span class="line"><span class="comment">//    var v1 = null;  // false</span></span><br><span class="line"><span class="comment">//    var v1 = undefined;   false</span></span><br><span class="line">    <span class="comment">//将字符串转换为boolean 类型  将字符串类型转换为布尔类型  只要这个字符串里面有内容 就会是true</span></span><br><span class="line"><span class="comment">//    var v1 = "1234"; // true   将字符串类型转换为布尔类型 除了空字符串以外 其它的都是true</span></span><br><span class="line"><span class="comment">//    var v1 = "abcd"; //true</span></span><br><span class="line"><span class="comment">//    var v1 = '0';</span></span><br><span class="line"><span class="comment">//    var v1 = '-10';</span></span><br><span class="line"><span class="comment">//    var v1 = '';</span></span><br><span class="line">    <span class="keyword">var</span> v1 = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">var</span> res = <span class="built_in">Boolean</span>(v1); <span class="comment">//将变量v1的类型强制的转换为布尔类型 true| true</span></span><br><span class="line">    <span class="built_in">document</span>.write(res);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/03/js01/1537151446898.png" alt="1537151446898"></p>
+</li>
+</ul>
+<h3 id="布尔类型的隐式转换"><a href="#布尔类型的隐式转换" class="headerlink" title="布尔类型的隐式转换"></a>布尔类型的隐式转换</h3><p>流程控制语句会把后面的值隐式转换成布尔类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">转换为true   非空字符串  非0数字  true 任何对象</span><br><span class="line">转换成false  空字符串  0   null  undefined</span><br></pre></td></tr></table></figure>
+<h2 id="表达式和语句"><a href="#表达式和语句" class="headerlink" title="表达式和语句"></a>表达式和语句</h2><h3 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h3><blockquote>
+<p>一个表达式可以产生一个值，有可能是运算、函数调用、有可能是字面量。表达式可以放在任何需要值的地方。  </p>
+</blockquote>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">常识:</span><br><span class="line">  只能操作一个值的操作符叫一元操作符,组成的表达式叫一元表达式.(一个值一个运算符)</span><br><span class="line">  由两个值和一个运算符连接起来的表达式叫二元表达式。(两个值一个运算符)</span><br><span class="line">  由三个值和两个运算符连接起来的表达式叫三元表达式.(三个值两个运算符)</span><br><span class="line">例如：</span><br><span class="line">  12</span><br><span class="line">  aa++</span><br><span class="line">  aa + 56</span><br><span class="line">  5 &gt; 6 ? &apos;5&apos; : &apos;6&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><blockquote>
+<p>语句可以理解为一个行为，循环语句和判断语句就是典型的语句。一个程序有很多个语句组成，一般情况下;分割一个一个的语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">JavaScript所提供的语句分为以下几大类： </span><br><span class="line">  1. 变量声明，赋值语句：var。</span><br><span class="line">  语法如下： var 变量名称 [=初始值]</span><br><span class="line">  例如：var num = 25;</span><br><span class="line">  2. 条件和分支语句：if...else，switch。 （后面具体学习）</span><br><span class="line">  3. 循环语句：for， for...in，while,break,continue。（后面具体学习）</span><br><span class="line">  4. 注释语句：//，/*...*/。 </span><br><span class="line">  // 这是单行注释 </span><br><span class="line">  /* 这可以多行注释.... */</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h3><ul>
+<li>过去调试JavaScript的方式<ul>
+<li>alert()</li>
+<li>console.log()</li>
+</ul>
+</li>
+<li>断点调试</li>
+</ul>
+<blockquote>
+<p>断点调试是指自己在程序的某一行设置一个断点，调试时，程序运行到这一行就会停住，然后你可以一步一步往下调试，调试过程中可以看各个变量当前的值，出错的话，调试到出错的代码行即显示错误，停下。</p>
+</blockquote>
+<ul>
+<li>调试步骤</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">浏览器中按F12--&gt;sources--&gt;找到需要调试的文件--&gt;在程序的某一行设置断点</span><br></pre></td></tr></table></figure>
+<ul>
+<li>调试中的相关操作</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Watch:监视，通过watch可以监视变量的值的变化，非常的常用。</span><br><span class="line">F10:程序单步执行，让程序一行一行的执行，这个时候，观察watch中变量的值的变化。</span><br><span class="line">F8：跳到下一个断点处，如果后面没有断点了，则程序执行结束。</span><br></pre></td></tr></table></figure>
+<p>tips: 监视变量，不要监视表达式，因为监视了表达式，那么这个表达式也会执行。</p>
+<ol>
+<li>代码调试的能力非常重要，只有学会了代码调试，才能学会自己解决bug的能力。初学者不要觉得调试代码麻烦就不去调试，知识点花点功夫肯定学的会，但是代码调试这个东西，自己不去练，永远都学不会。</li>
+<li>今天学的代码调试非常的简单，只要求同学们记住代码调试的这几个按钮的作用即可，后面还会学到很多的代码调试技巧。</li>
+</ol>
+<h2 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h2><blockquote>
+<p>程序的三种基本结构</p>
+</blockquote>
+<h3 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h3><p> 从上到下执行的代码就是顺序结构</p>
+<p><strong>程序默认就是由上到下顺序执行的</strong></p>
+<h3 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h3><p>根据不同的情况，执行对应代码</p>
+<h3 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h3><p>循环结构：满足一定的条件，重复做一件事情</p>
+<h2 id="分支结构-1"><a href="#分支结构-1" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p>语法结构<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="comment">/* 条件表达式 */</span>) &#123;</span><br><span class="line">  <span class="comment">//条件成立时 执行语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> (<span class="comment">/* 条件表达式 */</span>)&#123;</span><br><span class="line">  <span class="comment">// 成立执行语句</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 否则执行语句</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="comment">/* 条件1 */</span>)&#123;</span><br><span class="line">  <span class="comment">// 成立执行语句</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="comment">/* 条件2 */</span>)&#123;</span><br><span class="line">  <span class="comment">// 成立执行语句</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="comment">/* 条件3 */</span>)&#123;</span><br><span class="line">  <span class="comment">// 成立执行语句</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 最后默认执行语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>if语句单分支</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第一种if语句的语法结构</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">          if(条件语句)&#123;</span></span><br><span class="line"><span class="comment">            要执行的代码块</span></span><br><span class="line"><span class="comment">          &#125;</span></span><br><span class="line"><span class="comment">          如果条件语句成立 就执行代码块 如果条件语句不成立 就不执行代码块</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="comment">// 如果考试分数 等于100分 就打印出满分</span></span><br><span class="line">        <span class="comment">// 思路分析：先要有一个变量来表示分数 然后拿这个变量与100进行比较  如果为true 就表示是满分 如果为false 就不执行代码块</span></span><br><span class="line">        <span class="keyword">var</span> fenshu = <span class="number">100</span>;  <span class="comment">// 先要有一个变量来表示分数</span></span><br><span class="line">        <span class="keyword">if</span>(fenshu == <span class="number">100</span> )&#123; <span class="comment">// 然后拿这个变量与100进行比较</span></span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"满分"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>if语句双分支</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//第二种if语句的语法结构</span></span><br><span class="line">       <span class="comment">/*</span></span><br><span class="line"><span class="comment">         if(条件语句)&#123;</span></span><br><span class="line"><span class="comment">           要执行的代码块</span></span><br><span class="line"><span class="comment">         &#125;else&#123;</span></span><br><span class="line"><span class="comment">           要执行的代码块</span></span><br><span class="line"><span class="comment">         &#125;</span></span><br><span class="line"><span class="comment">         如果条件语句成立了 得到 true 就会执行第一个大括号里面的代码块 如果条件语句不成立 为false时执行 第二个大括号里面的代码块</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">       <span class="comment">//案例：如果分数大于或者等于60分 就提示及格  否则 分数 小于60 就提示 渣渣</span></span><br><span class="line">       <span class="comment">//1.第一步：要定义一个变量表示分数</span></span><br><span class="line">       <span class="comment">//2.判断这个分数是否大于等于60</span></span><br><span class="line">       <span class="keyword">var</span> fenshu = <span class="number">51</span>;</span><br><span class="line">       <span class="keyword">if</span>(fenshu &gt;= <span class="number">60</span>) &#123;</span><br><span class="line">           <span class="built_in">document</span>.write(<span class="string">"及格"</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="built_in">document</span>.write(<span class="string">"渣渣辉"</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>案例：<br>    判断一个数是偶数还是奇数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//判断一个数是偶数还是奇数</span></span><br><span class="line">      <span class="keyword">var</span> v1 = <span class="number">11</span>;</span><br><span class="line">      <span class="comment">//看看这个数是否能够被2整除 表示余数为0   10 % 2  == 0</span></span><br><span class="line">      <span class="keyword">if</span>(v1 % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line">          <span class="built_in">document</span>.write(v1+<span class="string">"是偶数"</span>);</span><br><span class="line">      &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="built_in">document</span>.write(v1+<span class="string">"是奇数"</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>​ 求两个数的最大数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 求两个数的最大数 拿两个变量来进行比较</span></span><br><span class="line">       <span class="keyword">var</span> v1 = <span class="number">10</span>;</span><br><span class="line">       <span class="keyword">var</span> v2 = <span class="number">20</span>;</span><br><span class="line">       <span class="keyword">if</span>(v1 &gt; v2)&#123;</span><br><span class="line">           <span class="built_in">document</span>.write(v1+<span class="string">"是最大值"</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="built_in">document</span>.write(v2 + <span class="string">"是最大值"</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>​  是否年满18岁(是否成年)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   是否年满18岁(是否成年)</span></span><br><span class="line">       <span class="keyword">var</span> age = <span class="number">18</span>;</span><br><span class="line">       <span class="comment">//判断age变量是否大于等于18</span></span><br><span class="line">       <span class="keyword">if</span>(age &gt;= <span class="number">18</span>) &#123;</span><br><span class="line">           <span class="built_in">document</span>.write(<span class="string">"你已成年，要对自己负责"</span>);</span><br><span class="line">       &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="built_in">document</span>.write(<span class="string">"洗洗睡吧"</span>);</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure>
+<p>​    分数转换，把百分制转换成ABCDE   &lt;60  E  60-70 D  70-80 C  80-90 B  90 - 100 A</p>
+<p>### </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fenshu = <span class="number">88</span>;</span><br><span class="line">        <span class="keyword">if</span>(fenshu &gt;=<span class="number">90</span> &amp;&amp; fenshu &lt;= <span class="number">100</span>)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"A"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(fenshu &gt;=<span class="number">80</span>)&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"B"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(fenshu &gt;= <span class="number">70</span> )&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"C"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(fenshu &gt;= <span class="number">60</span> )&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"D"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="built_in">document</span>.write(<span class="string">"E"</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><p>语法格式:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (变量名) &#123;</span><br><span class="line">  <span class="keyword">case</span> 常量<span class="number">1</span>:</span><br><span class="line">    语句;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 常量<span class="number">2</span>:</span><br><span class="line">    语句;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 常量<span class="number">3</span>:</span><br><span class="line">    语句;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  …</span><br><span class="line">  <span class="keyword">case</span> 常量n:</span><br><span class="line">    语句;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    语句;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<pre><code>break可以省略，如果省略，代码会继续执行下一个case
+switch 语句在比较值时使用的是全等操作符, 因此不会发生类型转换（例如，字符串&apos;10&apos; 不等于数值 10）
+
+switch语句它在功能上和if语句多分支很相似  
+如果是范围的判断推荐使用if语句多分支 
+如果是固定值之间的比较 推荐使用switch语句 
+</code></pre><h2 id="循环结构-1"><a href="#循环结构-1" class="headerlink" title="循环结构"></a>循环结构</h2><blockquote>
+<p>在javascript中，循环语句有三种，while、do..while、for循环。</p>
+</blockquote>
+<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><p>基本语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当循环条件为true时，执行循环体，</span></span><br><span class="line"><span class="comment">// 当循环条件为false时，结束循环。</span></span><br><span class="line"><span class="keyword">while</span> (循环条件) &#123;</span><br><span class="line">  <span class="comment">//循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>案例:</p>
+<p>​    打印1~10之间数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>​    打印100以内 7的倍数<br>    打印1~100以内的奇数</p>
+<p>   打印100以内所有偶数的和</p>
+<h3 id="do…while语句"><a href="#do…while语句" class="headerlink" title="do…while语句"></a>do…while语句</h3><blockquote>
+<p>do..while循环和while循环非常像，二者经常可以相互替代，但是do..while的特点是不管条件成不成立，都会执行一次。</p>
+</blockquote>
+<p>基础语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line">  <span class="comment">// 循环体;</span></span><br><span class="line">&#125; <span class="keyword">while</span> (循环条件);</span><br></pre></td></tr></table></figure>
+<p>代码示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>案例：</p>
+<h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><blockquote>
+<p>写while循环的经常会忘记自增，for循环其实是while循环演化过来的，语法更加的简洁明了，使用非常的广泛。</p>
+</blockquote>
+<p>for循环语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for循环的表达式之间用的是;号分隔的，千万不要写成,</span></span><br><span class="line"><span class="comment">//    1           2         4</span></span><br><span class="line"><span class="keyword">for</span> (初始化变量; 判断的条件; 自增表达式<span class="number">3</span>) &#123;</span><br><span class="line"> 	<span class="comment">// 3</span></span><br><span class="line">    <span class="comment">// 循环体4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行顺序：1243  —-  243   —–243(直到循环条件变成false)</p>
+<ol>
+<li>初始化表达式</li>
+<li>判断表达式</li>
+<li>自增表达式</li>
+<li>循环体</li>
+</ol>
+<p>案例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//打印1-100之间所有数  </span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//求1-100之间所有数的和</span></span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"><span class="comment">//求1-100之间所有数的能够被3整除的平均值 </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//求1-100之间所有偶数的和</span></span><br><span class="line"><span class="comment">//使用for循环求1-100之间所有偶数的和</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="comment">//求1000-9999年之间的闰年  4年一闰，百年不闰  400年又一闰</span></span><br><span class="line"></span><br><span class="line">		</span><br><span class="line"><span class="comment">//打印9行一列的表格  </span></span><br><span class="line">	</span><br><span class="line"><span class="comment">//打印一行9列的表格  </span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"><span class="comment">//打印9行9列的表格  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//打印9行9列的表格</span></span><br></pre></td></tr></table></figure>
+<p>作业：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">求1-100之间所有数的乘积</span><br><span class="line">求1-100之间所有奇数的和</span><br><span class="line">计算1-100之间能3整除的数的和</span><br><span class="line">计算1-100之间不能被7整除的数的和</span><br></pre></td></tr></table></figure>
+<p>### </p>
+<h1 id="循环中断关键字"><a href="#循环中断关键字" class="headerlink" title="循环中断关键字"></a>循环中断关键字</h1><h3 id="continue和break"><a href="#continue和break" class="headerlink" title="continue和break"></a>continue和break</h3><blockquote>
+<p>break:立即跳出整个循环，即循环结束，开始执行循环后面的内容（直接跳到大括号）</p>
+<p>continue:立即跳出当前循环，继续下一次循环（跳到i++的地方）</p>
+</blockquote>
+<blockquote>
+<p>break</p>
+</blockquote>
+<blockquote>
+<p>continue</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/js01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js00" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/js00/">js00</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/js00/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="typora-copy-images-to-media"><a href="#typora-copy-images-to-media" class="headerlink" title="typora-copy-images-to: media"></a>typora-copy-images-to: media</h2><h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
+<li>能够说出什么是JavaScript</li>
+<li>能够说出JavaScript的引入方式(书写位置)</li>
+<li>能够使用变量 </li>
+<li>能够理解变量的数据类型</li>
+<li>能够使用运算符</li>
+</ul>
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h2><h3 id="JavaScript是什么"><a href="#JavaScript是什么" class="headerlink" title="JavaScript是什么"></a>JavaScript是什么</h3>
+        
+          <a class="article-more-a" href="/2019/02/03/js00/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/js00/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-结构伪类选择器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/结构伪类选择器/">结构伪类选择器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/结构伪类选择器/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:45:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h1><p>凡是伪类选择器都会有一个:</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:first-child</td>
+<td>匹配第一个子元素</td>
+</tr>
+<tr>
+<td>:last-child</td>
+<td>匹配最后一个子元素</td>
+</tr>
+<tr>
+<td>:nth-child(n)</td>
+<td>匹配第N个子元素</td>
+</tr>
+<tr>
+<td>:nth-child(2n)</td>
+<td>匹配偶数的子元素</td>
+</tr>
+<tr>
+<td>:nth-child(2n+1)</td>
+<td>匹配奇数的子元素</td>
+</tr>
+<tr>
+<td>:nth-child(odd)</td>
+<td>匹配奇数的子元素</td>
+</tr>
+<tr>
+<td>:nth-child(even)</td>
+<td>匹配偶数的子元素</td>
+</tr>
+<tr>
+<td>:only-child</td>
+<td>当前父元素下面只有只有一个子元素才会匹配</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">		ul &#123;</span></span><br><span class="line"><span class="undefined">			width: 600px;</span></span><br><span class="line"><span class="undefined">			margin: 100px auto;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		li&#123;</span></span><br><span class="line"><span class="undefined">			list-style: none;</span></span><br><span class="line"><span class="undefined">			float: left;</span></span><br><span class="line"><span class="undefined">			width: 80px;</span></span><br><span class="line"><span class="undefined">			height: 80px;</span></span><br><span class="line"><span class="undefined">			text-align: center;</span></span><br><span class="line"><span class="undefined">			line-height: 80px;</span></span><br><span class="line"><span class="undefined">			margin: 0px -1px -1px 0px;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">border</span><span class="selector-pseudo">:1px</span> <span class="selector-tag">solid</span> <span class="selector-id">#000</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">		</span></span><br><span class="line"><span class="css">		<span class="comment">/*结构伪类元素选择器：它匹配规则找当前元素的父元素再去查找其子元素*/</span></span></span><br><span class="line"><span class="undefined">		/* li:first-child&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#f00</span>;</span></span><br><span class="line"><span class="undefined">		&#125; */</span></span><br><span class="line"><span class="undefined">		/* li:last-child&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#f00</span>;</span></span><br><span class="line"><span class="undefined">		&#125; */</span></span><br><span class="line"><span class="undefined">		/* li:nth-child(3)&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background</span>: <span class="selector-id">#f00</span>;</span></span><br><span class="line"><span class="undefined">		&#125; */</span></span><br><span class="line"><span class="undefined">		/* li:nth-child(2n)&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#f00</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="css">		<span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2n+1)</span>&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#00f</span>;</span></span><br><span class="line"><span class="undefined">		&#125; */</span></span><br><span class="line"><span class="undefined">		/* li:nth-child(even)&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background</span>: <span class="selector-id">#f00</span>;</span></span><br><span class="line"><span class="undefined">		&#125; */</span></span><br><span class="line"><span class="css">		<span class="selector-tag">li</span><span class="selector-pseudo">:only-child</span>&#123;</span></span><br><span class="line"><span class="css">			<span class="selector-tag">background-color</span>: <span class="selector-id">#00f</span>;</span></span><br><span class="line"><span class="undefined">		&#125;</span></span><br><span class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>7<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>8<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>9<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>10<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>11<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>12<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>13<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>14<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>15<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>16<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>17<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>18<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>19<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>20<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>21<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>22<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>23<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>24<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>25<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>26<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>27<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>28<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>29<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>30<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>31<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>32<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>33<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>34<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>35<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">li</span>&gt;</span>独生子女<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/结构伪类选择器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-定位" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/定位/">定位</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/定位/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:25:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="定位-position-（一定要掌握）"><a href="#定位-position-（一定要掌握）" class="headerlink" title="定位(position)（一定要掌握）"></a>定位(position)（一定要掌握）</h1><p>如果，说浮动， 关键在一个 “浮” 字上面， 那么 我们的定位，关键在于一个 “位” 上。</p>
+<p>PS: 定位是我们CSS算是数一数二难点的了，但是，你务必要学好它，我们CSS离不开定位，特别是后面的js特效，天天和定位打交道。不要抵触它，反而要爱上它，它可以让我们工作更加轻松哦！</p>
+<h2 id="为什么要用定位？"><a href="#为什么要用定位？" class="headerlink" title="为什么要用定位？"></a>为什么要用定位？</h2><p>那么定位，最长运用的场景再那里呢？   来看几幅图片，你一定会有感悟！</p>
+<p>第一幅图， 小黄色块可以再图片上移动：</p>
+<p><img src="/2019/02/03/定位/1.gif" style="border: 1px dashed #3c3c3c;"><br></p>
+        
+          <a class="article-more-a" href="/2019/02/03/定位/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/定位/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-清除浮动" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/清除浮动/">清除浮动</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/清除浮动/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:16:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><p>人生就像乘坐北京地铁一号线：</p>
+<p>途经国贸，羡慕繁华；</p>
+<p>途经天安门，幻想权力；</p>
+<p>途经金融街，梦想发财；</p>
+<p>经过公主坟，遥想华丽家族；</p>
+<p>经过玉泉路，依然雄心勃勃…</p>
+<p>这时，有个声音飘然入耳:乘客你好,八宝山马上就要到了！</p>
+<p>顿时醒悟：人生苦短，有始有终。 </p>
+<p>好比我们的浮动，有浮动开始，则就应该有浮动结束。</p>
+<h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2>
+        
+          <a class="article-more-a" href="/2019/02/03/清除浮动/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/清除浮动/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-浮动" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/浮动/">浮动</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/浮动/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:12:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
+<li><strong>记忆</strong><ul>
+<li>能够说出 CSS 的布局的三种机制</li>
+</ul>
+</li>
+<li><strong>理解</strong><ul>
+<li>能够说出普通流在布局中的特点</li>
+<li>能够说出浮动在布局中的作用</li>
+<li>能够说出在实际布局中浮动的应用方法</li>
+<li>能够说出决定浮动元素大小的两个因素</li>
+</ul>
+</li>
+<li><strong>应用</strong><ul>
+<li>能够实现图文环绕效果</li>
+<li>能够实现浮动案例</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-CSS-布局的三种机制"><a href="#1-CSS-布局的三种机制" class="headerlink" title="1. CSS 布局的三种机制"></a>1. CSS 布局的三种机制</h3><blockquote>
+<p>网页布局的核心——就是<strong>用 CSS 来摆放盒子位置</strong>。</p>
+</blockquote>
+<p>CSS 提供了 <strong>3 种机制</strong>来设置盒子的摆放位置，分别是<strong>普通流</strong>、<strong>浮动</strong>和<strong>定位</strong>，其中：<br></p>
+        
+          <a class="article-more-a" href="/2019/02/03/浮动/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/浮动/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-显示模式-1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/显示模式-1/">显示模式</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/显示模式-1/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>目标：</p>
+<ul>
+<li>能够理解标准文档流</li>
+</ul>
+<p>我们书写的HTML代码 发现一个现象 在浏览器上面显示的效果是从左到右 从上到下显示的 。比如我们使用PS软件画图  想在画布的任何地方画内容都可以。我们把这种从左到右 从上到下的这种显示方式 称之为流！标准文档流！</p>
+<h2 id="标准文档流中标签的现象"><a href="#标准文档流中标签的现象" class="headerlink" title="标准文档流中标签的现象"></a>标准文档流中标签的现象</h2><h3 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h3><p>如果标签与标签之间有换行 在浏览器上面就会显示一个空白(空格)</p>
+<p><img src="/2019/02/03/显示模式-1/1531969997706.png" alt="1531969997706"><br></p>
+        
+          <a class="article-more-a" href="/2019/02/03/显示模式-1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/显示模式-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-important属性" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/important属性/">important属性</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/important属性/" class="archive-article-date">
+  	<time datetime="2019-02-03T06:49:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="important-属性"><a href="#important-属性" class="headerlink" title="!important 属性"></a>!important 属性</h1><p>important 这个英文单词在英文中 表示<strong>重要的</strong></p>
+<p>它在CSS中表示权重最高  某一个属性的权重</p>
+<blockquote>
+<p>语法：</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    属性：值 !important;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">错误的写法：</span><br><span class="line">1. 属性:值;!<span class="selector-tag">important</span>  !<span class="selector-tag">important</span>是写在分号里面</span><br><span class="line">2. 属性:值 <span class="selector-tag">important</span> ; 不能缺少感叹号</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/03/important属性/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/important属性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-阿里云与linux常用命令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -184,68 +1034,9 @@
 <li>Linux严格区分大小写，而windows不区分大小写，由于linux严格区分大小写，因此linux认为a.php和A.PHP是两个不同的文件，而在windows当中windows会认为这是2个相同的文件</li>
 <li>windows大部分的工作是通过图形操作界面就能够完成，linux大部分的工作是通过命令行来完成</li>
 </ol>
-<h2 id="2、几大常见目录简介"><a href="#2、几大常见目录简介" class="headerlink" title="2、几大常见目录简介"></a>2、几大常见目录简介</h2><h2 id="bin目录"><a href="#bin目录" class="headerlink" title="bin目录"></a>bin目录</h2><p>简介：binary的简写， 主要存放linux下可以执行的二进制命令（如常见的ls），普通用户和超级管理员都可以使用的二进制命令。</p>
-<h2 id="sbin目录"><a href="#sbin目录" class="headerlink" title="sbin目录"></a>sbin目录</h2><p>简介：super bin，超级管理员可以执行的二进制命令，普通用户不可以执行。</p>
-<h2 id="home目录"><a href="#home目录" class="headerlink" title="home目录"></a>home目录</h2><p>简介：home 用户的家目录，每当在linux下创建一个登陆用户，就会在该目录下创建对应的文件，其用户可以在该目录下执行可读可写的操作。</p>
-<h2 id="root目录"><a href="#root目录" class="headerlink" title="root目录"></a>root目录</h2><p>简介：root 超级管理员的家目录。</p>
-<h2 id="etc-配置文件目录"><a href="#etc-配置文件目录" class="headerlink" title="etc 配置文件目录"></a>etc 配置文件目录</h2><p>简介：etc 该目录主要存放系统的配置文件信息，例如apache、mysql等服务的配置文件。</p>
-<h2 id="usr目录"><a href="#usr目录" class="headerlink" title="usr目录"></a>usr目录</h2><p>简介：usr 是Unix software resource的简写，表示Linux的软件资源目录主要是存放用户自定义安装软件的目录，lamp环境的 Apache MySQL php都会安装在这里，类型Windows下的Program Files。</p>
-<h2 id="var目录"><a href="#var目录" class="headerlink" title="var目录"></a>var目录</h2><p>简介：var是variable单词的简写，代表是可变的，到时候该目录主要存放系统的日志，以及网站的根目录等等。</p>
-<p>安装httpd （相当于我们window下的apache服务）服务后，默认生成一个/var/www/html的目录，作为我们网站的根目录，上传代码到该目录我们便可以通过ip地址或则已经绑定解析的域名例如：==ip地址/文件名.后缀访问==（如：<strong>==129.2.23.47/wx_sample.php==</strong>）</p>
-<h2 id="3、shell命令概念"><a href="#3、shell命令概念" class="headerlink" title="3、shell命令概念"></a>3、shell命令概念</h2><p>​    常见的shell有sh、bash 、csh等，一般来说我们都是使用的bash，该shell解释器位于/bin/bash，是一个二进制的命令，可以帮我们去翻译用户的行为，并且在linux下是存在编程的，叫做shell编程</p>
-<p>==linux下只存在一个盘符，叫做 / （根目录），根下存在很多的目录==</p>
-<h3 id="cd命令"><a href="#cd命令" class="headerlink" title="cd命令"></a>cd命令</h3><p>cd命令跟我们的window下的cd命令作用一样，是用来切换目录的。当我们连接上服务器后，可以通过 </p>
-<p>==cd /== 进入整个服务器的根目录</p>
-<p>linux下只存在一个盘符，叫做 / （根目录），根下存在很多的目录</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/./img/1548036502535.png" alt="1548036502535"></p>
-<h3 id="ll命令"><a href="#ll命令" class="headerlink" title="ll命令"></a>ll命令</h3><p>在linux下有一个哲学，linux下一切皆文件，所以展示的既有文件，也包含文件夹</p>
-<p><code>ls</code></p>
-<p><code>这个命令其实就是ls -l指令的简写。</code></p>
-<p>输入==ls==等价于==ls -l==</p>
-<p>列出目录里面的文件信息，上面我们已经进入了服务器根目录,下面我们通过ls查看下面的文件和文件夹</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/./img/1548037353584.png" alt="1548037353584"></p>
-<h3 id="pwd命令"><a href="#pwd命令" class="headerlink" title="pwd命令"></a>pwd命令</h3><p><img src="/2019/01/30/阿里云与linux常用命令/img/1548038161259.png" alt="1548038161259"></p>
-<p># ls -la 例如ls是展示某个目录下的文件信息，但是如果需要展示全部的文件信息，可以加-a选项。如果是要查看root家目录下的文件信息，则需要使用</p>
-<p>==clear清屏命令==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/./img/1548037823633.png" alt="1548037823633"></p>
-<h3 id="su-切换用户身份命令（switch-user）"><a href="#su-切换用户身份命令（switch-user）" class="headerlink" title="su 切换用户身份命令（switch user）"></a>su 切换用户身份命令（switch user）</h3><p>如果当前是root用户切换为普通用户，那么是不需要输入任何密码的，因为root是超级管理员。如果当前的用户是一个普通的用户切换成为root，那么必须输入超级管理员的密码。同时需要注意，在输入密码的过程中，密码是没有回显的。</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/./img/1548038047211.png" alt="1548038047211"></p>
-<h3 id="ip地址查看"><a href="#ip地址查看" class="headerlink" title="ip地址查看"></a>ip地址查看</h3><p><img src="/2019/01/30/阿里云与linux常用命令/img/1548038344210.png" alt="1548038344210"></p>
-<h1 id="文件夹和文件相关命令（暂时没用到）"><a href="#文件夹和文件相关命令（暂时没用到）" class="headerlink" title="文件夹和文件相关命令（暂时没用到）"></a>文件夹和文件相关命令（暂时没用到）</h1><p>常见操作：增加、修改、删除、重命名、复制、移动，其注意的命令如下：==注意：执行ls是为了查看效果==</p>
-<p> mkdir 创建文件夹  <img src="/2019/01/30/阿里云与linux常用命令/img/1548038593156.png" alt="1548038593156"></p>
-<p>touch 创建文件</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/img/1548038635390.png" alt="1548038635390"></p>
-<p>rm 删除文件</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548038847217.png" alt="1548038847217"></p>
-<h3 id="tab命令，自动补全文件名"><a href="#tab命令，自动补全文件名" class="headerlink" title="tab命令，自动补全文件名"></a>tab命令，自动补全文件名</h3><h1 id="tab"><a href="#tab" class="headerlink" title="   + tab"></a><img src="/2019/01/30/阿里云与linux常用命令/1548039768217.png" alt="1548039768217">   + tab</h1><p><img src="/2019/01/30/阿里云与linux常用命令/snipaste20190121_103140.png" alt="1548039836170"></p>
-<p>==补上：部分同学可能tp3的S函数不用正常使用，顾要赋予网站操作文件的权限==，==记得按确定==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548077030640.png" alt="1548077030640"></p>
-<h2 id="阿里云的几个无法访问网站的问题"><a href="#阿里云的几个无法访问网站的问题" class="headerlink" title="阿里云的几个无法访问网站的问题"></a>阿里云的几个无法访问网站的问题</h2><h3 id="1、服务没开启"><a href="#1、服务没开启" class="headerlink" title="1、服务没开启"></a>1、服务没开启</h3><p>1-1：==service httpd start==        开启apache服务</p>
-<p>1-2：==service httpd restart==    重启apache服务</p>
-<p>1-3：==service httpd status==     查看服务状态</p>
-<p>1-4： ==service httpd stop==       停止服务</p>
-<h3 id="2、端口未开放"><a href="#2、端口未开放" class="headerlink" title="2、端口未开放"></a>2、端口未开放</h3><p>==2-1 进入你的阿里云控制台==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548053473437.png" alt="1548053473437"></p>
-<p>==3-2 进入你的服务器管理==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548053673340.png" alt="1548053673340"></p>
-<p>==3-2 打开安全组设置如下图==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548053428377.png" alt="1548053428377"></p>
-<p>==3-4：点击【配置规则】====</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548053762357.png" alt="1548053762357"></p>
-<p>==3-4：点击添加安全组规则==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/C:/Users\mango\AppData\Local\Temp\1548053848726.png" alt="1548053848726"></p>
-<p>==3-5配置开放80端口==</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548054063404.png" alt="1548054063404"></p>
-<p>==线上直接编辑代码==：</p>
-<p>第一步：</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548077089460.png" alt="1548077089460"></p>
-<p>第二步：</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/C:/Users\mango\AppData\Local\Temp\1548077151101.png" alt="1548077151101"></p>
-<p>第三步：</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548077202580.png" alt="1548077202580"></p>
-<p>第四步：</p>
-<p><img src="/2019/01/30/阿里云与linux常用命令/1548077226210.png" alt="1548077226210"></p>
-
+        
+          <a class="article-more-a" href="/2019/01/30/阿里云与linux常用命令/#more">more >></a>
+        
       
 
       
@@ -378,725 +1169,9 @@
 
 
   
-    <article id="post-微信小程序03" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/27/微信小程序03/">微信小程序03</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/27/微信小程序03/" class="archive-article-date">
-  	<time datetime="2019-01-27T11:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code># 目录
-</code></pre><p>[TOC]</p>
-<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>能够使用事件</p>
-<p>​    事件分为几种？  2种，bind 与 catch</p>
-<p>​    bind:tap  冒泡</p>
-<p>​    catch:tap 非冒泡</p>
-<p>能够修改配置文件实现底部导航<br></p>
-        
-          <a class="article-more-a" href="/2019/01/27/微信小程序03/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/27/微信小程序03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-列表样式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/27/列表样式/">列表样式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/27/列表样式/" class="archive-article-date">
-  	<time datetime="2019-01-27T01:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h1><p>在HTML中无序列表、有序列表前面有项目符号 比如小黑点，项目符号会对网页布局产生很大的影响。、</p>
-<p>我们需要将项目符号去除。</p>
-<p>可以使用css对其进行设置</p>
-<p>列表样式属性为：</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="pr_list-style.asp.htm">list-style</a></td>
-<td>简写属性。用于把所有用于列表的属性设置于一个声明中。</td>
-</tr>
-<tr>
-<td><a href="pr_list-style-type.asp.htm">list-style-type</a></td>
-<td>设置列表项标志的类型。   属性值为：none 去除列表前面的项目符号</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">			<span class="comment">/*去除列表前面的项目符号*/</span></span><br><span class="line">			<span class="comment">/* list-style-type: none; */</span></span><br><span class="line">			<span class="attribute">list-style</span>: none; <span class="comment">/*简写属性*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/27/列表样式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-文字文本样式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/27/文字文本样式/">文字文本样式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/27/文字文本样式/" class="archive-article-date">
-  	<time datetime="2019-01-27T00:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS字体样式属性"><a href="#CSS字体样式属性" class="headerlink" title="CSS字体样式属性"></a>CSS字体样式属性</h1><h2 id="font-size-字号大小"><a href="#font-size-字号大小" class="headerlink" title="font-size:字号大小"></a>font-size:字号大小</h2><p>font-size属性用于设置字号，该属性的值可以使用相对长度单位，也可以使用绝对长度单位。其中，相对长度单位比较常用，推荐使用像素单位px，绝对长度单位使用较少。具体如下：</p>
-<p><img src="/2019/01/27/文字文本样式/dd.png"><br></p>
-        
-          <a class="article-more-a" href="/2019/01/27/文字文本样式/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/27/文字文本样式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信小程序02" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/26/微信小程序02/">微信小程序02</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/26/微信小程序02/" class="archive-article-date">
-  	<time datetime="2019-01-26T10:56:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><ul>
-<li>事件的使用方式</li>
-<li>事件分类</li>
-<li>事件绑定</li>
-<li>事件对象</li>
-</ul>
-<p>==目标：能够掌握事件的绑定和使用==</p>
-<ul>
-<li>基础组件</li>
-<li>view组件</li>
-</ul>
-<p>==目标：能够根据事件和view组件实现点击按钮切换内容==</p>
-<ul>
-<li>swiper滑块</li>
-</ul>
-<p>==目标：能够掌握使用滑块(轮播图)==</p>
-<ul>
-<li>scroll-view</li>
-</ul>
-<p>==目标：能够掌握使用scroll-view加载更多内容==</p>
-<ul>
-<li>基础内容组件</li>
-<li>按钮</li>
-</ul>
-<p>==目标：能够掌握按钮的使用==</p>
-<p>input组件</p>
-<p>form组件</p>
-<p>==目标：能够创建form表单模拟登陆功能==</p>
-<h1 id="三、-今日课程内容"><a href="#三、-今日课程内容" class="headerlink" title="三、 今日课程内容"></a>三、 今日课程内容</h1>
-        
-          <a class="article-more-a" href="/2019/01/26/微信小程序02/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/26/微信小程序02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-盒子模型" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/盒子模型/">盒子模型</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/盒子模型/" class="archive-article-date">
-  	<time datetime="2019-01-25T09:20:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="盒子模型（CSS重点）"><a href="#盒子模型（CSS重点）" class="headerlink" title="盒子模型（CSS重点）"></a>盒子模型（CSS重点）</h1><p>其实，CSS就三个大模块：  盒子模型 、 浮动 、 定位，其余的都是细节。要求这三部分，无论如何也要学的非常精通。  </p>
-<p>所谓盒子模型就是把HTML页面中的元素看作是一个矩形的盒子，也就是一个盛装内容的容器。每个矩形都由元素的内容、内边距（padding）、边框（border）和外边距（margin）组成。</p>
-<h2 id="看透网页布局的本质"><a href="#看透网页布局的本质" class="headerlink" title="看透网页布局的本质"></a>看透网页布局的本质</h2><p>网页布局中，我们是如何把里面的文字，图片，按照美工给我们的效果图排列的整齐有序呢？</p>
-<p><img src="/2019/01/25/盒子模型/t.png"></p>
-        
-          <a class="article-more-a" href="/2019/01/25/盒子模型/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/盒子模型/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-背景" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/背景/">背景</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/背景/" class="archive-article-date">
-  	<time datetime="2019-01-25T09:12:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="CSS-背景-background"><a href="#CSS-背景-background" class="headerlink" title="CSS 背景(background)"></a>CSS 背景(background)</h1><p>CSS 可以添加背景颜色和背景图片，以及来进行图片设置。</p>
-<table>
-<thead>
-<tr>
-<th>background-color</th>
-<th>背景颜色</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>background-image</td>
-<td>背景图片地址</td>
-</tr>
-<tr>
-<td>background-repeat</td>
-<td>是否平铺</td>
-</tr>
-<tr>
-<td>background-position</td>
-<td>背景位置</td>
-</tr>
-<tr>
-<td>background-attachment</td>
-<td>背景固定还是滚动</td>
-</tr>
-<tr>
-<td>背景的合写（复合属性）</td>
-<td></td>
-</tr>
-<tr>
-<td>background:背景颜色 背景图片地址 背景平铺 背景滚动 背景位置</td>
-</tr>
-</tbody>
-</table>
-<h2 id="背景颜色-background-color"><a href="#背景颜色-background-color" class="headerlink" title="背景颜色(background-color)"></a>背景颜色(background-color)</h2><p><img src="/2019/01/25/背景/1536135052519.png" alt="1536135052519"></p>
-        
-          <a class="article-more-a" href="/2019/01/25/背景/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/背景/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-三大特性" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/三大特性/">三大特性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/三大特性/" class="archive-article-date">
-  	<time datetime="2019-01-25T09:08:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="行高那些事"><a href="#行高那些事" class="headerlink" title="行高那些事"></a>行高那些事</h1><p>行高的测量方法：</p>
-<p><img src="/2019/01/25/三大特性/line1.png"></p>
-<p><img src="/2019/01/25/三大特性/line2.png"></p>
-<p> 行高我们利用最多的一个地方是： 可以让一行文本在盒子中垂直居中对齐。</p>
-<blockquote>
-<p><strong>文字的行高等于盒子的高度。</strong></p>
-</blockquote>
-<p>这里情况些许复杂，开始学习，我们可以先从简单地方入手学会。</p>
-<p><img src="/2019/01/25/三大特性/1.png" width="700"><br></p>
-        
-          <a class="article-more-a" href="/2019/01/25/三大特性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/三大特性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-显示模式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/25/显示模式/">显示模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/25/显示模式/" class="archive-article-date">
-  	<time datetime="2019-01-25T09:02:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>目标：</p>
-<ul>
-<li>能够理解标准文档流</li>
-</ul>
-<p>我们书写的HTML代码 发现一个现象 在浏览器上面显示的效果是从左到右 从上到下显示的 。比如我们使用PS软件画图  想在画布的任何地方画内容都可以。我们把这种从左到右 从上到下的这种显示方式 称之为流！标准文档流！</p>
-<h2 id="标准文档流中标签的现象"><a href="#标准文档流中标签的现象" class="headerlink" title="标准文档流中标签的现象"></a>标准文档流中标签的现象</h2><h3 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h3><p>如果标签与标签之间有换行 在浏览器上面就会显示一个空白(空格)</p>
-<p><img src="/2019/01/25/显示模式/1536145447619.png" alt="1536145447619"></p>
-<p>要解决上图所示的现象：需要将标签放置于同一行显示。</p>
-<p><img src="/2019/01/25/显示模式/1536145488714.png" alt="1536145488714"></p>
-        
-          <a class="article-more-a" href="/2019/01/25/显示模式/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/25/显示模式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1208,6 +1283,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
             
             <div class="clearfix"></div>
