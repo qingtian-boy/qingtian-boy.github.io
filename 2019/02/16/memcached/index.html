@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/16/memcached/1550309521671.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/16/memcached/1550309642612.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/16/memcached/1550310215857.png">
-<meta property="og:updated_time" content="2019-02-18T00:28:39.124Z">
+<meta property="og:updated_time" content="2019-02-20T08:01:40.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="memcached">
 <meta name="twitter:description" content="目录?[TOC] 一、昨日回顾1、知识点回顾能够运用 chmod、chown 命令 ​    chmod 修改文件权限 ​        chmod -R 权限值(777) 文件/目录 ​    chown 修改文件拥有者，同时也可以修改所属组 ​        chown -R 拥有者(用户名):所属组(组名) 文件/目录 能够运用 sudo、whereis 命令 ​    whereis 查找">
@@ -377,9 +377,9 @@
 <h2 id="7、过期时间"><a href="#7、过期时间" class="headerlink" title="7、过期时间"></a>7、过期时间</h2><p>由于开发中使用 set 比较多，所以我们可以使用 set 命令操作 memcache 的过期时间</p>
 <p>设置一个键值对在 10秒后过期</p>
 <p><img src="/2019/02/16/memcached/1545017418643.png" alt="1545017418643"></p>
-<h2 id="8、xshell-操作-memcache-的注意事项"><a href="#8、xshell-操作-memcache-的注意事项" class="headerlink" title="8、xshell 操作 memcache 的注意事项"></a>8、xshell 操作 memcache 的注意事项</h2><p><strong>回退(退格删除)快捷键：</strong></p>
+<h2 id="8、xshell-操作-memcache-的注意事项"><a href="#8、xshell-操作-memcache-的注意事项" class="headerlink" title="8、xshell 操作 memcache 的注意事项"></a>8、xshell 操作 memcache 的注意事项</h2><p>回退(退格删除)快捷键：</p>
 <p>ctrl + backspace</p>
-<p><strong>退出 memcache 命令行：</strong></p>
+<p>退出 memcache 命令行：</p>
 <ul>
 <li><p>按下 ctrl + ]</p>
 </li>
@@ -429,7 +429,7 @@
 <p>有可能报以下图所示的错误</p>
 <p><img src="/2019/02/16/memcached/1542790996717.png" alt="1542790996717"></p>
 <p>==注意：主要是没有安装 unzip 指令==</p>
-<p><strong>解决方法：使用 yum -y install unzip 指令安装即可</strong></p>
+<p>解决方法：使用 yum -y install unzip 指令安装即可</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># cd pecl-memcache-php7</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="1-4、生成编译文件"><a href="#1-4、生成编译文件" class="headerlink" title="1.4、生成编译文件"></a>1.4、生成编译文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># /usr/local/php/bin/phpize</span></span></span><br></pre></td></tr></table></figure>
 <p><img src="/2019/02/16/memcached/1545032891497.png" alt="1545032891497"></p>
@@ -479,7 +479,7 @@
 <p><img src="/2019/02/16/memcached/1550289459069.png" alt="1550289459069"></p>
 <p>重启 php</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># pkill -9 php-fpm</span></span></span><br><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># service php-fpm start</span></span></span><br></pre></td></tr></table></figure>
-<h1 id="十二、Memcached-类的常用方法说明"><a href="#十二、Memcached-类的常用方法说明" class="headerlink" title="十二、Memcached 类的常用方法说明"></a>十二、Memcached 类的常用方法说明</h1><p><strong>常用的类方法如下所示：</strong></p>
+<h1 id="十二、Memcached-类的常用方法说明"><a href="#十二、Memcached-类的常用方法说明" class="headerlink" title="十二、Memcached 类的常用方法说明"></a>十二、Memcached 类的常用方法说明</h1><p>常用的类方法如下所示：</p>
 <p>addServer(host, port)：host 就是 Linux 服务器地址，port默认是 11211（memcached端口），用于连接 memcached 服务器</p>
 <p>==addServers(servers)：用于连接分布式 memcached 服务器，主要分布式==</p>
 <p>set(key, value, expire)：用于修改或添加内存的 memcached 数据，该方法有3个参数</p>
@@ -776,7 +776,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Ajax js</a>
+                <a href="javascript:void(0)" class="js-tag color3">Ajax JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -796,11 +796,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JQ js</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">VUE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,19 +812,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则 JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">memcache</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则 js</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则 JS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则 js</a>
               </li>
              
               <li class="article-tag-list-item">
