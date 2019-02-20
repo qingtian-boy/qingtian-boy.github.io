@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/13/linux01/1542270496060.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/13/linux01/1542331672751.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/13/linux01/1542331749532.png">
-<meta property="og:updated_time" content="2019-02-13T10:41:55.545Z">
+<meta property="og:updated_time" content="2019-02-20T07:19:01.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux01">
 <meta name="twitter:description" content="目录[TOC] 一、昨日回顾1、知识回顾能够实现VM虚拟机安装CentOS操作系统 ​    首先创建一个虚拟主机 ​    然后载入光盘( .iso镜像文件) ​    再然后开机 能够运用vim编辑器 ​    有几种模式？    3种，分别为：命令行模式、编辑模式、末行模式 vim 文件 — 直接进到命令行模式 ​    复制一行：yy ​    复制多行：ny n代表多少行 例如：复制3行">
@@ -293,8 +293,8 @@
 <p>把3行复制到4行： 3copy4</p>
 <p>把第3行移到第4行：3m4<br><a id="more"></a></p>
 <h1 id="二、Linux内核分析"><a href="#二、Linux内核分析" class="headerlink" title="二、Linux内核分析"></a>二、Linux内核分析</h1><h2 id="1、-etc-grub-conf文件"><a href="#1、-etc-grub-conf文件" class="headerlink" title="1、/etc/grub.conf文件"></a>1、/etc/grub.conf文件</h2><h3 id="1-1、passwd命令"><a href="#1-1、passwd命令" class="headerlink" title="1.1、passwd命令"></a>1.1、passwd命令</h3><p>​    Linux以安全性和稳定性在世界上自居，在Linux发明之初就在安全领域做了很多手段，其中最简单就是提供了密码的登录和密码修改的功能，在Linux系统当中无论什么用户都必须具有密码才能登录Linux操作系统。</p>
-<p><strong>命令格式： passwd [用户名]</strong></p>
-<p><strong>命令作用：更新或者设置用户登录的密码</strong></p>
+<p>命令格式： passwd [用户名]</p>
+<p>命令作用：更新或者设置用户登录的密码</p>
 <p><img src="/2019/02/13/linux01/1541233855181.png" alt="1541233855181"></p>
 <blockquote>
 <p>注意</p>
@@ -345,9 +345,9 @@
 <h2 id="4、用户组相关的指令"><a href="#4、用户组相关的指令" class="headerlink" title="4、用户组相关的指令"></a>4、用户组相关的指令</h2><p>在Linux当中我们可以通过命令对用户组进行管理，主要可以管理用户组的增删查该功能</p>
 <h3 id="4-1、添加用户组"><a href="#4-1、添加用户组" class="headerlink" title="4.1、添加用户组"></a>4.1、添加用户组</h3><p>命令格式：groupadd [-选项] 组名称</p>
 <p>命令作用：添加用户组，一般使用该命令添加的用户组id大于或者等于500</p>
-<p><strong>案例1：添加一个名为php34的用户组</strong></p>
+<p>案例1：添加一个名为php34的用户组</p>
 <p><img src="/2019/02/13/linux01/1544754013811.png" alt="1544754013811"></p>
-<p><strong>案例2：添加一个名为php32的用户组,id=520</strong></p>
+<p>案例2：添加一个名为php32的用户组,id=520</p>
 <p>这时如果希望自定义用户组的id，那么其命令规则如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupadd -g [id][组名]</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/02/13/linux01/1544754168924.png" alt="1544754168924"></p>
@@ -357,13 +357,13 @@
 <p><img src="/2019/02/13/linux01/1541402407607.png" alt="1541402407607"></p>
 <h3 id="4-2、搜索或者定位"><a href="#4-2、搜索或者定位" class="headerlink" title="4.2、搜索或者定位"></a>4.2、搜索或者定位</h3><p>命令格式：grep 关键字 [文件的名称或者路径]</p>
 <p>命令作用：搜索或者定位指定的关键字内容</p>
-<p><strong>案例1：查找/etc/group文件中id=1314的组信息</strong></p>
+<p>案例1：查找/etc/group文件中id=1314的组信息</p>
 <p><img src="/2019/02/13/linux01/1544754547221.png" alt="1544754547221"></p>
-<p><strong>案例2：查找/etc/group文件中php520的组信息</strong></p>
+<p>案例2：查找/etc/group文件中php520的组信息</p>
 <p><img src="/2019/02/13/linux01/1544754602585.png" alt="1544754602585"></p>
 <h3 id="4-3、删除用户组"><a href="#4-3、删除用户组" class="headerlink" title="4.3、删除用户组"></a>4.3、删除用户组</h3><p>命令格式：groupdel 组名称</p>
 <p>命令作用：删除一个用户组</p>
-<p><strong>案例：删除一个名为itcast的用户组</strong></p>
+<p>案例：删除一个名为itcast的用户组</p>
 <p><img src="/2019/02/13/linux01/1544754755022.png" alt="1544754755022"></p>
 <p><img src="/2019/02/13/linux01/1544754865721.png" alt="1544754865721"></p>
 <blockquote>
@@ -372,11 +372,11 @@
 </blockquote>
 <h3 id="4-4、修改用户组"><a href="#4-4、修改用户组" class="headerlink" title="4.4、修改用户组"></a>4.4、修改用户组</h3><p>命令格式：groupmod [-选项] 组名称</p>
 <p>命令作用：修改用户组的信息</p>
-<p><strong>案例1：修改php34为php33</strong></p>
+<p>案例1：修改php34为php33</p>
 <p>如果需要修改组的名称，我们的命令格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupmod -n [新的名字][旧的名字]</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/02/13/linux01/1544755291118.png" alt="1544755291118"></p>
-<p><strong>案例2：修改itcast的组Id=502</strong></p>
+<p>案例2：修改itcast的组Id=502</p>
 <p>如果需要修改组的id，我们的命令格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groupmod -g [id][组的名称]</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/02/13/linux01/1544755524913.png" alt="1544755524913"></p>
@@ -412,11 +412,11 @@
 <p>​    ==在密码的列中有时会出现!!的情况，这时表示当前用户没有密码，如果一个用户在linux中没有密码则无法登录Linux操作系统，但是可以被root用su命令进行随意的切换==</p>
 <h2 id="4、与用户相关的指令"><a href="#4、与用户相关的指令" class="headerlink" title="4、与用户相关的指令"></a>4、与用户相关的指令</h2><h3 id="4-1、显示用户的相关信息"><a href="#4-1、显示用户的相关信息" class="headerlink" title="4.1、显示用户的相关信息"></a>4.1、显示用户的相关信息</h3><p>命令格式：id 【存在的linux用户】</p>
 <p>命令作用：显示用户的相关信息</p>
-<p><strong>案例：显示root的相关信息</strong></p>
+<p>案例：显示root的相关信息</p>
 <p><img src="/2019/02/13/linux01/1544757672541.png" alt="1544757672541"></p>
 <h3 id="4-2、显示用户的信息"><a href="#4-2、显示用户的信息" class="headerlink" title="4.2、显示用户的信息"></a>4.2、显示用户的信息</h3><p>命令格式：groups 【存在的linux用户】</p>
 <p>命令作用：以键值对【用户名=&gt;组名】来显示用户的信息</p>
-<p><strong>案例：显示root的相关信息用键值的方式进行显示</strong></p>
+<p>案例：显示root的相关信息用键值的方式进行显示</p>
 <p><img src="/2019/02/13/linux01/1544757758035.png" alt="1544757758035"></p>
 <h3 id="4-3、添加用户"><a href="#4-3、添加用户" class="headerlink" title="4.3、添加用户"></a>4.3、添加用户</h3><p>命令格式：useradd [-选项] 用户名称</p>
 <p>命令作用：自定义添加一个用户（普通用户）</p>
@@ -484,19 +484,19 @@
 <p>那么如果为了完成这个例子，我们就需要使用强制删除的手段加上-f选项，-f（force）<br>如下图所示:</p>
 <p><img src="/2019/02/13/linux01/1550040917180.png" alt="1550040917180"></p>
 <p>例子3：删除/root/php32下所有的文件，但不删除目录</p>
-<p>​    那么如果为了完成这个例子，我们就需要使用强制删除的手段加上-f选项，-f（force）<br>同时在-f后面加上<em>，rm -f </em>表示删除一个目录下所有的子文件，这是一个固定的linux命令组合，我们需要永远牢记</p>
+<p>​    那么如果为了完成这个例子，我们就需要使用强制删除的手段加上-f选项，-f（force）<br>同时在-f后面加上，rm -f 表示删除一个目录下所有的子文件，这是一个固定的linux命令组合，我们需要永远牢记</p>
 <p><img src="/2019/02/13/linux01/1550041008811.png" alt="1550041008811"></p>
 <p>例子3：删除/root/php32下所有的文件，包括子目录和文件，以及子目录中子文件和子目录</p>
-<p>这时如果为了达到目的，我们就需要使用递归删除的方法，使用 -rf 选项和*</p>
+<p>这时如果为了达到目的，我们就需要使用递归删除的方法，使用 -rf 选项和</p>
 <p>所以格式如下:</p>
-<p>rm -rf *</p>
+<p>rm -rf </p>
 <p>这也是一个固定的组合</p>
 <p><img src="/2019/02/13/linux01/1550041279257.png" alt="1550041279257"></p>
-<h2 id="2、删除的灾难性和Linux删除原理"><a href="#2、删除的灾难性和Linux删除原理" class="headerlink" title="2、删除的灾难性和Linux删除原理"></a>2、删除的灾难性和Linux删除原理</h2><p>rm -rf * 假设这条命令在根目录（/）执行，那么就是一个毁灭性的操作，所以这条语句等同于rm -rf /，这种删除是绝对不能执行了，为什么不能执行，因为Linux的删除是粉碎性删除（删除后无法进行数据恢复，因为linux是安全著称的系统，删除是很彻底），其原理如下 所示：</p>
+<h2 id="2、删除的灾难性和Linux删除原理"><a href="#2、删除的灾难性和Linux删除原理" class="headerlink" title="2、删除的灾难性和Linux删除原理"></a>2、删除的灾难性和Linux删除原理</h2><p>rm -rf  假设这条命令在根目录（/）执行，那么就是一个毁灭性的操作，所以这条语句等同于rm -rf /，这种删除是绝对不能执行了，为什么不能执行，因为Linux的删除是粉碎性删除（删除后无法进行数据恢复，因为linux是安全著称的系统，删除是很彻底），其原理如下 所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">会删除文件的同时删除节点，因此没有节点，则无法恢复数据</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>==注意：==</p>
-<p>​    ==所以在公司当中切记不要随便在根目录下或者重要的目录下使用rm -rf *或者使用rm -rf /<br>Linux删除是粉碎性的，但是它也 可以保证我们的重要机密文件不能被恢复。==</p>
+<p>​    ==所以在公司当中切记不要随便在根目录下或者重要的目录下使用rm -rf 或者使用rm -rf /<br>Linux删除是粉碎性的，但是它也 可以保证我们的重要机密文件不能被恢复。==</p>
 </blockquote>
 <h2 id="3、复制命令"><a href="#3、复制命令" class="headerlink" title="3、复制命令"></a>3、复制命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">命令格式：cp [-选项][源文件或目录][目标位置]</span><br><span class="line">命令作用：复制文件或者目录</span><br></pre></td></tr></table></figure>
 <p>例子1：复制/root/php32下的a.php文件复制到cp的目录当中</p>
@@ -519,7 +519,7 @@
 <h1 id="七、Linux的网络配置"><a href="#七、Linux的网络配置" class="headerlink" title="七、Linux的网络配置"></a>七、Linux的网络配置</h1><h2 id="1、IP段的查找方式和ip地址选择"><a href="#1、IP段的查找方式和ip地址选择" class="headerlink" title="1、IP段的查找方式和ip地址选择"></a>1、IP段的查找方式和ip地址选择</h2><p>ip段其实是一个ip地址的前3位就是一个ip的段，同一个ip段的机器称为局域网机器。</p>
 <p>IP最后那位可用只有：2~254</p>
 <p>网关：192.168.82.1</p>
-<p>比如现在有一个ip段位192.168.82.*，如果我们都处于这个ip段，我们俗称为62ip段，在这个段中的计算机都可以互相通信，同时也导致ip冲突的可能性发生，所以每一个计算机它的ip地址都是唯一的，所以如果你希望确定一个ip地址，首先你就需要确定ip段的同时，用以下方式去确定一个ip是否没有被别人使用：</p>
+<p>比如现在有一个ip段位192.168.82.，如果我们都处于这个ip段，我们俗称为62ip段，在这个段中的计算机都可以互相通信，同时也导致ip冲突的可能性发生，所以每一个计算机它的ip地址都是唯一的，所以如果你希望确定一个ip地址，首先你就需要确定ip段的同时，用以下方式去确定一个ip是否没有被别人使用：</p>
 <h3 id="1-1、在windows当中使用cmd打开命令运行窗口如下所示"><a href="#1-1、在windows当中使用cmd打开命令运行窗口如下所示" class="headerlink" title="1.1、在windows当中使用cmd打开命令运行窗口如下所示"></a>1.1、在windows当中使用cmd打开命令运行窗口如下所示</h3><h3 id="1-2、在窗口中输入ipconfig"><a href="#1-2、在窗口中输入ipconfig" class="headerlink" title="1.2、在窗口中输入ipconfig"></a>1.2、在窗口中输入ipconfig</h3><p><img src="/2019/02/13/linux01/1550043504853.png" alt="1550043504853"></p>
 <p>​    如果这ip地址是62那么就代表192.168.82.62这个ip地址是已经被您的本地所使用了，因此linux是不能使用该地址的，同时我们怎么知道其他地址是否可以使用呢？比如说，我们怎么知道ip地址为192.168.82.197是否可以使用呢？</p>
 <h3 id="1-3、使用ping命令，ping-192-168-82-197"><a href="#1-3、使用ping命令，ping-192-168-82-197" class="headerlink" title="1.3、使用ping命令，ping 192.168.82.197"></a>1.3、使用ping命令，ping 192.168.82.197</h3><p>结果如下所示</p>
@@ -678,7 +678,7 @@
 <p>第6列(11月  15 19:34)：文件或者目录的创建时间或者修改时间</p>
 <p>第7列（test）：表示文件或者目录的名称，本案例表示目录的名称是图片</p>
 <h1 id="十、总结"><a href="#十、总结" class="headerlink" title="十、总结"></a>十、总结</h1><p>防火墙<br>    service    iptables status    查看防火墙<br>    service iptables stop 停用防火墙<br>    service iptables start 启用防火墙<br>    service iptables restart 重启防火墙<br>    加入开机自动关闭防火墙<br>    chkconfig iptables off</p>
-<p>复制文件<br>    cp 文件名 目标路径<br>    例如：把 /root/php33/a.php 文件复制到 /root<br>    cp /root/php33/a.php /root<br>    例如：把 /root/php33/目录下所有文件复制到 /root/php<br>    cp -r /root/php33/* /root/php</p>
+<p>复制文件<br>    cp 文件名 目标路径<br>    例如：把 /root/php33/a.php 文件复制到 /root<br>    cp /root/php33/a.php /root<br>    例如：把 /root/php33/目录下所有文件复制到 /root/php<br>    cp -r /root/php33/ /root/php</p>
 <p>删除文件<br>    rm 文件名称<br>    例如：删除 /root/php33/a.php<br>    rm /root/php33/a.php 提示用户是否确认删除</p>
 <pre><code>例如：删除 /root/php33/b.php，不需要提示确认信息
 rm -f /root/php33/b.php

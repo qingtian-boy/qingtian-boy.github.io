@@ -51,7 +51,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/20/js06/wps321D.tmp.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/02/20/js06/wps321E.tmp.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/02/20/js06/wps321F.tmp.jpg">
-<meta property="og:updated_time" content="2019-02-20T06:31:10.632Z">
+<meta property="og:updated_time" content="2019-02-20T07:19:05.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js06">
 <meta name="twitter:description" content="JavaScript从入门到精通（五）课程目标① 事件监听（ok） ② 事件对象（ok） ③ 事件冒泡与事件捕获（ok） ④ 事件委托（ok） ⑤ 阻止事件冒泡（ok） ⑥ 阻止元素的默认行为（ok） ⑦ 节点操作 ⑧ BOM模型（定时器）">
@@ -211,7 +211,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JavaScript从入门到精通（五）"><a href="#JavaScript从入门到精通（五）" class="headerlink" title="JavaScript从入门到精通（五）"></a>JavaScript从入门到精通（五）</h1><h1 id="课程目标"><a href="#课程目标" class="headerlink" title="课程目标"></a><strong>课程</strong>目标</h1><p>① 事件监听（ok）</p>
+        <h1 id="JavaScript从入门到精通（五）"><a href="#JavaScript从入门到精通（五）" class="headerlink" title="JavaScript从入门到精通（五）"></a>JavaScript从入门到精通（五）</h1><h1 id="课程目标"><a href="#课程目标" class="headerlink" title="课程目标"></a>课程目标</h1><p>① 事件监听（ok）</p>
 <p>② 事件对象（ok）</p>
 <p>③ 事件冒泡与事件捕获（ok）</p>
 <p>④ 事件委托（ok）</p>
@@ -219,12 +219,12 @@
 <p>⑥ 阻止元素的默认行为（ok）</p>
 <p>⑦ 节点操作</p>
 <p>⑧ BOM模型（定时器）<br><a id="more"></a></p>
-<h1 id="一-、事件绑定"><a href="#一-、事件绑定" class="headerlink" title="一**、事件绑定**"></a><strong>一**</strong>、<strong><strong>事件</strong></strong>绑定**</h1><h2 id="1、事件-绑定的类型"><a href="#1、事件-绑定的类型" class="headerlink" title="1、事件**绑定的类型**"></a><strong>1、事件**</strong>绑定的类型**</h2><p>在JavaScript中，事件绑定一共可以分为三种形式：① 行内绑定 ② 动态绑定 ③ 事件监听</p>
-<h2 id="2、提出-问题"><a href="#2、提出-问题" class="headerlink" title="2、提出**问题**"></a><strong>2、提出**</strong>问题**</h2><p>为什么需要    </p>
+<h1 id="一、事件绑定"><a href="#一、事件绑定" class="headerlink" title="一、事件绑定"></a>一、事件绑定</h1><h2 id="1、事件绑定的类型"><a href="#1、事件绑定的类型" class="headerlink" title="1、事件绑定的类型"></a>1、事件绑定的类型</h2><p>在JavaScript中，事件绑定一共可以分为三种形式：① 行内绑定 ② 动态绑定 ③ 事件监听</p>
+<h2 id="2、提出问题"><a href="#2、提出问题" class="headerlink" title="2、提出问题"></a>2、提出问题</h2><p>为什么需要    </p>
 <p>在JS中，我们通过动态绑定可不可以为同一个对象的同一个事件绑定多个事件处理程序。</p>
 <p><img src="/2019/02/20/js06/wps31DE.tmp.jpg" alt="img"> </p>
 <p>运行结果：只弹出了world字符串，因为动态绑定中，我们为同一个对象的同一个事件只能绑定一次，而且只触发最后一次绑定。</p>
-<h2 id="3、-事件监听"><a href="#3、-事件监听" class="headerlink" title="3、**事件监听**"></a><strong>3、**</strong>事件监听**</h2><p>事件监听也是事件绑定的一种，基本语法：</p>
+<h2 id="3、事件监听"><a href="#3、事件监听" class="headerlink" title="3、事件监听"></a>3、事件监听</h2><p>事件监听也是事件绑定的一种，基本语法：</p>
 <p>dom对象.addEventListener(type,callback,[capture]);</p>
 <p>参数说明：</p>
 <p>type ：事件的类型，没有’on’前缀。如click、mouseover、mouseout</p>
@@ -232,10 +232,10 @@
 <p>[capture] ：可选参数，布尔类型，默认为false，代表冒泡模型。如果为true，代表捕获模型</p>
 <p>demo02_jianting.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31DF.tmp.jpg" alt="img"> </p>
-<h1 id="二-、事件对象"><a href="#二-、事件对象" class="headerlink" title="二**、事件对象**"></a><strong>二**</strong>、<strong><strong>事件</strong></strong>对象**</h1><h2 id="1、提出-问题"><a href="#1、提出-问题" class="headerlink" title="1、提出**问题**"></a><strong>1、提出**</strong>问题**</h2><p>为什么需要事件对象？</p>
+<h1 id="二、事件对象"><a href="#二、事件对象" class="headerlink" title="二、事件对象"></a>二、事件对象</h1><h2 id="1、提出问题"><a href="#1、提出问题" class="headerlink" title="1、提出问题"></a>1、提出问题</h2><p>为什么需要事件对象？</p>
 <p>答：在JS中，有些情况下，我们想获得与事件相关的一些信息，这个时候怎么办？比如获取键盘的键值，比如获取鼠标的横纵坐标。就必须使用事件对象了。</p>
-<h2 id="2、什么-是事件对象"><a href="#2、什么-是事件对象" class="headerlink" title="2、什么**是事件对象**"></a><strong>2、什么**</strong>是事件对象**</h2><p>在JS中，当事件发生时，系统会自动生成一个对象（内存），然后将与事件发生的所有信息都放入这个对象中，我们把这个对象就称之为“事件对象”。</p>
-<h2 id="3、获取-事件对象"><a href="#3、获取-事件对象" class="headerlink" title="3、获取**事件对象**"></a><strong>3、获取**</strong>事件对象**</h2><p>在JS中，我们通常把浏览器分为两大类：① 基于IE内核的浏览器 ② 基于W3C内核的浏览器。</p>
+<h2 id="2、什么是事件对象"><a href="#2、什么是事件对象" class="headerlink" title="2、什么是事件对象"></a>2、什么是事件对象</h2><p>在JS中，当事件发生时，系统会自动生成一个对象（内存），然后将与事件发生的所有信息都放入这个对象中，我们把这个对象就称之为“事件对象”。</p>
+<h2 id="3、获取事件对象"><a href="#3、获取事件对象" class="headerlink" title="3、获取事件对象"></a>3、获取事件对象</h2><p>在JS中，我们通常把浏览器分为两大类：① 基于IE内核的浏览器 ② 基于W3C内核的浏览器。</p>
 <p>① 基于IE内核的浏览器</p>
 <p>IE8以下的IE浏览器、各种浏览器的兼容模式</p>
 <p>② 基于W3C内核的浏览器</p>
@@ -254,7 +254,7 @@
 <p>一定要记住：事件对象就是事件处理程序的一个参数，叫什么名字没有任何关系</p>
 <p>demo03_event.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31E0.tmp.jpg" alt="img"> </p>
-<h2 id="4、-事件对象相关案例"><a href="#4、-事件对象相关案例" class="headerlink" title="4、**事件对象相关案例**"></a><strong>4、**</strong>事件对象相关案例**</h2><p>例1：使用事件对象获取键盘的键值（demo04_keyCode.html）</p>
+<h2 id="4、事件对象相关案例"><a href="#4、事件对象相关案例" class="headerlink" title="4、事件对象相关案例"></a>4、事件对象相关案例</h2><p>例1：使用事件对象获取键盘的键值（demo04_keyCode.html）</p>
 <p><img src="/2019/02/20/js06/wps31E1.tmp.jpg" alt="img"> </p>
 <p>方向键的键值：37（左）、38（上）、39（右）、40（下）</p>
 <p>例2：获取鼠标的横纵坐标（前提：使用事件对象，demo05_mouse.html）</p>
@@ -271,28 +271,28 @@
 <p><img src="/2019/02/20/js06/wps31E6.tmp.jpg" alt="img"> </p>
 <p>特别说明：元素，比如img图片可以设置style=”position:absolute; left:100px; top:100px;”，如果元素在行内设置了left以及top，我们就可以通过：</p>
 <p>img对象.style.left或img对象.style.top来获取横纵坐标，默认返回结果是一个字符串。想使用，必须使用parseInt进行转换。但是假设我们没有为元素设置left以及top值，以上代码不成立，必须通过img对象.offsetLeft或img对象.offsetTop进行获取。</p>
-<h1 id="三-、事件冒泡以及事件捕获"><a href="#三-、事件冒泡以及事件捕获" class="headerlink" title="三**、事件冒泡以及事件捕获**"></a><strong>三**</strong>、<strong><strong>事件</strong></strong>冒泡以及事件捕获**</h1><h2 id="1-、什么-是事件冒泡"><a href="#1-、什么-是事件冒泡" class="headerlink" title="1**、什么**是事件冒泡"></a><strong>1**</strong>、什么<strong>**是事件冒泡</strong></h2><p>所谓的事件冒泡是指事件的响应会像水泡一样上升到最顶级对象，我们把这个过程就称之为“事件冒泡”。</p>
+<h1 id="三、事件冒泡以及事件捕获"><a href="#三、事件冒泡以及事件捕获" class="headerlink" title="三、事件冒泡以及事件捕获"></a>三、事件冒泡以及事件捕获</h1><h2 id="1、什么是事件冒泡"><a href="#1、什么是事件冒泡" class="headerlink" title="1、什么是事件冒泡"></a>1、什么是事件冒泡</h2><p>所谓的事件冒泡是指事件的响应会像水泡一样上升到最顶级对象，我们把这个过程就称之为“事件冒泡”。</p>
 <p>demo08_bubble.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31E7.tmp.jpg" alt="img"> </p>
 <p>由以上代码运行可知，单击div3，click执行的顺序：div3 &gt; div2 &gt; div1，我们把这个过程就称之为“事件冒泡”。</p>
-<h2 id="2、事件-的捕获"><a href="#2、事件-的捕获" class="headerlink" title="2、事件**的捕获**"></a><strong>2、事件**</strong>的捕获**</h2><p>事件的捕获与事件冒泡正好相反，其事件的执行顺序是从外到内进行触发，如以下代码：</p>
+<h2 id="2、事件的捕获"><a href="#2、事件的捕获" class="headerlink" title="2、事件的捕获"></a>2、事件的捕获</h2><p>事件的捕获与事件冒泡正好相反，其事件的执行顺序是从外到内进行触发，如以下代码：</p>
 <p><img src="/2019/02/20/js06/wps31E8.tmp.jpg" alt="img"> </p>
 <p>由以上代码运行可知，单击div3，click执行的顺序：div1 &gt; div2 &gt; div3，我们把这个过程就称之为“事件捕获”，注意addEventListener的第三个参数为true。</p>
-<h2 id="3、事件-冒泡与事件捕获的原理图"><a href="#3、事件-冒泡与事件捕获的原理图" class="headerlink" title="3、事件**冒泡与事件捕获的原理图**"></a><strong>3、事件**</strong>冒泡与事件捕获的原理图**</h2><p><img src="/2019/02/20/js06/wps31F8.tmp.jpg" alt="img"> </p>
-<h1 id="四、-事件委托-事件代理"><a href="#四、-事件委托-事件代理" class="headerlink" title="四、**事件委托/事件代理**"></a><strong>四、**</strong>事件委托<strong><strong>/事件</strong></strong>代理**</h1><h2 id="1、提出-问题-1"><a href="#1、提出-问题-1" class="headerlink" title="1、提出**问题**"></a><strong>1、提出**</strong>问题**</h2><p>例1：使用JS代码对ul标签中的所有li标签进行事件绑定</p>
+<h2 id="3、事件冒泡与事件捕获的原理图"><a href="#3、事件冒泡与事件捕获的原理图" class="headerlink" title="3、事件冒泡与事件捕获的原理图"></a>3、事件冒泡与事件捕获的原理图</h2><p><img src="/2019/02/20/js06/wps31F8.tmp.jpg" alt="img"> </p>
+<h1 id="四、事件委托-事件代理"><a href="#四、事件委托-事件代理" class="headerlink" title="四、事件委托/事件代理"></a>四、事件委托/事件代理</h1><h2 id="1、提出问题-1"><a href="#1、提出问题-1" class="headerlink" title="1、提出问题"></a>1、提出问题</h2><p>例1：使用JS代码对ul标签中的所有li标签进行事件绑定</p>
 <p>demo10_weituo.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31F9.tmp.jpg" alt="img"> </p>
 <p>以上代码虽然可以完成事件绑定，但是必须循环为每个li标签进行绑定，如果存在100个li标签我们需要循环遍历绑定100次，而且以上代码，在动态新增li标签之后，新的标签也需要单独绑定。</p>
 <p>提出问题：以上代码，我们能不能只绑定一次呢？</p>
 <p>答：可以，使用事件委托进行实现。</p>
-<h2 id="2、事件-委托"><a href="#2、事件-委托" class="headerlink" title="2、事件**委托**"></a><strong>2、事件**</strong>委托**</h2><p>取快递：小强、旺财、小黑，他们都有一份自己的快递，正好今天送货。</p>
+<h2 id="2、事件委托"><a href="#2、事件委托" class="headerlink" title="2、事件委托"></a>2、事件委托</h2><p>取快递：小强、旺财、小黑，他们都有一份自己的快递，正好今天送货。</p>
 <p>① 第一种情况：三个人提前在门口等快递员，等到3点，接收快递。</p>
 <p>② 第二种情况：前台MM，三个人可以委托前台MM帮助代为收快递。</p>
 <p>我们把第二种情况就称之为“事件委托”。在JavaScript中，事件委托是基于事件冒泡进行实现的，我们在进行事件绑定时，不需要单独为后代元素进行一个一个绑定，只需要在其祖先元素中进行一次绑定即可。</p>
 <p>事件委托就是把事件绑定在祖先元素上，由于事件冒泡的关系，后代元素（子元素、后代元素）会自动具有祖先元素绑定的事件。</p>
 <p>demo11_weituo.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31FA.tmp.jpg" alt="img"> </p>
-<h2 id="3、-解决事件委托的小-bug"><a href="#3、-解决事件委托的小-bug" class="headerlink" title="3、**解决事件委托的小**bug"></a><strong>3、**</strong>解决事件委托的小<strong>**bug</strong></h2><p>如demo11_weituo.html代码所示，虽然每个li标签都具有了onclick事件，但是其都只能弹出相同的内容，如何根据自己的需要弹出不同的结果呢？</p>
+<h2 id="3、解决事件委托的小bug"><a href="#3、解决事件委托的小bug" class="headerlink" title="3、解决事件委托的小bug"></a>3、解决事件委托的小bug</h2><p>如demo11_weituo.html代码所示，虽然每个li标签都具有了onclick事件，但是其都只能弹出相同的内容，如何根据自己的需要弹出不同的结果呢？</p>
 <p>答：使用事件对象的几个属性，</p>
 <p>event.target：对事件起源目标的引用，属性返回触发事件的那个节点。</p>
 <p>event.currentTarget：属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点。</p>
@@ -300,8 +300,8 @@
 <p><img src="/2019/02/20/js06/wps31FB.tmp.jpg" alt="img"> </p>
 <p>运行结果：</p>
 <p><img src="/2019/02/20/js06/wps31FC.tmp.jpg" alt="img"> </p>
-<h2 id="4、target-应用"><a href="#4、target-应用" class="headerlink" title="4、target**应用**"></a><strong>4、target**</strong>应用**</h2><p><img src="/2019/02/20/js06/wps31FD.tmp.jpg" alt="img"> </p>
-<h1 id="五-、阻止事件冒泡"><a href="#五-、阻止事件冒泡" class="headerlink" title="五**、阻止事件冒泡**"></a><strong>五**</strong>、<strong><strong>阻止</strong></strong>事件冒泡**</h1><p>有些情况下，我们可能并不需要事件冒泡，所以冒泡需要被禁止。</p>
+<h2 id="4、target应用"><a href="#4、target应用" class="headerlink" title="4、target应用"></a>4、target应用</h2><p><img src="/2019/02/20/js06/wps31FD.tmp.jpg" alt="img"> </p>
+<h1 id="五、阻止事件冒泡"><a href="#五、阻止事件冒泡" class="headerlink" title="五、阻止事件冒泡"></a>五、阻止事件冒泡</h1><p>有些情况下，我们可能并不需要事件冒泡，所以冒泡需要被禁止。</p>
 <p>在不同浏览器下，其禁止方式也是不同的：</p>
 <p>① 基于IE内核的浏览器</p>
 <p>window.event.cancelBubble = true;</p>
@@ -312,11 +312,11 @@
 <p>demo13_stopBubble.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps31FE.tmp.jpg" alt="img"> </p>
 <p><img src="/2019/02/20/js06/wps31FF.tmp.jpg" alt="img"> </p>
-<h1 id="六-、阻止元素的默认行为"><a href="#六-、阻止元素的默认行为" class="headerlink" title="六**、阻止元素的默认行为**"></a><strong>六**</strong>、<strong><strong>阻止</strong></strong>元素的默认行为**</h1><h2 id="1、什么-是默认行为"><a href="#1、什么-是默认行为" class="headerlink" title="1、什么**是默认行为**"></a><strong>1、什么**</strong>是默认行为**</h2><p>在HTML代码中，有些元素，拥有自己的默认行为。</p>
+<h1 id="六、阻止元素的默认行为"><a href="#六、阻止元素的默认行为" class="headerlink" title="六、阻止元素的默认行为"></a>六、阻止元素的默认行为</h1><h2 id="1、什么是默认行为"><a href="#1、什么是默认行为" class="headerlink" title="1、什么是默认行为"></a>1、什么是默认行为</h2><p>在HTML代码中，有些元素，拥有自己的默认行为。</p>
 <p>如a标签，单击后会自动跳转到href所指向的页面</p>
 <p>如submit按钮，单击后会自动提交action所指向的页面</p>
 <p>但是有些情况下，我们需要中止元素的默认行为。</p>
-<h2 id="2、阻止-默认行为的方式-（了解）"><a href="#2、阻止-默认行为的方式-（了解）" class="headerlink" title="2、阻止**默认行为的方式**（了解）"></a><strong>2、阻止**</strong>默认行为的方式<strong>**（了解）</strong></h2><p>① 基于IE内核的浏览器</p>
+<h2 id="2、阻止默认行为的方式（了解）"><a href="#2、阻止默认行为的方式（了解）" class="headerlink" title="2、阻止默认行为的方式（了解）"></a>2、阻止默认行为的方式（了解）</h2><p>① 基于IE内核的浏览器</p>
 <p>window.event.returnValue = false;</p>
 <p>② 基于W3C内核的浏览器</p>
 <p>dom.事件 = function(event) {</p>
@@ -327,14 +327,14 @@
 <p>});</p>
 <p>demo14_default.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3200.tmp.jpg" alt="img"> </p>
-<h2 id="3、最简单-的阻止默认行为（重点掌握-）"><a href="#3、最简单-的阻止默认行为（重点掌握-）" class="headerlink" title="3、最简单**的阻止默认行为（重点掌握**）"></a><strong>3、最简单**</strong>的<strong><strong>阻止</strong></strong>默认行为<strong><strong>（重点</strong></strong>掌握<strong>**）</strong></h2><p>在实际项目开发中，我们还可以通过return false来阻止元素的默认行为。</p>
+<h2 id="3、最简单的阻止默认行为（重点掌握）"><a href="#3、最简单的阻止默认行为（重点掌握）" class="headerlink" title="3、最简单的阻止默认行为（重点掌握）"></a>3、最简单的阻止默认行为（重点掌握）</h2><p>在实际项目开发中，我们还可以通过return false来阻止元素的默认行为。</p>
 <p><img src="/2019/02/20/js06/wps3201.tmp.jpg" alt="img"> </p>
-<h1 id="七-、事件相关案例"><a href="#七-、事件相关案例" class="headerlink" title="七**、事件相关案例**"></a><strong>七**</strong>、<strong><strong>事件</strong></strong>相关案例**</h1><p>例1：根据密码的长度修改密码框的颜色demo15_password.html 示例代码</p>
+<h1 id="七、事件相关案例"><a href="#七、事件相关案例" class="headerlink" title="七、事件相关案例"></a>七、事件相关案例</h1><p>例1：根据密码的长度修改密码框的颜色demo15_password.html 示例代码</p>
 <p><img src="/2019/02/20/js06/wps3202.tmp.jpg" alt="img"> </p>
 <p>例2：鹦鹉学舌，demo16_yingwu.html 示例代码</p>
 <p><img src="/2019/02/20/js06/wps3203.tmp.jpg" alt="img"> </p>
 <p>提示：oninput事件，输入事件，当文本框中有文本输入时触发此事件。</p>
-<h1 id="八-、节点操作-（增删改）"><a href="#八-、节点操作-（增删改）" class="headerlink" title="八**、节点操作**（增删改）"></a><strong>八**</strong>、<strong><strong>节点</strong></strong>操作<strong>**（增删改）</strong></h1><h2 id="1、相关-的方法-（增）"><a href="#1、相关-的方法-（增）" class="headerlink" title="1、相关**的方法**（增）"></a><strong>1、相关**</strong>的方法<strong>**（增）</strong></h2><p>① 创建节点，基本语法：</p>
+<h1 id="八、节点操作（增删改）"><a href="#八、节点操作（增删改）" class="headerlink" title="八、节点操作（增删改）"></a>八、节点操作（增删改）</h1><h2 id="1、相关的方法（增）"><a href="#1、相关的方法（增）" class="headerlink" title="1、相关的方法（增）"></a>1、相关的方法（增）</h2><p>① 创建节点，基本语法：</p>
 <p>document.createElement(‘标签名称’)，如document.createElement(‘div’) === <div></div></p>
 <p>② 在标签之间添加元素内容，innerHTML与innerText</p>
 <p>③ 把新创建的节点添加到某个节点的下面（变成子节点）</p>
@@ -345,22 +345,22 @@
 <p>第三点：把新节点追加到某个节点的下方appendChild</p>
 <p>demo17_newNode.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3204.tmp.jpg" alt="img"> </p>
-<h2 id="2、判断-某个元素是否具有子节点"><a href="#2、判断-某个元素是否具有子节点" class="headerlink" title="2、判断**某个元素是否具有子节点**"></a><strong>2、判断**</strong>某个元素是否具有子节点**</h2><p>基本语法：node.hasChildNodes()</p>
+<h2 id="2、判断某个元素是否具有子节点"><a href="#2、判断某个元素是否具有子节点" class="headerlink" title="2、判断某个元素是否具有子节点"></a>2、判断某个元素是否具有子节点</h2><p>基本语法：node.hasChildNodes()</p>
 <p>返回布尔类型的值，判断某个元素下是否具有子节点</p>
 <p>demo18_hasChild.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3205.tmp.jpg" alt="img"> </p>
-<h2 id="3、获取-子节点"><a href="#3、获取-子节点" class="headerlink" title="3、获取**子节点**"></a><strong>3、获取**</strong>子节点**</h2><p>node.childNodes ：获取所有的子节点，返回的是一个类数组的特殊对象。</p>
+<h2 id="3、获取子节点"><a href="#3、获取子节点" class="headerlink" title="3、获取子节点"></a>3、获取子节点</h2><p>node.childNodes ：获取所有的子节点，返回的是一个类数组的特殊对象。</p>
 <p>demo18_childNodes.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3206.tmp.jpg" alt="img"> </p>
-<h2 id="4、克隆-节点与删除节点（克隆与删除-）"><a href="#4、克隆-节点与删除节点（克隆与删除-）" class="headerlink" title="4、克隆**节点与删除节点（克隆与删除**）"></a><strong>4、克隆**</strong>节点与删除节点<strong><strong>（克隆</strong></strong>与删除<strong>**）</strong></h2><p>node.cloneNode()  ：对某一个节点进行克隆操作</p>
+<h2 id="4、克隆节点与删除节点（克隆与删除）"><a href="#4、克隆节点与删除节点（克隆与删除）" class="headerlink" title="4、克隆节点与删除节点（克隆与删除）"></a>4、克隆节点与删除节点（克隆与删除）</h2><p>node.cloneNode()  ：对某一个节点进行克隆操作</p>
 <p>父节点. removeChild(要删除的子节点) ：删除某一个节点，删除父节点下的子节点</p>
 <p>demo20_node.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3207.tmp.jpg" alt="img"> </p>
 <p>demo20_node.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps3218.tmp.jpg" alt="img"> </p>
-<h2 id="5、节点-操作案例"><a href="#5、节点-操作案例" class="headerlink" title="5、节点**操作案例**"></a><strong>5、节点**</strong>操作案例**</h2><p>动态创建一个文本框</p>
+<h2 id="5、节点操作案例"><a href="#5、节点操作案例" class="headerlink" title="5、节点操作案例"></a>5、节点操作案例</h2><p>动态创建一个文本框</p>
 <p><img src="/2019/02/20/js06/wps3219.tmp.jpg" alt="img"> </p>
-<h2 id="6、为-新元素设置属性以及获取属性-（重点）"><a href="#6、为-新元素设置属性以及获取属性-（重点）" class="headerlink" title="6、为**新元素设置属性以及获取属性**（重点）"></a><strong>6、为**</strong>新元素设置属性以及获取属性<strong>**（重点）</strong></h2><p>node.getAttribute()</p>
+<h2 id="6、为新元素设置属性以及获取属性（重点）"><a href="#6、为新元素设置属性以及获取属性（重点）" class="headerlink" title="6、为新元素设置属性以及获取属性（重点）"></a>6、为新元素设置属性以及获取属性（重点）</h2><p>node.getAttribute()</p>
 <p>返回当前元素节点的指定属性。如果指定属性不存在，则返回null；</p>
 <p>node.setAttribute()</p>
 <p>为当前元素节点新增属性。如果同名属性已存在</p>
@@ -368,11 +368,11 @@
 <p><img src="/2019/02/20/js06/wps321A.tmp.jpg" alt="img"> </p>
 <p>在实际JS开发中，我们还可以直接通过对象.属性的方式进行获取或设置：</p>
 <p><img src="/2019/02/20/js06/wps321B.tmp.jpg" alt="img"> </p>
-<h2 id="7、判断-属性与删除属性-（重点）"><a href="#7、判断-属性与删除属性-（重点）" class="headerlink" title="7、判断**属性与删除属性**（重点）"></a><strong>7、判断**</strong>属性与删除属性<strong>**（重点）</strong></h2><p>node.hasAttribute() ：返回一个布尔值，表示当前元素节点是否包含指定属性</p>
+<h2 id="7、判断属性与删除属性（重点）"><a href="#7、判断属性与删除属性（重点）" class="headerlink" title="7、判断属性与删除属性（重点）"></a>7、判断属性与删除属性（重点）</h2><p>node.hasAttribute() ：返回一个布尔值，表示当前元素节点是否包含指定属性</p>
 <p>node.removeAttribute() ：从当前元素节点移除属性</p>
 <p>demo22_remove.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps321C.tmp.jpg" alt="img"> </p>
-<h2 id="8、节点-操作案例"><a href="#8、节点-操作案例" class="headerlink" title="8、节点**操作案例**"></a><strong>8、节点**</strong>操作案例**</h2><p>例1：全选与全不选功能demo23_qx.html 示例代码：</p>
+<h2 id="8、节点操作案例"><a href="#8、节点操作案例" class="headerlink" title="8、节点操作案例"></a>8、节点操作案例</h2><p>例1：全选与全不选功能demo23_qx.html 示例代码：</p>
 <p><img src="/2019/02/20/js06/wps321D.tmp.jpg" alt="img"> </p>
 <p><img src="/2019/02/20/js06/wps321E.tmp.jpg" alt="img"> </p>
 <p><img src="/2019/02/20/js06/wps321F.tmp.jpg" alt="img"> </p>
@@ -446,7 +446,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript从入门到精通（五）"><span class="toc-number">1.</span> <span class="toc-text">JavaScript从入门到精通（五）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#课程目标"><span class="toc-number">2.</span> <span class="toc-text">课程目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一-、事件绑定"><span class="toc-number">3.</span> <span class="toc-text">一**、事件绑定**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、事件-绑定的类型"><span class="toc-number">3.1.</span> <span class="toc-text">1、事件**绑定的类型**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、提出-问题"><span class="toc-number">3.2.</span> <span class="toc-text">2、提出**问题**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、-事件监听"><span class="toc-number">3.3.</span> <span class="toc-text">3、**事件监听**</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二-、事件对象"><span class="toc-number">4.</span> <span class="toc-text">二**、事件对象**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、提出-问题"><span class="toc-number">4.1.</span> <span class="toc-text">1、提出**问题**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、什么-是事件对象"><span class="toc-number">4.2.</span> <span class="toc-text">2、什么**是事件对象**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、获取-事件对象"><span class="toc-number">4.3.</span> <span class="toc-text">3、获取**事件对象**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、-事件对象相关案例"><span class="toc-number">4.4.</span> <span class="toc-text">4、**事件对象相关案例**</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三-、事件冒泡以及事件捕获"><span class="toc-number">5.</span> <span class="toc-text">三**、事件冒泡以及事件捕获**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-、什么-是事件冒泡"><span class="toc-number">5.1.</span> <span class="toc-text">1**、什么**是事件冒泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、事件-的捕获"><span class="toc-number">5.2.</span> <span class="toc-text">2、事件**的捕获**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、事件-冒泡与事件捕获的原理图"><span class="toc-number">5.3.</span> <span class="toc-text">3、事件**冒泡与事件捕获的原理图**</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、-事件委托-事件代理"><span class="toc-number">6.</span> <span class="toc-text">四、**事件委托/事件代理**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、提出-问题-1"><span class="toc-number">6.1.</span> <span class="toc-text">1、提出**问题**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、事件-委托"><span class="toc-number">6.2.</span> <span class="toc-text">2、事件**委托**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、-解决事件委托的小-bug"><span class="toc-number">6.3.</span> <span class="toc-text">3、**解决事件委托的小**bug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、target-应用"><span class="toc-number">6.4.</span> <span class="toc-text">4、target**应用**</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五-、阻止事件冒泡"><span class="toc-number">7.</span> <span class="toc-text">五**、阻止事件冒泡**</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六-、阻止元素的默认行为"><span class="toc-number">8.</span> <span class="toc-text">六**、阻止元素的默认行为**</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么-是默认行为"><span class="toc-number">8.1.</span> <span class="toc-text">1、什么**是默认行为**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、阻止-默认行为的方式-（了解）"><span class="toc-number">8.2.</span> <span class="toc-text">2、阻止**默认行为的方式**（了解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、最简单-的阻止默认行为（重点掌握-）"><span class="toc-number">8.3.</span> <span class="toc-text">3、最简单**的阻止默认行为（重点掌握**）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七-、事件相关案例"><span class="toc-number">9.</span> <span class="toc-text">七**、事件相关案例**</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八-、节点操作-（增删改）"><span class="toc-number">10.</span> <span class="toc-text">八**、节点操作**（增删改）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、相关-的方法-（增）"><span class="toc-number">10.1.</span> <span class="toc-text">1、相关**的方法**（增）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、判断-某个元素是否具有子节点"><span class="toc-number">10.2.</span> <span class="toc-text">2、判断**某个元素是否具有子节点**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、获取-子节点"><span class="toc-number">10.3.</span> <span class="toc-text">3、获取**子节点**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、克隆-节点与删除节点（克隆与删除-）"><span class="toc-number">10.4.</span> <span class="toc-text">4、克隆**节点与删除节点（克隆与删除**）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、节点-操作案例"><span class="toc-number">10.5.</span> <span class="toc-text">5、节点**操作案例**</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、为-新元素设置属性以及获取属性-（重点）"><span class="toc-number">10.6.</span> <span class="toc-text">6、为**新元素设置属性以及获取属性**（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、判断-属性与删除属性-（重点）"><span class="toc-number">10.7.</span> <span class="toc-text">7、判断**属性与删除属性**（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、节点-操作案例"><span class="toc-number">10.8.</span> <span class="toc-text">8、节点**操作案例**</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript从入门到精通（五）"><span class="toc-number">1.</span> <span class="toc-text">JavaScript从入门到精通（五）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#课程目标"><span class="toc-number">2.</span> <span class="toc-text">课程目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一、事件绑定"><span class="toc-number">3.</span> <span class="toc-text">一、事件绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、事件绑定的类型"><span class="toc-number">3.1.</span> <span class="toc-text">1、事件绑定的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、提出问题"><span class="toc-number">3.2.</span> <span class="toc-text">2、提出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、事件监听"><span class="toc-number">3.3.</span> <span class="toc-text">3、事件监听</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、事件对象"><span class="toc-number">4.</span> <span class="toc-text">二、事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、提出问题"><span class="toc-number">4.1.</span> <span class="toc-text">1、提出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、什么是事件对象"><span class="toc-number">4.2.</span> <span class="toc-text">2、什么是事件对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、获取事件对象"><span class="toc-number">4.3.</span> <span class="toc-text">3、获取事件对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、事件对象相关案例"><span class="toc-number">4.4.</span> <span class="toc-text">4、事件对象相关案例</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、事件冒泡以及事件捕获"><span class="toc-number">5.</span> <span class="toc-text">三、事件冒泡以及事件捕获</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是事件冒泡"><span class="toc-number">5.1.</span> <span class="toc-text">1、什么是事件冒泡</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、事件的捕获"><span class="toc-number">5.2.</span> <span class="toc-text">2、事件的捕获</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、事件冒泡与事件捕获的原理图"><span class="toc-number">5.3.</span> <span class="toc-text">3、事件冒泡与事件捕获的原理图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、事件委托-事件代理"><span class="toc-number">6.</span> <span class="toc-text">四、事件委托/事件代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、提出问题-1"><span class="toc-number">6.1.</span> <span class="toc-text">1、提出问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、事件委托"><span class="toc-number">6.2.</span> <span class="toc-text">2、事件委托</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、解决事件委托的小bug"><span class="toc-number">6.3.</span> <span class="toc-text">3、解决事件委托的小bug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、target应用"><span class="toc-number">6.4.</span> <span class="toc-text">4、target应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、阻止事件冒泡"><span class="toc-number">7.</span> <span class="toc-text">五、阻止事件冒泡</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、阻止元素的默认行为"><span class="toc-number">8.</span> <span class="toc-text">六、阻止元素的默认行为</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是默认行为"><span class="toc-number">8.1.</span> <span class="toc-text">1、什么是默认行为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、阻止默认行为的方式（了解）"><span class="toc-number">8.2.</span> <span class="toc-text">2、阻止默认行为的方式（了解）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、最简单的阻止默认行为（重点掌握）"><span class="toc-number">8.3.</span> <span class="toc-text">3、最简单的阻止默认行为（重点掌握）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、事件相关案例"><span class="toc-number">9.</span> <span class="toc-text">七、事件相关案例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、节点操作（增删改）"><span class="toc-number">10.</span> <span class="toc-text">八、节点操作（增删改）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、相关的方法（增）"><span class="toc-number">10.1.</span> <span class="toc-text">1、相关的方法（增）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、判断某个元素是否具有子节点"><span class="toc-number">10.2.</span> <span class="toc-text">2、判断某个元素是否具有子节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、获取子节点"><span class="toc-number">10.3.</span> <span class="toc-text">3、获取子节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、克隆节点与删除节点（克隆与删除）"><span class="toc-number">10.4.</span> <span class="toc-text">4、克隆节点与删除节点（克隆与删除）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、节点操作案例"><span class="toc-number">10.5.</span> <span class="toc-text">5、节点操作案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、为新元素设置属性以及获取属性（重点）"><span class="toc-number">10.6.</span> <span class="toc-text">6、为新元素设置属性以及获取属性（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、判断属性与删除属性（重点）"><span class="toc-number">10.7.</span> <span class="toc-text">7、判断属性与删除属性（重点）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8、节点操作案例"><span class="toc-number">10.8.</span> <span class="toc-text">8、节点操作案例</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
