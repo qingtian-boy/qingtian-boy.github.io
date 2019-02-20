@@ -482,17 +482,224 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一、svn代码版本管理控制工具"><a href="#一、svn代码版本管理控制工具" class="headerlink" title="一、svn代码版本管理控制工具"></a>一、svn代码版本管理控制工具</h1><h2 id="1、为什么需要svn"><a href="#1、为什么需要svn" class="headerlink" title="1、为什么需要svn"></a>1、为什么需要svn</h2><h3 id="传统团队开发项目"><a href="#传统团队开发项目" class="headerlink" title="传统团队开发项目"></a>传统团队开发项目</h3><p><img src="/2019/02/20/PHP00/wps63DD.tmp.jpg" alt="img"></p>
-<p>上面传统团队开发的流程会产生哪些问题？</p>
-<ul>
-<li><p>代码冲突问题。因为多个组员可能修改同一个文件，造成同一个文件相同行代码进行整合的时候会产生冲突。</p>
+        <h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><ul>
+<li><p>PHP基本介绍</p>
+<p>​    为什么学习PHP</p>
+<p>​    什么是PHP</p>
+<p>​    静态网站与动态网站的区别</p>
+<p>==目标：懂得什么是静态网站什么是动态网站==</p>
 </li>
-<li><p>代码丢失问题。某个组员误删了文件或某段代码，找不回来了。</p>
+<li><p>网站的基本概念</p>
+<p>​    服务器</p>
+<p>​    IP</p>
+<p>​    域名</p>
+<p>​    DNS</p>
+<p>​    端口</p>
+<p>==目标：懂得什么是服务器、IP、域名、DNS、端口==</p>
 </li>
-<li><p>代码==共享==问题。代码传来传去太麻烦。</p></li></ul>
-        
-          <a class="article-more-a" href="/2019/02/20/PHP00/#more">more >></a>
-        
+<li><p>安装apache</p>
+<p>​    软件安装</p>
+<p>​    apache重点目录说明</p>
+<p>​    http.exe相关应用</p>
+</li>
+<li><p>安装PHP</p>
+</li>
+<li><p>安装MYSQL</p>
+<p>==目标：能够实现apache、PHP、MYSQL的安装==</p>
+</li>
+<li><p>配置虚拟主机</p>
+<p>​    什么是虚拟主机</p>
+<p>​    虚拟主机的分类</p>
+<pre><code>配置基于域名的虚拟主机
+</code></pre><p>==目标：能够配置基于域名的虚拟主机==</p>
+</li>
+</ul>
+<h1 id="三、今日课程内容：搭建环境"><a href="#三、今日课程内容：搭建环境" class="headerlink" title="三、今日课程内容：搭建环境"></a>三、今日课程内容：搭建环境</h1><h2 id="1-PHP基本介绍"><a href="#1-PHP基本介绍" class="headerlink" title="1. PHP基本介绍"></a>1. PHP基本介绍</h2><p>PHP的==LOGO==：</p>
+<p><img src="/2019/02/20/PHP00/1.png" alt="img"> </p>
+<h3 id="为什么学习PHP"><a href="#为什么学习PHP" class="headerlink" title="为什么学习PHP"></a>为什么学习PHP</h3><p>PHP的优点：</p>
+<p>a. 使用范围广，应用前景好；</p>
+<p>b. 开发效率高，程序简洁；</p>
+<p>c. 跨平台运行，几乎支持所有服务器环境和所有主流数据库；</p>
+<p>d. 完全支持面向对象，也支持面向过程；</p>
+<p>e. 内置函数丰富，完美支持正则表达式，支持通用MVC框架开发；</p>
+<p>f. 与商业市场的粘合度非常高，渗透于大量的IT开源与闭源项目中；</p>
+<h3 id="什么是PHP"><a href="#什么是PHP" class="headerlink" title="什么是PHP"></a>什么是PHP</h3><p>PHP: ==Hypertext Preprocessor==  翻译过来就是：==超文本预处理器==</p>
+<p>是一种被广泛应用的开放源代码的多用途脚本语言，它可嵌入到 HTML中，尤其适合 web 开发。 </p>
+<p>PHP于1994年由<a href="https://baike.baidu.com/item/Rasmus%20Lerdorf" target="_blank" rel="noopener">Rasmus Lerdorf</a>创建，刚刚开始是<a href="https://baike.baidu.com/item/Rasmus%20Lerdorf" target="_blank" rel="noopener">Rasmus Lerdorf</a>为了要<a href="https://baike.baidu.com/item/%E7%BB%B4%E6%8A%A4" target="_blank" rel="noopener">维护</a>个人网页而制作的一个简单的用<a href="https://baike.baidu.com/item/Perl" target="_blank" rel="noopener">Perl</a>语言编写的程序，后来又用C语言重新编写了。PHP全称最早并不是叫做Hypertext Preprocessor，而是叫Personal Home Page，Hypertext Preprocessor是1997年之后才出现的。</p>
+<p>PHP目前属于zend公司，由zend公司对其进行商业维护。公司总部设在美国加利福尼亚州的库比蒂诺，技术中心设在以色列特拉维夫的拉马特甘。</p>
+<h3 id="静态网站与动态网站的区别"><a href="#静态网站与动态网站的区别" class="headerlink" title="静态网站与动态网站的区别"></a>静态网站与动态网站的区别</h3><p>1）  动态网站以==数据库技术==为基础，静态网站只是==单纯的静态页面==（如.htm、.html、.xml）；</p>
+<p>2）  静态网站解析速度极快，但不易维护，动态网站牺牲了一定的速度，但是功能强大且维护方便；</p>
+<p><strong>==注意==</strong>：动态网站和动态效果不是一个概念，动态效果也可存在于静态的网站中！</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>什么是静态网站？什么是动态网站？</p>
+<p>静态网站：数据是写死的，并且是由浏览器解析的语言（html、js、css）组成的代码；</p>
+<p>动态网站：数据不是写死的，而是依托于程序语言（PHP）操作数据库获取数据展示到静态页面中的代码；</p>
+<h2 id="2-网站的基本概念"><a href="#2-网站的基本概念" class="headerlink" title="2. 网站的基本概念"></a>2. 网站的基本概念</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><p>服务器，也称==伺服器==，是提供计算服务的设备。（可直观的理解为“电脑”） </p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>==概念==：表示<a href="https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E4%B9%8B%E9%97%B4%E4%BA%92%E8%BF%9E%E7%9A%84%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">网络之间互连的==协议==</a>。（IP）是Internet Protocol的外语缩写，中文缩写为“网协”。</p>
+<p>IP地址是指互联网协议地址（英语：Internet Protocol Address，又译为网际协议地址），是IP Address的缩写。IP地址是<a href="https://baike.baidu.com/item/IP%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">IP协议</a>提供的一种统一的地址格式，它为互联网上的每一个网络和每一台主机分配一个逻辑地址，以此来屏蔽物理地址的差异。</p>
+<p><strong>==注意==</strong>：我们通常口述表达所说的IP指的是==IP地址==的概念；而==正统的IP指的是一种协议==。</p>
+<p>==IP地址其实就是用来表示计算机在互联网中的位置的地址编号！==在互联网中，只能通过IP地址来找到其他的计算机</p>
+<h3 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h3><p><a href="https://baike.baidu.com/item/%E5%9F%9F%E5%90%8D" target="_blank" rel="noopener">域名</a>（<a href="https://baike.baidu.com/item/Domain%20Name" target="_blank" rel="noopener">Domain Name</a>）：是由一串用“点”分隔的字符组成的Internet上某一台计算机或计算机组的名称，用于在数据传输时标识计算机的电子方位。</p>
+<p>域名其实就是==IP地址上的“面具”== 。</p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>dns是domain name service的缩写，它的作用简单的说，可以理解为：==将域名翻译成ip地址==。</p>
+<p>互联网，或者服务器，是看不懂域名的，它们只懂IP地址，dns其实就是一个翻译，将域名翻译成绑定的IP地址，这样用户在浏览器中输入域名，服务器就可以通过dns知道用户请求的是哪个服务器上部署的网站，然后才将对应的网站内容返回给用户。</p>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><p>“<a href="https://baike.baidu.com/item/%E7%AB%AF%E5%8F%A3" target="_blank" rel="noopener">端口</a>“是英文port的意译，可以认为是设备与外界通讯交流的出口。端口可分为==<strong>虚拟端口</strong>==和<strong>物理端口</strong>，其中虚拟端口指计算机内部或交换机路由器内的端口，不可见。例如计算机中的80端口、21端口、23端口等。物理端口又称为接口，是可见端口，计算机背板的RJ45网口，交换机路由器集线器等RJ45端口。电话使用RJ11插口也属于物理端口的范畴。 </p>
+<h2 id="3-安装apache"><a href="#3-安装apache" class="headerlink" title="3. 安装apache"></a>3. 安装apache</h2><h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><p>==1）准备软件压缩包==</p>
+<p><img src="/2019/02/20/PHP00/img/2" alt="1533303875744"></p>
+<p>==2）安装步骤==</p>
+<p>第一步，解压压缩包，</p>
+<p><img src="/2019/02/20/PHP00/img/3" alt="1533304019578"></p>
+<p>第二步，点击进入httpd-2.4.29-Win32-VC15文件夹，剪切Apache24文件夹， </p>
+<p><img src="/2019/02/20/PHP00/img/4" alt="1533304144632"></p>
+<p>第三步，将剪切的Apache24文件夹，粘贴到软件存放目录，比如我这里粘贴到F:\usr目录中，并且将Apache24改名为apache24</p>
+<p><img src="/2019/02/20/PHP00/img/5" alt="1533305310478"></p>
+<p>第四部，修改apache主配置文件，</p>
+<p>打开F:\usr\apache24\conf\httpd.conf文件，修改以下四个配置项：</p>
+<p><img src="/2019/02/20/PHP00/img/6" alt="1533305591668"></p>
+<p><img src="/2019/02/20/PHP00/img/7" alt="1533305510432"></p>
+<p><img src="/2019/02/20/PHP00/img/8" alt="1533305573240"></p>
+<p>修改完成后，保存文件！ </p>
+<p>第五步，进入F:/usr/apache24/bin目录，按==shift==+==右键== –&gt; ==在此处打开命令窗口==，输入==httpd –k install==安装apache</p>
+<p><img src="/2019/02/20/PHP00/img/9" alt="1533306253102"></p>
+<p>再输入httpd –k start启动apache服务</p>
+<p><img src="/2019/02/20/PHP00/img/10" alt="1533306852408"></p>
+<p>第六步，测试apache是否安装成功，打开浏览器，输入localhost，页面展示如下图则表示apache安装成功。 </p>
+<p><img src="/2019/02/20/PHP00/img/11" alt="1533306952171"></p>
+<h3 id="apache重点目录说明"><a href="#apache重点目录说明" class="headerlink" title="apache重点目录说明"></a>apache重点目录说明</h3><p><img src="/2019/02/20/PHP00/img/12.png" alt="1533306253102"></p>
+<h3 id="httpd-exe相关应用"><a href="#httpd-exe相关应用" class="headerlink" title="httpd.exe相关应用"></a>httpd.exe相关应用</h3><p>我们可以通过bin目录中的httpd.exe来执行某些apache控制的操作。</p>
+<p><img src="/2019/02/20/PHP00/img/13" alt="1533307131671"></p>
+<p>==<strong>TIPS</strong>==：在使用httpd.exe执行相关操作指令时，可以省略”.exe”，效果不变。</p>
+<h4 id="查看apache加载的模块"><a href="#查看apache加载的模块" class="headerlink" title="查看apache加载的模块"></a>查看apache加载的模块</h4><p>操作指令： ==httpd.exe  –M==</p>
+<p><img src="/2019/02/20/PHP00/img/59" alt="1537500553163"></p>
+<h4 id="重启apache"><a href="#重启apache" class="headerlink" title="重启apache"></a>重启apache</h4><p>操作指令：==httpd.exe  –k  restart==</p>
+<p><img src="/2019/02/20/PHP00/img/60" alt="1537500575360"></p>
+<h4 id="调出帮助列表"><a href="#调出帮助列表" class="headerlink" title="调出帮助列表"></a>调出帮助列表</h4><p>操作指令：==httpd.exe  -h==</p>
+<p><img src="/2019/02/20/PHP00/img/61" alt="1537500700101"></p>
+<h4 id="检查配置语法"><a href="#检查配置语法" class="headerlink" title="检查配置语法"></a>检查配置语法</h4><p>操作指令：==httpd.exe  -t==</p>
+<p><img src="/2019/02/20/PHP00/img/62" alt="1537500931857"></p>
+<h2 id="4-安装PHP"><a href="#4-安装PHP" class="headerlink" title="4. 安装PHP"></a>4. 安装PHP</h2><p>==1）准备软件压缩包==</p>
+<p><img src="/2019/02/20/PHP00/img/14" alt="1533307532596"></p>
+<p>==2）安装步骤==</p>
+<p>第一步，解压压缩包，</p>
+<p><img src="/2019/02/20/PHP00/img/15" alt="1533307609740"></p>
+<p>第二步，剪切解压后的PHP目录php-7.1.14-Win32-VC32-x86，转移到软件安装目录中， 将php-7.1.14-Win32-VC32-x86改名为php7，</p>
+<p><img src="/2019/02/20/PHP00/img/16" alt="1533307711015"></p>
+<p>第三步，将PHP配置成为apache的一个模块，</p>
+<ol>
+<li><p>进入php7目录，指定当前环境的配置文件，</p>
+<p><img src="/2019/02/20/PHP00/img/17.png" alt="1533307711015"></p>
+</li>
+<li><p>打开apache24/conf/httpd.conf，将PHP配置为apache的一个模块，添加如下配置项</p>
+<p><img src="/2019/02/20/PHP00/img/21" alt="1533308759467"></p>
+</li>
+<li><p>打开php7/php.ini，增加如下配置项：</p>
+<p><img src="/2019/02/20/PHP00/img/19" alt="1533308597175"></p>
+<p><img src="/2019/02/20/PHP00/img/20" alt="1533308624881"></p>
+</li>
+</ol>
+<p>第四步，重启apache，测试访问PHP页面</p>
+<p>重启apache</p>
+<p><img src="/2019/02/20/PHP00/img/22" alt="1533308859998"></p>
+<p>在F:/usr/apache24/htdocs目录中创建一个名为code1.php的文件，并且构建测试代码： </p>
+<p><img src="/2019/02/20/PHP00/img/23" alt="1533308957718"></p>
+<p>打开浏览器，访问code1.php，成功则出现如下效果，</p>
+<p><img src="/2019/02/20/PHP00/img/24" alt="1533309012409"></p>
+<h2 id="5-安装MYSQL"><a href="#5-安装MYSQL" class="headerlink" title="5. 安装MYSQL"></a>5. 安装MYSQL</h2><p>==1）准备软件安装包==</p>
+<p><img src="/2019/02/20/PHP00/img/25" alt="1533335475231"></p>
+<p>==2）安装步骤==</p>
+<p>在F:\usr 中创建一个新的目录，mysql5.5.2</p>
+<p><img src="/2019/02/20/PHP00/img/48" alt="1533338257606"></p>
+<p>双击进行安装</p>
+<p><img src="/2019/02/20/PHP00/img/26.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/27.png" alt="1533335475231"></p>
+<p>==配置下面这个选项后别急着点next选项==， </p>
+<p><img src="/2019/02/20/PHP00/img/28.png" alt="1533335475231"></p>
+<p>再次点击Server data files选项，改变其默认的安装路径，如下图所示，改变之后再点击next选项，</p>
+<p><img src="/2019/02/20/PHP00/img/29.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/30.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/31.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/32.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/33.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/34.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/35.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/36.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/37.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/38.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/39.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/40.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/41.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/42.png" alt="1533335475231"></p>
+<p><img src="/2019/02/20/PHP00/img/43.png" alt="1533335475231"></p>
+<p>测试使用MYSQL数据库，</p>
+<p>打开cmd小黑窗口，输出登陆MYSQL的指令，如下图，</p>
+<p><img src="/2019/02/20/PHP00/img/44.png" alt="1533335475231"></p>
+<p>输出相关内容，显示了上图中的效果，说明MYSQL安装成功。 </p>
+<h2 id="6-配置虚拟主机"><a href="#6-配置虚拟主机" class="headerlink" title="6. 配置虚拟主机"></a>6. 配置虚拟主机</h2><h3 id="什么是虚拟主机"><a href="#什么是虚拟主机" class="headerlink" title="什么是虚拟主机"></a>什么是虚拟主机</h3><p><strong>==概念==</strong>：虚拟主机是指在网络服务器上分出一定的==磁盘空间==，用户可以租用此部分空间，以供用户放置站点及应用组件，提供必要的数据存放和传输功能。</p>
+<h3 id="虚拟主机的分类"><a href="#虚拟主机的分类" class="headerlink" title="虚拟主机的分类"></a>虚拟主机的分类</h3><p>目前对虚拟主机的分类没有明确的界定，一般要看从什么角度上来进行分类。</p>
+<p>一种主流的分类类型是从操作系统上来进行划分，可分为：</p>
+<p>1）  windows虚拟主机；</p>
+<p>2）  Linux虚拟主机；</p>
+<h3 id="配置基于域名的虚拟主机"><a href="#配置基于域名的虚拟主机" class="headerlink" title="配置基于域名的虚拟主机"></a>配置基于域名的虚拟主机</h3><p><strong>==目标==</strong>：配置一个名为<a href="http://www.day1.com的域名，指向F:/home/class/day1/code目录" target="_blank" rel="noopener">www.day1.com的域名，指向F:/home/class/day1/code目录</a></p>
+<h4 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h4><p>第一步，打开apache的主配置文件httpd.conf，开启引入httpd-vhosts.conf文件的配置，如下图去掉配置项前面的”#”，开启该配置项，</p>
+<p><img src="/2019/02/20/PHP00/img/45.png" alt="1533335475231"></p>
+<p>第二步，打开 apache根目录/conf/extra/httpd-vhosts.conf文件，将下图中红框所示的部分全部加上“#”注释掉，</p>
+<p><img src="/2019/02/20/PHP00/img/46.png" alt="1533335475231"></p>
+<p>第三步，在httpd-vhosts.conf文件中添加以下配置项，</p>
+<p><img src="/2019/02/20/PHP00/img/58" alt="1537485509093"></p>
+<p>第四步，在day1/code/code1.php中构建测试代码,如下图， </p>
+<p><img src="/2019/02/20/PHP00/img/53" alt="1533369380106"></p>
+<p>第五步，重启apache,通过 <a href="http://www.day1.com" target="_blank" rel="noopener">www.day1.com</a> 访问项目目录下的code1.php文件，</p>
+<p>重启apache</p>
+<p><img src="/2019/02/20/PHP00/img/54" alt="1533369396512"></p>
+<p>第六步，打开C:/Windows/system32/drivers/etc/hosts文件，在最末尾添加如下图所示的配置项，让<a href="http://www.day1.com域名指向127.0.0.1也就是本地，" target="_blank" rel="noopener">www.day1.com域名指向127.0.0.1也就是本地，</a></p>
+<p><img src="/2019/02/20/PHP00/img/55" alt="1533369501118"></p>
+<p>第七步，使用浏览器测试访问，效果如下：</p>
+<p><img src="/2019/02/20/PHP00/img/56" alt="1533369513741"></p>
+<h2 id="7-全天总结"><a href="#7-全天总结" class="headerlink" title="7. 全天总结"></a>7. 全天总结</h2><ol>
+<li><p>能够说出静态网站和动态网站的区别</p>
+<p>静态网站：数据是写死的，内容是由浏览器能够解析的代码内容；</p>
+<p>动态网站：数据不是写死的，需要依托于程序语言（PHP）操作数据库来实现数据的读取的代码内容；</p>
+</li>
+<li><p>什么是服务器？什么是IP？什么是域名？什么是DNS？什么是端口？</p>
+<p>服务器：就是连接在互联网中的电脑</p>
+<p>IP：IP指的是IP协议，我们口头所说的IP指的是IP地址，IP地址是标明一台计算机在互联中的地址编号</p>
+<p>域名：IP的面具</p>
+<p>DNS：将域名转换为IP地址的过程</p>
+<p>端口：在计算机中标识内部软件的编号</p>
+</li>
+<li><p>能够安装并配置PHP语言</p>
+<p>第一步解压软件压缩包，转移软件目录；</p>
+<p>第二步确定PHP的配置文件，然后调整PHP的配置文件中的两个配置项：extension_dir（指定PHP扩展文件存放路径的配置项）、date.timezone（时区）</p>
+<p>第三步，在apache的主配置文件中加入三个配置项，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LoadModule php7_module F:/usr/php7/php7apache2_4.dll//引入php7作为apache一个模块</span><br><span class="line">PHPIniDir &quot;F:/usr/php7&quot;//告诉apache去哪里找php的配置文件</span><br><span class="line">AddType application/x-httpd-php .php .html .htm .txt//指定能够书写php代码的文件后缀名</span><br></pre></td></tr></table></figure>
+<p>第四步，httpd -t检测配置语法是否有错误，没有错误则重启apache</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>能够理解web程序访问流程</p>
+</li>
+<li><p>能够安装Apache并访问第一个默认静态网页</p>
+<p>第一步，解压安装包，转移软件目录</p>
+<p>第二步，调整apache的主配置文件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ServerRoot &quot;F:/usr/apache24&quot;//设置apache安装的根目录</span><br><span class="line">ServerName localhost//设置一个默认的服务器名（域名）</span><br><span class="line">DocumentRoot &quot;F:/usr/apache24/htdocs&quot;//localhost默认指向的本地的根目录</span><br><span class="line">&lt;Directory &quot;F:/usr/apache24/htdocs&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>第三步，执行httpd -k install安装apache，然后执行httpd -k start启动apache指令</p>
+</li>
+</ol>
+<ol start="6">
+<li><p>能够配置Apache以执行php脚本</p>
+</li>
+<li><p>能够理解虚拟主机的含义</p>
+<p>虚拟主机：从计算机磁盘中划分出来的一段磁盘空间</p>
+</li>
+<li><p>能够搭建基于域名的虚拟主机</p>
+<p>第一步，在apache的主配置文件中引入配置虚拟主机的辅配置文件，</p>
+<p>第二步，打开配置虚拟主机的辅配置文件httpd-vhosts.conf，注释掉不必要的配置项，然后增加自己需要的虚拟主机配置项，示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">	ServerName www.day1.com</span><br><span class="line">	DocumentRoot &quot;F:/home/class/day1/code&quot;</span><br><span class="line">	&lt;Directory &quot;F:/home/class/day1/code&quot;&gt;</span><br><span class="line">		Require all granted</span><br><span class="line">		Options Indexes FollowSymLinks</span><br><span class="line">		Allowoverride all</span><br><span class="line">		DirectoryIndex index.php</span><br><span class="line">	&lt;/Directory&gt;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+<p>第三步，重启apache，让配置生效</p>
+<p>第四步，打开本地的hosts文件，增加指向本地的虚拟主机域名，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 www.day1.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
 
       
@@ -980,14 +1187,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">JS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack前端工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
               </li>
              
@@ -996,11 +1195,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
+                <a href="javascript:void(0)" class="js-tag color3">JS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1008,7 +1215,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">正则 js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1021,10 +1232,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">svn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则 js</a>
               </li>
             
             <div class="clearfix"></div>
