@@ -8,14 +8,43 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>PHP14 | 晴天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、昨日回顾1. 知识回顾 能够设置及读取COOKIE的值 设置(增删改)操作：setcookie函数 查询操作：$_COOKIE变量  理解COOKIE的工作原理">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
 <meta property="og:title" content="PHP14">
 <meta property="og:url" content="http://yoursite.com/2019/02/20/PHP14/index.html">
 <meta property="og:site_name" content="晴天的博客">
+<meta property="og:description" content="一、昨日回顾1. 知识回顾 能够设置及读取COOKIE的值 设置(增删改)操作：setcookie函数 查询操作：$_COOKIE变量  理解COOKIE的工作原理">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-20T09:00:40.772Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/2">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/3">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/4">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/5">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/6">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/7">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/8">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/10">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/9">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/12">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/11">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/15">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/13">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/14">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/16">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/17">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/18">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/19">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/20">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/21">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/22">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/23">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP14/24">
+<meta property="og:updated_time" content="2019-02-22T13:22:26.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP14">
+<meta name="twitter:description" content="一、昨日回顾1. 知识回顾 能够设置及读取COOKIE的值 设置(增删改)操作：setcookie函数 查询操作：$_COOKIE变量  理解COOKIE的工作原理">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/20/PHP14/1.png">
   
     <link rel="alternative" href="/atom.xml" title="晴天的博客" type="application/atom+xml">
   
@@ -171,7 +200,318 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
+<li><p>能够设置及读取COOKIE的值</p>
+<p>设置(增删改)操作：setcookie函数</p>
+<p>查询操作：$_COOKIE变量</p>
+</li>
+<li><p>理解COOKIE的工作原理</p>
+<a id="more"></a>
+<p>将数据持久化存储在浏览器端，同时让数据能够区分不同服务器的一种技术。</p>
+</li>
+<li><p>能够理解session的工作原理</p>
+<p>将数据持久化存储在服务器端，同时让数据能够区分不同浏览器的一种技术。</p>
+</li>
+<li><p>能够设置和读取session数据</p>
+<p>1）首先需要开启SESSION机制：session_start()</p>
+<p>2）然后像操作普通数组一样操作$_SESSION变量进行增、删、改、查数据即可。</p>
+</li>
+<li><p>能够理解销毁session的含义</p>
+<p>通过session_destroy函数来进行销毁session操作，通过这个函数销毁的是SESSION数据区。</p>
+</li>
+<li><p>能够理解session的垃圾回收机制</p>
+<p>当一定的时间内PHP发现还没有任何程序去访问该SESSION数据区，则PHP将会认为这个数据区可能是一个垃圾数据区；然后当访问程序的时候，将会以一定的概率去清除这个垃圾数据区。</p>
+</li>
+</ol>
+<h2 id="2-昨日反馈"><a href="#2-昨日反馈" class="headerlink" title="2. 昨日反馈"></a>2. 昨日反馈</h2><p><img src="/2019/02/20/PHP14/1.png" alt="1540044693798"></p>
+<h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><ul>
+<li><p>GD图像处理技术相关概念</p>
+<p>​    为什么使用GD图像处理技术</p>
+<p>​    什么是GD图像处理技术</p>
+</li>
+<li><p>开启GD扩展</p>
+</li>
+<li><p>GD扩展相关操作</p>
+<p>​    操作分析</p>
+<p>​    基本操作</p>
+<p>​    创建画布相关操作</p>
+<p>​    关闭画布操作</p>
+<p>​    图像输出相关操作</p>
+<p>​    画布内容相关操作</p>
+<p>​    辅助相关操作</p>
+<p>==目标：制作水印图，制作等比缩略图，制作验证码==</p>
+</li>
+<li><p>案例：制作水印图</p>
+<p>​    功能分析</p>
+<p>​    代码实现</p>
+</li>
+<li><p>案例：制作缩略图</p>
+<p>​    固定宽高缩略图</p>
+<p>​    等比缩略图</p>
+</li>
+<li><p>案例：制作验证码</p>
+</li>
+</ul>
+<p>  ​    功能分析</p>
+<pre><code>代码实现
+</code></pre><h1 id="三、今日课程内容：GD图像处理技术"><a href="#三、今日课程内容：GD图像处理技术" class="headerlink" title="三、今日课程内容：GD图像处理技术"></a>三、今日课程内容：GD图像处理技术</h1><h2 id="1-GD图像处理技术相关概念"><a href="#1-GD图像处理技术相关概念" class="headerlink" title="1. GD图像处理技术相关概念"></a>1. GD图像处理技术相关概念</h2><h3 id="为什么使用GD图像处理技术"><a href="#为什么使用GD图像处理技术" class="headerlink" title="为什么使用GD图像处理技术"></a>为什么使用GD图像处理技术</h3><p>在WEB项目中，GD图像处理技术应用非常广泛，比如制作验证码图片，给图片打水印等。</p>
+<h3 id="什么是GD图像处理技术"><a href="#什么是GD图像处理技术" class="headerlink" title="什么是GD图像处理技术"></a>什么是GD图像处理技术</h3><p>GD图像处理技术 即 PHP通过使用==GD扩展==来操作图像的一种技术。</p>
+<h2 id="2-开启GD扩展"><a href="#2-开启GD扩展" class="headerlink" title="2. 开启GD扩展"></a>2. 开启GD扩展</h2><p>扩展，意味着GD并不是PHP默认就是配置开启的，而是需要额外进行配置的。</p>
+<p><strong>==开启步骤==</strong>：</p>
+<p>第一步，打开php.ini确认extension_dir配置项，</p>
+<p><img src="/2019/02/20/PHP14/2" alt="1540085105102"></p>
+<p>第二步，在php.ini中开启GD扩展的extension配置项，</p>
+<p><img src="/2019/02/20/PHP14/3" alt="1540085178925"></p>
+<p>第三步，确认php_gd2.dll文件在extendsion_dir配置项所指定的目录中是否存在，</p>
+<p><img src="/2019/02/20/PHP14/4" alt="1540085238688"><br>第四步，重启apache，检查gd扩展是否开启成功，</p>
+<p><img src="/2019/02/20/PHP14/5" alt="1540085299941"></p>
+<p>在day15/code目录中创建code1.php检查gd扩展是否开启成功，</p>
+<p><img src="/2019/02/20/PHP14/6" alt="1540085365402"></p>
+<h2 id="3-GD扩展相关操作"><a href="#3-GD扩展相关操作" class="headerlink" title="3. GD扩展相关操作"></a>3. GD扩展相关操作</h2><h4 id="操作分析"><a href="#操作分析" class="headerlink" title="操作分析"></a>操作分析</h4><p>在程序中使用GD扩展操作图像，其实就相当于我们在电脑中使用各种绘图软件来绘制图像，比如PS软件。</p>
+<p>我们以PS软件绘制图像的方式为切入点，来分析绘图过程中所需要的一些操作有哪些：</p>
+<ol>
+<li>安装并打开PS软件；</li>
+<li>创建一个画布；</li>
+<li>选个工具，并且选择颜色在画布上画点，线等图案；</li>
+<li>保存图片；</li>
+<li>关闭画布；</li>
+</ol>
+<h4 id="创建画布相关操作"><a href="#创建画布相关操作" class="headerlink" title="创建画布相关操作"></a>创建画布相关操作</h4><p>涉及的函数：</p>
+<blockquote>
+<p><strong>imagecreate</strong>(宽,  高)   创建画布</p>
+<p><strong>imagecreatetruecolor</strong>(宽,  高)    创建一个真彩色画布</p>
+<p><strong>imagecreatefromjpeg</strong>(jpeg图片路径)    根据一张已有的jpeg图片创建画布</p>
+<p><strong>imagecreatefromgif</strong>(gif图片路径)    根据一张已有的gif图片创建画布</p>
+<p><strong>imagecreatefrompng</strong>(png图片路径)    根据一张已有的png图片创建画布</p>
+</blockquote>
+<p><strong>==需求==</strong>：根据以下要求完成操作，</p>
+<ol>
+<li>根据imagecreate和imagecreatetruecolor两个函数分别创建一个400*200的画布，打印返回值；</li>
+<li>根据一张已有的jpeg图片创建画布，打印返回值；</li>
+</ol>
+<p><strong>==解答==</strong>：创建名为code2.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line">var_dump( $resource ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreatetruecolor函数</span></span><br><span class="line">$resource1 = imagecreatetruecolor(<span class="number">400</span>, <span class="number">200</span>);</span><br><span class="line">var_dump( $resource1 ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreatefromjpeg函数</span></span><br><span class="line">$resource2 = imagecreatefromjpeg(<span class="string">'./source/28.jpg'</span>);</span><br><span class="line">var_dump( $resource2 );</span><br></pre></td></tr></table></figure>
+<p>访问code2.php，输出的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resource(2) of type (gd)    #imagecreate函数结果的输出</span><br><span class="line">resource(3) of type (gd)    #imagecreatetruecolor函数结果的输出</span><br><span class="line">resource(5) of type (gd)    #imagecreatefromjpeg函数结果的输出</span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：创建画布函数执行操作完成之后，其返回值都是资源类型的数据。</p>
+<h4 id="关闭画布操作"><a href="#关闭画布操作" class="headerlink" title="关闭画布操作"></a>关闭画布操作</h4><p>涉及的函数：</p>
+<blockquote>
+<p><strong>imagedestroy</strong>(画布资源)    销毁画布资源</p>
+</blockquote>
+<p><strong>==需求==</strong>：根据以下要求完成操作，</p>
+<ol>
+<li>根据imagecreate创建一个400*200的画布，打印返回值；</li>
+<li>使用imagedestroy关闭打开的画布，再次打印”1”中创建的画布资源返回值；</li>
+</ol>
+<p><strong>==解答==</strong>：创建名为code3.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line">var_dump( $resource ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#imagedestroy函数</span></span><br><span class="line">imagedestroy($resource);</span><br><span class="line">var_dump( $resource );</span><br></pre></td></tr></table></figure>
+<p>访问code3.php，输出的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resource(2) of type (gd)     #销毁之前的值</span><br><span class="line">resource(2) of type (Unknown)     #销毁之后的值</span><br></pre></td></tr></table></figure>
+<h4 id="图像输出相关操作"><a href="#图像输出相关操作" class="headerlink" title="图像输出相关操作"></a>图像输出相关操作</h4><p>涉及的函数：</p>
+<blockquote>
+<p>imagejpeg()    以jpeg的格式输出图片到浏览器或保存成文件</p>
+<p>imagepng()    以png的格式输出图片到浏览器或保存成文件</p>
+<p>imagegif()    以gif的格式输出图片到浏览器或保存成文件</p>
+</blockquote>
+<p><strong>==需求==</strong>：创建code4.php程序文件，</p>
+<ol>
+<li>使用imagecreatefromjpeg创建一个画布；</li>
+<li>同时实现根据GET方式传递的type值判定，如果type值为1，则直接将”1”中创建的画布以jpeg图片的格式输出到浏览器；如果type值为2，则将”1”中创建的画布以jpeg格式保存成图片文件；</li>
+</ol>
+<p><strong>==解答==</strong>：创建名为code4.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreatefromjpeg(<span class="string">'./source/m3.jpg'</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line">$type = <span class="keyword">isset</span>($_GET[<span class="string">'type'</span>]) ? $_GET[<span class="string">'type'</span>] : <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( $type==<span class="number">1</span> )&#123;<span class="comment">//将图像直接输出到浏览器中</span></span><br><span class="line"></span><br><span class="line">    header(<span class="string">'Content-type:image/jpeg'</span>);<span class="comment">//表示 在接下来的响应中告诉浏览器，要以image/jpeg的类型来对待返回给浏览器的响应数据</span></span><br><span class="line">    imagejpeg($resource);<span class="comment">//以jpeg格式的图片直接输出到浏览器</span></span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">elseif</span>( $type==<span class="number">2</span> )&#123;<span class="comment">//将图像保存成jpeg格式的图片</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">echo</span> <span class="string">'保存成文件!'</span>;</span><br><span class="line">    imagejpeg($resource, <span class="string">'./aa.jpg'</span>);<span class="comment">//将图像保存成名为aa.jpg的文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>==<strong>注意：</strong>==在输出图像之前，也就是上面这个案例中header(‘Content-type:….’)之前不能有任何的字符输出，否则图像将会损坏无法正常输出。</p>
+<h4 id="画布内容相关操作"><a href="#画布内容相关操作" class="headerlink" title="画布内容相关操作"></a>画布内容相关操作</h4><p>涉及的函数：</p>
+<blockquote>
+<p><strong>imagecolorallocate</strong>(画布资源,  R色值,  G色值,  B色值)    分配一个颜色</p>
+<p><strong>imagefill</strong>(画布资源,  基点x坐标,  基点y坐标,  颜色)    向画布填充颜色</p>
+<p><strong>imageline</strong>(画布资源,  起点x坐标,  起点y坐标,  终点x坐标,  终点y坐标,  颜色)    画线段操作</p>
+<p><strong>imagerectangle</strong>(画布资源,  对角线起点x坐标,  对角线起点y坐标,  对角线终点x坐标,  对角线终点y坐标,  颜色)    画矩形</p>
+<p><strong>imagearc</strong>(画布资源,  圆心x坐标,  圆心y坐标,  椭圆宽,  椭圆高,  起点角度,  终点角度,  颜色)    画圆弧线段</p>
+<p><strong>imagestring</strong>(画布资源,  字体大小,  文字左上角x坐标,  文字左上角y坐标,  内容,  颜色)    根据系统字体写字</p>
+<p><strong>imagettftext</strong>(画布资源,  字体大小,  角度,  文字左下角x坐标,  文字左下角y坐标,  颜色,  字体路径,  内容)    根据ttf格式的字体写字</p>
+</blockquote>
+<p><strong>==需求1==</strong>：创建code5.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答1==</strong>：创建名为code5.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code5.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/7" alt="1540090625787"></p>
+<p><strong>==需求1小结==</strong>：填充背景色的原理是以给定的坐标为基点，向四周扩散填充。</p>
+<p><img src="/2019/02/20/PHP14/8" alt="1540090951271"></p>
+<p><strong>==需求2==</strong>：创建code6.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>在画布上画一条线段；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答2==</strong>：创建名为code6.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#画线段</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">233</span>, <span class="number">16</span>, <span class="number">78</span>);</span><br><span class="line">imageline($resource, <span class="number">100</span>, <span class="number">150</span>, <span class="number">230</span>, <span class="number">75</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code6.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/10" alt="1540092088059"></p>
+<p><strong>==需求2小结==</strong>：</p>
+<p><img src="/2019/02/20/PHP14/9" alt="1540092029131"></p>
+<p><strong>==需求3==</strong>：创建code7.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>在画布上画一个矩形；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答3==</strong>：创建名为code7.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#画矩形</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">233</span>, <span class="number">16</span>, <span class="number">78</span>);</span><br><span class="line">imagerectangle($resource, <span class="number">100</span>, <span class="number">150</span>, <span class="number">230</span>, <span class="number">75</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code7.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/12" alt="1540092378936"></p>
+<p><strong>==需求3小结==</strong>：</p>
+<p><img src="/2019/02/20/PHP14/11" alt="1540092331332"></p>
+<p><strong>==需求4==</strong>：创建code8.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>在画布上画一个椭圆；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答4==</strong>：创建名为code8.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#画椭圆</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">233</span>, <span class="number">16</span>, <span class="number">78</span>);</span><br><span class="line">imagearc($resource, <span class="number">200</span>, <span class="number">100</span>, <span class="number">200</span>, <span class="number">110</span>, <span class="number">0</span>, <span class="number">360</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code8.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/15" alt="1540093582772"></p>
+<p><strong>==需求4小结==</strong>：</p>
+<p><img src="/2019/02/20/PHP14/13" alt="1540092485475"></p>
+<p><img src="/2019/02/20/PHP14/14" alt="1540093412142"></p>
+<p><strong>==需求5==</strong>：创建code9.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>在画布上使用imagestring写一句话：”今天天气好晴朗”；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答5==</strong>：创建名为code9.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据系统字体写字</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">233</span>, <span class="number">16</span>, <span class="number">78</span>);</span><br><span class="line"><span class="comment">//$str = '今天天气好晴朗';//如果写的是中文，将会出现乱码</span></span><br><span class="line">$str = <span class="string">'today is good day!'</span>;</span><br><span class="line">imagestring($resource, <span class="number">5</span>, <span class="number">100</span>, <span class="number">80</span>, $str, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code9.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/16" alt="1540093980436"></p>
+<p><strong>==需求5小结==</strong>：</p>
+<p>imagestring函数指定的字符起点坐标是第一个字符的左上角的坐标。</p>
+<p><strong>==需求6==</strong>：创建code10.php程序文件，</p>
+<ol>
+<li>使用imagecreate创建一个400*200的画布；</li>
+<li>将画布的背景色填充为RGB(255, 233, 85)；</li>
+<li>在画布上使用imagettftext写一句话：”今天天气好晴朗”；</li>
+<li>将画布以jpeg格式的图片直接输出到浏览器；</li>
+</ol>
+<p><strong>==解答6==</strong>：创建名为code10.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreate(<span class="number">400</span>, <span class="number">200</span>);<span class="comment">//创建400*200 px的画布</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#分配一个颜色</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">255</span>, <span class="number">233</span>, <span class="number">85</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#填充画布背景色</span></span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#根据ttf格式的字体写字</span></span><br><span class="line">$color = imagecolorallocate($resource, <span class="number">233</span>, <span class="number">16</span>, <span class="number">78</span>);</span><br><span class="line">$str = <span class="string">'今天天气好晴朗'</span>;</span><br><span class="line">imagettftext($resource, <span class="number">20</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">80</span>, $color, <span class="string">'F:/home/class/day15/code/source/font1.ttf'</span>, $str);</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问code10.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/17" alt="1540094427324"></p>
+<p><strong>==需求6小结==</strong>：</p>
+<p>指定的ttf格式的字体必须为从盘符开始的绝对路径地址，否则图片生成失败。</p>
+<h4 id="辅助相关操作"><a href="#辅助相关操作" class="headerlink" title="辅助相关操作"></a>辅助相关操作</h4><p>涉及的函数：</p>
+<blockquote>
+<p>==<strong>imagesx</strong>==(画布资源)    获得图片的宽度</p>
+<p><strong>==imagesy==</strong>(画布资源)    获得图片的高度</p>
+<p><strong>getimagesize</strong>(图片路径)    获得图片的宽度和高度等信息</p>
+</blockquote>
+<p><strong>==需求==</strong>：创建code11.php程序文件，</p>
+<ol>
+<li>使用imagecreatefromjpeg创建一个画布；</li>
+<li>获取这个画布的宽度；</li>
+<li>获取这个画布的高度；</li>
+<li>获取这个画布的宽度、高度、位度等信息；</li>
+</ol>
+<p><strong>==解答==</strong>：创建名为code11.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#imagecreate函数</span></span><br><span class="line">$resource = imagecreatefromjpeg(<span class="string">'./aa.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#获得宽度</span></span><br><span class="line">$w = imagesx($resource);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'宽度为：'</span> . $w . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#获得高度</span></span><br><span class="line">$h = imagesy($resource);</span><br><span class="line"><span class="keyword">echo</span>  <span class="string">'高度为：'</span> . $h . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#获得宽高等信息</span></span><br><span class="line">$info = getimagesize(<span class="string">'./aa.jpg'</span>);</span><br><span class="line">print_r($info);</span><br></pre></td></tr></table></figure>
+<p>访问code11.php，效果为：</p>
+<p><img src="/2019/02/20/PHP14/18" alt="1540104540209"></p>
+<h2 id="4-案例：制作水印图"><a href="#4-案例：制作水印图" class="headerlink" title="4. 案例：制作水印图"></a>4. 案例：制作水印图</h2><h3 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h3><ol>
+<li>根据一张已有的目标图片创建画布（擎天柱）;</li>
+<li>根据一张已有的LOGO图片创建画布；</li>
+<li>在目标图片（擎天柱）选择一个坐标点；</li>
+<li>在LOGO图片上将左上角的点选择为坐标基点；</li>
+<li>将LOGO图片拖拽进目标图片中，让两个选择好的坐标基点重合对齐；</li>
+<li>调整在目标图片（擎天柱）中LOGO图片的透明度；</li>
+<li>将最终的成品图到处成一张jpeg格式的图片；</li>
+<li>关闭目标图片（擎天柱）画布；</li>
+<li>关闭LOGO图片画布；</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p><img src="/2019/02/20/PHP14/19" alt="1540105503939"></p>
+<p>创建名为code12.php的文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1. 根据一张已有的目标图片创建画布（擎天柱）</span></span><br><span class="line">$dst = imagecreatefromjpeg(<span class="string">'./source/001.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 根据一张已有的LOGO图片创建画布</span></span><br><span class="line">$src = imagecreatefrompng(<span class="string">'./source/logo.png'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3. 在目标图片（擎天柱）选择一个坐标点；</span></span><br><span class="line"><span class="comment">4. 在LOGO图片上将左上角的点选择为坐标基点；</span></span><br><span class="line"><span class="comment">5. 将LOGO图片拖拽进目标图片中，让两个选择好的坐标基点重合对齐；</span></span><br><span class="line"><span class="comment">6. 调整在目标图片（擎天柱）中LOGO图片的透明度；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$dst_w = imagesx($dst);<span class="comment">//目标图的宽度</span></span><br><span class="line">$dst_h = imagesy($dst);<span class="comment">//目标图的高度</span></span><br><span class="line"></span><br><span class="line">$src_w = imagesx($src);<span class="comment">//LOGO图的宽度</span></span><br><span class="line">$src_h = imagesy($src);<span class="comment">//LOGO图的高度</span></span><br><span class="line"></span><br><span class="line">imagecopymerge($dst, $src, $dst_w/<span class="number">5</span>, $dst_h*<span class="number">2</span>/<span class="number">5</span>, <span class="number">0</span>, <span class="number">0</span>, $src_w, $src_h, <span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#直接将打好水印的图输出到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($dst);</span><br><span class="line"></span><br><span class="line"><span class="comment">#关闭画布</span></span><br><span class="line">imagedestroy($dst);</span><br><span class="line">imagedestroy($src);</span><br></pre></td></tr></table></figure>
+<p>访问后的效果：</p>
+<p><img src="/2019/02/20/PHP14/20" alt="1540105895671"></p>
+<h2 id="5-案例：制作缩略图"><a href="#5-案例：制作缩略图" class="headerlink" title="5. 案例：制作缩略图"></a>5. 案例：制作缩略图</h2><h3 id="固定宽高缩略图"><a href="#固定宽高缩略图" class="headerlink" title="固定宽高缩略图"></a>固定宽高缩略图</h3><h4 id="功能分析-1"><a href="#功能分析-1" class="headerlink" title="功能分析"></a>功能分析</h4><ol>
+<li>根据一张已有的需要缩小的图片（川普）创建一个画布；</li>
+<li>根据目标尺寸（200×300）创建一个目标空白画布；</li>
+<li>在目标空白画布上将(0,0)点选择为坐标基点；</li>
+<li>在需要缩小的图片（川普）画布中将(0, 0)点选择坐标基点；</li>
+<li>将需要缩小的图片（川普）拖拽进目标空白图片画布中，并且将两个图片的坐标基点对齐重合；</li>
+<li>将需要缩小图片（川普）的宽度调整为和目标空白画布一样的宽度；将需要缩小图片（川普）的高度调整为和目标空白画布一样的高度；</li>
+<li>将最终的成品缩略图到处成一张jpeg格式的图片；</li>
+<li>关闭目标图片画布；</li>
+<li>关闭需要缩小图片的画布；</li>
+</ol>
+<h4 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h4><p><img src="/2019/02/20/PHP14/21" alt="1540106815958"></p>
+<p>创建名为code13.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1. 根据一张已有的需要缩小的图片（川普）创建一个画布</span></span><br><span class="line">$src = imagecreatefromjpeg(<span class="string">'./source/m1.jpg'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 根据目标尺寸（200×300）创建一个目标空白画布</span></span><br><span class="line">$dst = imagecreatetruecolor(<span class="number">200</span>, <span class="number">300</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3. 在目标空白画布上将(0,0)点选择为坐标基点；</span></span><br><span class="line"><span class="comment">4. 在需要缩小的图片（川普）画布中将(0, 0)点选择坐标基点；</span></span><br><span class="line"><span class="comment">5. 将需要缩小的图片（川普）拖拽进目标空白图片画布中，并且将两个图片的坐标基点对齐重合；</span></span><br><span class="line"><span class="comment">6. 将需要缩小图片（川普）的宽度调整为和目标空白画布一样的宽度；将需要缩小图片（川普）的高度调整为和目标空白画布一样的高度；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">$src_w = imagesx($src);<span class="comment">//需要缩小画布的宽度</span></span><br><span class="line">$src_h = imagesy($src);<span class="comment">//需要缩小画布的高度</span></span><br><span class="line"></span><br><span class="line">imagecopyresampled($dst, $src, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">200</span>, <span class="number">300</span>, $src_w, $src_h);</span><br><span class="line"></span><br><span class="line"><span class="comment">#7. 输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($dst);</span><br><span class="line"></span><br><span class="line"><span class="comment">#8.关闭画布资源</span></span><br><span class="line">imagedestroy($dst);</span><br><span class="line">imagedestroy($src);</span><br></pre></td></tr></table></figure>
+<p>访问后的效果：</p>
+<p><img src="/2019/02/20/PHP14/22" alt="1540107061025"></p>
+<p>固定宽高的缩略图，其实是没有考虑到原图的宽高比例的，实际缩小以后，很可能会变形。</p>
+<h3 id="等比缩略图"><a href="#等比缩略图" class="headerlink" title="等比缩略图"></a>等比缩略图</h3><p>创建名为code14.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#1. 根据一张已有的需要缩小的图片（川普）创建一个画布</span></span><br><span class="line">$src = imagecreatefromjpeg(<span class="string">'./source/m1.jpg'</span>);</span><br><span class="line"></span><br><span class="line">$src_w = imagesx($src);<span class="comment">//原图的宽度</span></span><br><span class="line">$src_h = imagesy($src);<span class="comment">//原图的高度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 根据目标尺寸（200×300）创建一个目标空白画布</span></span><br><span class="line">$maxW = <span class="number">200</span>;<span class="comment">//设定最终缩略图的最大宽度为200px</span></span><br><span class="line">$maxH = <span class="number">300</span>;<span class="comment">//设定最终缩略图的最大高度为300px</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( $src_w&lt;=$maxW&amp;&amp;$src_h&lt;=$maxH )&#123;<span class="comment">//如果原图的宽度和高度都小于最大限定值，则维持原图的宽高不变即可</span></span><br><span class="line">    $dstW = $src_w;<span class="comment">//最终缩略图的宽度等于原图的宽度</span></span><br><span class="line">    $dstH = $src_h;<span class="comment">//最终缩略图的高度等于原图的高度</span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    </span><br><span class="line">    $dstW = $maxW;<span class="comment">//先将原图的宽度缩小为限定宽度的最大值</span></span><br><span class="line">    <span class="comment">//然后按照原图的宽高比例，计算最终缩略图的高度</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    $src_w/$src_h=$dstW/?</span></span><br><span class="line"><span class="comment">    ? = $dstW/($src_w/$src_h)</span></span><br><span class="line"><span class="comment">    ? = $dstW*$src_h/$src_w</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    $dstH = $dstW*$src_h/$src_w;<span class="comment">//然后根据原图宽高比例计算最终缩略图的高度</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( $dstH&gt;$maxH )&#123;<span class="comment">//当最终计算得到的缩略图高度比限定的最大高度还要大时，则重新计算缩略图的宽高</span></span><br><span class="line"></span><br><span class="line">        $dstH = $maxH;<span class="comment">//先将高度缩小为极大值</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    $src_w/$src_h=?/$dstH</span></span><br><span class="line"><span class="comment">    $src_w*$dstH = ?*$src_h</span></span><br><span class="line"><span class="comment">    ? = $src_w*$dstH/$src_h</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">        $dstW = $src_w*$dstH/$src_h;<span class="comment">//然后根据原图宽高比例计算最终缩略图的宽度</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$dst = imagecreatetruecolor($dstW, $dstH);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">3. 在目标空白画布上将(0,0)点选择为坐标基点；</span></span><br><span class="line"><span class="comment">4. 在需要缩小的图片（川普）画布中将(0, 0)点选择坐标基点；</span></span><br><span class="line"><span class="comment">5. 将需要缩小的图片（川普）拖拽进目标空白图片画布中，并且将两个图片的坐标基点对齐重合；</span></span><br><span class="line"><span class="comment">6. 将需要缩小图片（川普）的宽度调整为和目标空白画布一样的宽度；将需要缩小图片（川普）的高度调整为和目标空白画布一样的高度；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//$src_w = imagesx($src);//需要缩小画布的宽度</span></span><br><span class="line"><span class="comment">//$src_h = imagesy($src);//需要缩小画布的高度</span></span><br><span class="line"></span><br><span class="line">imagecopyresampled($dst, $src, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, $dstW, $dstH, $src_w, $src_h);</span><br><span class="line"></span><br><span class="line"><span class="comment">#7. 输出图像到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($dst);</span><br><span class="line"></span><br><span class="line"><span class="comment">#8.关闭画布资源</span></span><br><span class="line">imagedestroy($dst);</span><br><span class="line">imagedestroy($src);</span><br></pre></td></tr></table></figure>
+<p>最终的效果为：</p>
+<p><img src="/2019/02/20/PHP14/23" alt="1540109828062"></p>
+<h2 id="6-案例：制作验证码"><a href="#6-案例：制作验证码" class="headerlink" title="6. 案例：制作验证码"></a>6. 案例：制作验证码</h2><h3 id="功能分析-2"><a href="#功能分析-2" class="headerlink" title="功能分析"></a>功能分析</h3><ol>
+<li>创建一个有背景色的画布；</li>
+<li>构建随机字符；</li>
+<li>在画布上写字；</li>
+<li>设置干扰元素（干扰点，干扰线）；</li>
+<li>将图像输出到浏览器；</li>
+</ol>
+<h3 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h3><p>创建名为code15.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个空白画布 200*80</span></span><br><span class="line">$w = <span class="number">200</span>;</span><br><span class="line">$h = <span class="number">90</span>;</span><br><span class="line">$resource = imagecreatetruecolor($w, $h);</span><br><span class="line"></span><br><span class="line"><span class="comment">#给画布填充一个背景色</span></span><br><span class="line">$color = imagecolorallocate($resource, mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>));</span><br><span class="line">imagefill($resource, <span class="number">0</span>, <span class="number">0</span>, $color);</span><br><span class="line"></span><br><span class="line"><span class="comment">#构建随机字符</span></span><br><span class="line">$arr = array_merge(range(<span class="string">'a'</span>, <span class="string">'z'</span>), range(<span class="string">'A'</span>, <span class="string">'Z'</span>), range(<span class="number">0</span>, <span class="number">9</span>));</span><br><span class="line">$str = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;<span class="number">4</span>; $i++ )&#123;</span><br><span class="line">    $str .= $arr[mt_rand(<span class="number">0</span>, count($arr)<span class="number">-1</span>)];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#往画布上写字</span></span><br><span class="line">$bx = $w/<span class="number">4</span>;<span class="comment">//文字起点的左下角x坐标</span></span><br><span class="line">$by = $h*<span class="number">2</span>/<span class="number">3</span>;<span class="comment">//文字起点的左下角y坐标</span></span><br><span class="line">$color = imagecolorallocate($resource, mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>));<span class="comment">//构建随机色</span></span><br><span class="line">imagettftext($resource, $h/<span class="number">3</span>, <span class="number">0</span>, $bx, $by, $color, <span class="string">'F:/home/class/day15/code/source/font1.ttf'</span>, $str);</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置干扰元素</span></span><br><span class="line"><span class="comment">//设置干扰点</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;<span class="number">300</span>; $i++ )&#123; </span><br><span class="line">    $bx = mt_rand(<span class="number">0</span>, $w);<span class="comment">//起点x坐标</span></span><br><span class="line">    $by = mt_rand(<span class="number">0</span>, $h);<span class="comment">//起点y坐标</span></span><br><span class="line"></span><br><span class="line">    $ex = mt_rand($bx<span class="number">-2</span>, $bx+<span class="number">2</span>);<span class="comment">//终点的x坐标</span></span><br><span class="line">    $ey = mt_rand($by<span class="number">-2</span>, $by+<span class="number">2</span>);<span class="comment">//终点的y坐标</span></span><br><span class="line"></span><br><span class="line">    $color = imagecolorallocate($resource, mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>));<span class="comment">//构建随机色</span></span><br><span class="line"></span><br><span class="line">    imageline($resource, $bx, $by, $ex, $ey, $color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置干扰线</span></span><br><span class="line"><span class="keyword">for</span>($i=<span class="number">0</span>; $i&lt;<span class="number">10</span>; $i++ )&#123; </span><br><span class="line">    $bx = mt_rand(<span class="number">0</span>, $w/<span class="number">2</span>);<span class="comment">//起点x坐标</span></span><br><span class="line">    $by = mt_rand(<span class="number">0</span>, $h);<span class="comment">//起点y坐标</span></span><br><span class="line"></span><br><span class="line">    $ex = mt_rand($w/<span class="number">2</span>, $w);<span class="comment">//终点的x坐标</span></span><br><span class="line">    $ey = mt_rand(<span class="number">0</span>, $h);<span class="comment">//终点的y坐标</span></span><br><span class="line"></span><br><span class="line">    $color = imagecolorallocate($resource, mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>), mt_rand(<span class="number">0</span>, <span class="number">255</span>));<span class="comment">//构建随机色</span></span><br><span class="line"></span><br><span class="line">    imageline($resource, $bx, $by, $ex, $ey, $color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#将图像输出到浏览器</span></span><br><span class="line">header(<span class="string">'Content-type:image/jpeg'</span>);</span><br><span class="line">imagejpeg($resource);</span><br></pre></td></tr></table></figure>
+<p>访问页面，最终效果为：</p>
+<p><img src="/2019/02/20/PHP14/24" alt="1540112532160"></p>
+<h2 id="7-全天总结"><a href="#7-全天总结" class="headerlink" title="7. 全天总结"></a>7. 全天总结</h2><ol>
+<li><p>能够使用多种方式创建画布资源</p>
+<p>imagecreate函数    根据宽高创建画布 （色彩还原度低，建议单色系图片使用）</p>
+<p>imagecreatetruecolor函数      根据宽高创建画布（色彩还原度高，建议丰富色系图片使用）</p>
+<p>imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布</p>
+<p>imagecreatefromgif函数      根据一张已有的gif格式图片创建画布</p>
+<p>imagecreatefrompng函数      根据一张已有的png格式图片创建画布</p>
+</li>
+<li><p>能够操作画布资源</p>
+<p>填充背景色：  imagefill函数</p>
+<p>画线（画点）：imageline函数</p>
+<p>画矩形（正方形）：imagerectangle函数</p>
+<p>画圆弧（椭圆圆弧，正圆）：imagearc函数</p>
+<p>根据指定的ttf格式的字体写字：imagettftext函数</p>
+<p>分配颜色：imagecolorallocate函数</p>
+</li>
+<li><p>能够获取画布或图片的宽高尺寸信息</p>
+<p>获得画布的宽高：1) imagesx函数获得宽度；2)imagesy函数获得高度；</p>
+<p>获得指定图片的宽高等信息： getimagesize函数</p>
+</li>
+<li><p>能够输出画布资源为图片文件或网页图</p>
+<p>imagejpeg函数      以jpeg格式的图片输出到浏览器或者保存成文件</p>
+<p>imagegif函数      以gif格式的图片输出到浏览器或者保存成文件</p>
+<p>imagepng函数      以png格式的图片输出到浏览器或者保存成文件</p>
+</li>
+<li><p>能够销毁画布资源</p>
+<p>imagedestory函数</p>
+</li>
+<li><p>能够使用GD技术制作验证码图片</p>
+</li>
+<li><p>能够实现一张图片的缩略图</p>
+<p>imagecopyresampled函数</p>
+</li>
+<li><p>能够给一张图片添加水印图</p>
+<p>imagecopymerge函数</p>
+</li>
+</ol>
+
       
 
       
@@ -179,6 +519,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -230,7 +581,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、昨日回顾"><span class="toc-number">1.</span> <span class="toc-text">一、昨日回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-知识回顾"><span class="toc-number">1.1.</span> <span class="toc-text">1. 知识回顾</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-昨日反馈"><span class="toc-number">1.2.</span> <span class="toc-text">2. 昨日反馈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、知识路径"><span class="toc-number">2.</span> <span class="toc-text">二、知识路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、今日课程内容：GD图像处理技术"><span class="toc-number">3.</span> <span class="toc-text">三、今日课程内容：GD图像处理技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-GD图像处理技术相关概念"><span class="toc-number">3.1.</span> <span class="toc-text">1. GD图像处理技术相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用GD图像处理技术"><span class="toc-number">3.1.1.</span> <span class="toc-text">为什么使用GD图像处理技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是GD图像处理技术"><span class="toc-number">3.1.2.</span> <span class="toc-text">什么是GD图像处理技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-开启GD扩展"><span class="toc-number">3.2.</span> <span class="toc-text">2. 开启GD扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-GD扩展相关操作"><span class="toc-number">3.3.</span> <span class="toc-text">3. GD扩展相关操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#操作分析"><span class="toc-number">3.3.0.1.</span> <span class="toc-text">操作分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建画布相关操作"><span class="toc-number">3.3.0.2.</span> <span class="toc-text">创建画布相关操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关闭画布操作"><span class="toc-number">3.3.0.3.</span> <span class="toc-text">关闭画布操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图像输出相关操作"><span class="toc-number">3.3.0.4.</span> <span class="toc-text">图像输出相关操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#画布内容相关操作"><span class="toc-number">3.3.0.5.</span> <span class="toc-text">画布内容相关操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#辅助相关操作"><span class="toc-number">3.3.0.6.</span> <span class="toc-text">辅助相关操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-案例：制作水印图"><span class="toc-number">3.4.</span> <span class="toc-text">4. 案例：制作水印图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#功能分析"><span class="toc-number">3.4.1.</span> <span class="toc-text">功能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现"><span class="toc-number">3.4.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-案例：制作缩略图"><span class="toc-number">3.5.</span> <span class="toc-text">5. 案例：制作缩略图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#固定宽高缩略图"><span class="toc-number">3.5.1.</span> <span class="toc-text">固定宽高缩略图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#功能分析-1"><span class="toc-number">3.5.1.1.</span> <span class="toc-text">功能分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码实现-1"><span class="toc-number">3.5.1.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#等比缩略图"><span class="toc-number">3.5.2.</span> <span class="toc-text">等比缩略图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-案例：制作验证码"><span class="toc-number">3.6.</span> <span class="toc-text">6. 案例：制作验证码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#功能分析-2"><span class="toc-number">3.6.1.</span> <span class="toc-text">功能分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现-2"><span class="toc-number">3.6.2.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-全天总结"><span class="toc-number">3.7.</span> <span class="toc-text">7. 全天总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -374,11 +725,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -394,11 +745,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,15 +761,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>

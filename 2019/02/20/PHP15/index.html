@@ -8,14 +8,37 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>PHP15 | 晴天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、昨日回顾1. 知识回顾 能够使用多种方式创建画布资源 imagecreate函数      根据指定的宽高（单位是像素）创建画布（建议单色系图像使用） imagecreatetruecolor函数     根据指定的宽高（单位是像素）创建真彩色画布（建议丰富色系图像使用） imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布 imagecreatefromg">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
 <meta property="og:title" content="PHP15">
 <meta property="og:url" content="http://yoursite.com/2019/02/20/PHP15/index.html">
 <meta property="og:site_name" content="晴天的博客">
+<meta property="og:description" content="一、昨日回顾1. 知识回顾 能够使用多种方式创建画布资源 imagecreate函数      根据指定的宽高（单位是像素）创建画布（建议单色系图像使用） imagecreatetruecolor函数     根据指定的宽高（单位是像素）创建真彩色画布（建议丰富色系图像使用） imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布 imagecreatefromg">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-20T09:00:45.537Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/26">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/27">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/28">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/29">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/2">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/30">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/3">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/4">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/5">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/6">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/7">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/8">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/9">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/10">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/11">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/12">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/13">
+<meta property="og:image" content="http://yoursite.com/2019/02/20/PHP15/14">
+<meta property="og:updated_time" content="2019-02-22T13:23:32.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP15">
+<meta name="twitter:description" content="一、昨日回顾1. 知识回顾 能够使用多种方式创建画布资源 imagecreate函数      根据指定的宽高（单位是像素）创建画布（建议单色系图像使用） imagecreatetruecolor函数     根据指定的宽高（单位是像素）创建真彩色画布（建议丰富色系图像使用） imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布 imagecreatefromg">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/20/PHP15/26">
   
     <link rel="alternative" href="/atom.xml" title="晴天的博客" type="application/atom+xml">
   
@@ -171,7 +194,463 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
+<li><p>能够使用多种方式创建画布资源</p>
+<p>imagecreate函数      根据指定的宽高（单位是像素）创建画布（建议单色系图像使用）</p>
+<p>imagecreatetruecolor函数     根据指定的宽高（单位是像素）创建真彩色画布（建议丰富色系图像使用）</p>
+<p>imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布</p>
+<p>imagecreatefromgif函数    根据一张已有的gif格式图片创建画布</p>
+<p>imagecreatefrompng函数    根据一张已有的png格式图片创建画布</p>
+<a id="more"></a></li>
+<li><p>能够操作画布资源</p>
+<p>imagecolorallocate函数       分配颜色</p>
+<p>imagefill函数       填充颜色</p>
+<p>imageline函数       画线段（画点）</p>
+<p>imagerectangle函数      画矩形（画正方形）</p>
+<p>imagearc函数       画弧线段（椭圆，正圆）</p>
+<p>imagettftext函数      根据指定的ttf格式的字体来在画布上写字</p>
+</li>
+<li><p>能够输出画布资源为图片文件或网页图</p>
+<p>imagejpeg函数        将画布以jpeg格式的图像输出到浏览器或者保存成文件</p>
+<p>imagegif函数       将画布以gif格式的图像输出到浏览器或者保存成文件</p>
+<p>imagepng函数        将画布以png格式的图像输出到浏览器或者保存成文件</p>
+</li>
+<li><p>能够销毁画布资源</p>
+<p>imagedestroy函数</p>
+</li>
+</ol>
+<h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><ul>
+<li><p>面向对象相关概念</p>
+<p>​    为什么使用面向对象</p>
+<p>​    什么是面向对象</p>
+</li>
+<li><p>PHP中的类与对象</p>
+<p>​    类</p>
+<p>​    类成员</p>
+<p>​    对象</p>
+<p>​    对象创建的原理</p>
+<p>​    类成员的定义</p>
+<p>​    类成员的调用</p>
+<p>​        类的外部调用类成员</p>
+<p>​        类的内部调用类成员</p>
+<p>​    对象的比较</p>
+<p>​    self关键字</p>
+<p>​    构造方法</p>
+<p>​    析构方法</p>
+<p>​    对象的传值</p>
+<p>​    对象的克隆</p>
+<p>==目标：能够创建所有的类成员；能够实现在类的外部调用类成员；能够实现在类的内部调用类成员==</p>
+</li>
+</ul>
+<h1 id="三、今日课程内容：面向对象"><a href="#三、今日课程内容：面向对象" class="headerlink" title="三、今日课程内容：面向对象"></a>三、今日课程内容：面向对象</h1><h2 id="1-面向对象相关概念"><a href="#1-面向对象相关概念" class="headerlink" title="1. 面向对象相关概念"></a>1. 面向对象相关概念</h2><h3 id="为什么使用面向对象"><a href="#为什么使用面向对象" class="headerlink" title="为什么使用面向对象"></a>为什么使用面向对象</h3><p>编程思想有两个大类：1）面向过程思想；2）面向对象思想；</p>
+<h4 id="面向过程思想介绍"><a href="#面向过程思想介绍" class="headerlink" title="面向过程思想介绍"></a>面向过程思想介绍</h4><p>我们来看以下两个场景：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/2019/02/20/PHP15/26" alt="1540171795636"></td>
+<td><img src="/2019/02/20/PHP15/27" alt="1540171820984"></td>
+</tr>
+</tbody>
+</table>
+<p>==<strong>小结</strong>==：</p>
+<p>面向过程的思想：面向的是==整个过程==，强调的是过程中的每一个==动作==。</p>
+<h4 id="面向对象思想介绍"><a href="#面向对象思想介绍" class="headerlink" title="面向对象思想介绍"></a>面向对象思想介绍</h4><p>同样是相同的两个场景，使用面向对象的方式来解决最终的问题：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/2019/02/20/PHP15/28" alt="1540172201752"></td>
+<td><img src="/2019/02/20/PHP15/29" alt="1540172251677"></td>
+</tr>
+</tbody>
+</table>
+<p>==<strong>小结</strong>==：</p>
+<p>面向对象的思想：面向的是==一个对象==，强调的是最终执行的 ==结果==。</p>
+<h4 id="面向过程思想的局限性"><a href="#面向过程思想的局限性" class="headerlink" title="面向过程思想的局限性"></a>面向过程思想的局限性</h4><ol>
+<li>使用面向过程思想开发，代码冗余率高，重用性低；</li>
+<li>使用面向过程思想开发，如果中途需求发生改变，那么代码的改动量将会相当庞大。</li>
+</ol>
+<p>正是由于有这些局限性，所以人们慢慢过渡到使用面向对象的方式来进行开发，解决上述局限性问题。</p>
+<h3 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h3><p>面向对象即==OOP== （Object Oriented Programming）</p>
+<p><strong>==概念==</strong>：以面向对象思想为指导的一种编程方式。</p>
+<p>通俗的理解面向对象：==找个对象帮我做事==。</p>
+<h2 id="2-PHP中的类与对象"><a href="#2-PHP中的类与对象" class="headerlink" title="2. PHP中的类与对象"></a>2. PHP中的类与对象</h2><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>程序本质上就是对现实世界的模拟。</p>
+<p>现实世界中的类是一个比较抽象的概念，比如人类，鱼类，车类等，它其实就是拥有相同特性的事物的统称；</p>
+<p>程序当中也有类的概念。</p>
+<p>现实当中类的概念：具有相同 ==特征== 和 ==行为== 的一类群体的统称。</p>
+<p>PHP中的类的概念：具有相同 ==属性== 和 ==方法== 的一类事物的集合。</p>
+<p>==<strong>PHP中类的定义语法</strong>==</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    类成员</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>code1.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'这是一个类定义的基本语法。'</span>;</span><br></pre></td></tr></table></figure>
+<p>访问code1.php的效果：</p>
+<p><img src="/2019/02/20/PHP15/2" alt="1540174546244"></p>
+<h3 id="类成员"><a href="#类成员" class="headerlink" title="类成员"></a>类成员</h3><p>类成员包括==三个大类==：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A(类成员) --&gt; B</span><br><span class="line">A --&gt; E</span><br><span class="line">A --&gt; I</span><br><span class="line">B[1.成员属性] --&gt; C(静态成员属性)</span><br><span class="line">B --&gt; D(非静态成员属性)</span><br><span class="line">E[2.成员方法] --&gt; F(静态成员方法)</span><br><span class="line">E --&gt; G(非静态成员方法)</span><br><span class="line">I[3.类常量]</span><br></pre></td></tr></table></figure>
+<p>定义一个完整的包含类成员的类：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $v1=<span class="string">'v1'</span>;<span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $v2=<span class="string">'v2'</span>;<span class="comment">//静态成员属性</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#类常量</span></span><br><span class="line">    <span class="keyword">const</span> URL=<span class="string">'www.home.com'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#成员方法</span></span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">($name, $age)</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> $name . <span class="string">':'</span> . $age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">f2</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'f2'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'这个类包含了所有的类成员！'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>对象需要基于类的定义创建出来。</p>
+<p><strong>==创建对象的语法==</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//需要先定义一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demoA</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//然后再基于一个已有的类创建对象</span></span><br><span class="line">$obj = <span class="keyword">new</span> demoA;</span><br></pre></td></tr></table></figure>
+<p>code4.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//需要先定义一个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demoA</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//然后再基于一个已有的类创建对象</span></span><br><span class="line">$obj = <span class="keyword">new</span> demoA;</span><br><span class="line"></span><br><span class="line">var_dump( $obj );</span><br></pre></td></tr></table></figure>
+<p>访问code4.php效果为：</p>
+<p><img src="/2019/02/20/PHP15/30" alt="1540175445650"></p>
+<h3 id="类成员的定义"><a href="#类成员的定义" class="headerlink" title="类成员的定义"></a>类成员的定义</h3><h4 id="成员属性"><a href="#成员属性" class="headerlink" title="成员属性"></a>成员属性</h4><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在Person类中定义一个非静态成员属性，名为”age”，不指定值；</li>
+<li>在Person类中定义一个静态成员属性，名为”height”，值为”1.78”；</li>
+<li>在Person类中定义一个静态成员属性，名为”weight”，不指定值；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code6.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $name=<span class="string">'zhangsan'</span>;</span><br><span class="line">    <span class="keyword">public</span> $age;<span class="comment">//不指定值</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $height=<span class="number">1.78</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $weight;<span class="comment">//不指定值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'定义成员属性！'</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li>定义非静态成员属性的方式：就是在定义普通变量前加上public关键字，定义时可以不给该属性指定值。</li>
+<li>定义静态成员属性的方式：就是在定义非静态成员属性的语法基础上加多一个static关键字。</li>
+</ol>
+<h4 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h4><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个名为singing的非静态成员方法，方法中输出”我会唱歌”；</li>
+<li>在Person类中定义一个名为dancing的静态成员方法，方法中输出”我会跳舞”；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code7.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">singing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会唱歌'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">dancing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会跳舞'</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'定义成员方法！'</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li>非静态成员方法的定义方式：在普通函数的结构基础上加上public关键字；</li>
+<li>静态成员方法的定义方式：在非静态成员方法的语法基础上加上static关键字；</li>
+</ol>
+<h4 id="类常量"><a href="#类常量" class="headerlink" title="类常量"></a>类常量</h4><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个类常量，名为”AREA”，值为”广东省广州市”；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code8.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//类常量</span></span><br><span class="line">    <span class="keyword">const</span> AREA=<span class="string">'广东省广州市'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'定义类常量！'</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：定义类常量的方式：就是const定义常量的写法写在了某个类中。</p>
+<h3 id="类成员的调用"><a href="#类成员的调用" class="headerlink" title="类成员的调用"></a>类成员的调用</h3><h4 id="类的外部调用类成员"><a href="#类的外部调用类成员" class="headerlink" title="类的外部调用类成员"></a>类的外部调用类成员</h4><h5 id="成员属性-1"><a href="#成员属性-1" class="headerlink" title="成员属性"></a>成员属性</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在Person类中定义一个非静态成员属性，名为”age”，不指定值；</li>
+<li>在Person类中定义一个静态成员属性，名为”height”，值为”1.78”；</li>
+<li>在Person类中定义一个静态成员属性，名为”weight”，不指定值；</li>
+<li>实现在类的外部输出四个属性的值；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code9.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $name=<span class="string">'zhangsan'</span>;</span><br><span class="line">    <span class="keyword">public</span> $age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $height=<span class="number">1.78</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $weight;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部调用 静态成员属性</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'类的外部调用静态成员属性：&lt;br/&gt;'</span>; </span><br><span class="line"><span class="keyword">echo</span> <span class="string">'$height属性：'</span> . Person::$height . <span class="string">'&lt;br/&gt;'</span>;<span class="comment">//使用类名加上固定的符号"::"再加上属性名（注意属性名包括$符号）</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'$weight属性：'</span>; var_dump( Person::$weight );</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部访问 非静态成员属性</span></span><br><span class="line">$obj = <span class="keyword">new</span> Person;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'类的外部调用非静态成员属性：&lt;br/&gt;'</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'$name属性：'</span> . $obj-&gt;name . <span class="string">'&lt;br/&gt;'</span>;<span class="comment">//使用对象加上固定的符号"-&gt;"再加上属性的名字（注意属性的名字不包括$符号）</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'$age属性：'</span>; var_dump( $obj-&gt;age );</span><br></pre></td></tr></table></figure>
+<p>访问code9.php，输出的内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">类的外部调用静态成员属性：</span><br><span class="line">$height属性：1.78</span><br><span class="line">$weight属性：NULL</span><br><span class="line"></span><br><span class="line">类的外部调用非静态成员属性：</span><br><span class="line">$name属性：zhangsan</span><br><span class="line">$age属性：NULL</span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li><p>在类的外部调用非静态成员属性的方式：</p>
+<p> 1）首先必须创建一个对象；</p>
+<p> 2）然后使用这个对象加上固定的符号”==-&gt;==”再加上属性的属性名（==注意不包括$符号==）来进行访问；</p>
+</li>
+<li><p>在类的外部调用静态成员属性的方式： 直接通过类名加固定的符号”::”再加上属性（==注意属性要包括$符号==）来进行调用；</p>
+</li>
+</ol>
+<p>==TIPS==： “::”这个符号我们专业的称为 ==范围解析操作符==。</p>
+<h5 id="成员方法-1"><a href="#成员方法-1" class="headerlink" title="成员方法"></a>成员方法</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个名为singing的非静态成员方法，方法中输出”我会唱歌”；</li>
+<li>在Person类中定义一个名为dancing的静态成员方法，方法中输出”我会跳舞”；</li>
+<li>实现在类的外部分别调用执行singing和dancing方法；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code10.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">singing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会唱歌'</span>; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">dancing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会跳舞'</span>; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部调用 静态成员方法</span></span><br><span class="line">Person::dancing();</span><br><span class="line"></span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部访问 非静态成员方法</span></span><br><span class="line">$obj = <span class="keyword">new</span> Person;</span><br><span class="line">$obj-&gt;singing();</span><br></pre></td></tr></table></figure>
+<p>访问code10.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/3" alt="1540178163049"></p>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li><p>在类的外部调用非静态成员方法的方式：</p>
+<p>1）首先需要创建一个该类的对象；</p>
+<p>2）然后使用这个对象加上固定的符号”==-&gt;==”再加上方法名和小括号，有参数传参数来实现调用；</p>
+</li>
+<li><p>在类的外部调用静态成员方法的方式：直接使用类名加上固定的符号”==::==”再加上方法名和小括号，有参数传参数来实现调用。</p>
+</li>
+</ol>
+<h5 id="类常量-1"><a href="#类常量-1" class="headerlink" title="类常量"></a>类常量</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个类常量，名为”AREA”，值为”广东省广州市”；</li>
+<li>实现在类的外部调用输出类常量；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code11.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//类常量</span></span><br><span class="line">    <span class="keyword">const</span> AREA=<span class="string">'广东省广州市'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部调用类常量</span></span><br><span class="line"><span class="keyword">echo</span> Person::AREA;</span><br></pre></td></tr></table></figure>
+<p>访问code11.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/4" alt="1540178442164"></p>
+<p><strong>==小结==</strong>：类的外部调用类常量的方式： 直接使用类名加上固定的符号”==::==”再加上类常量名来实现访问；</p>
+<h5 id="类的外部访问类成员总结"><a href="#类的外部访问类成员总结" class="headerlink" title="类的外部访问类成员总结"></a><strong>类的外部访问类成员总结</strong></h5><ol>
+<li><p>类的外部访问非静态成员（非静态成员属性和非静态成员方法）：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> $var1=<span class="string">'var1'</span>;<span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>&#123;<span class="comment">//非静态成员方法</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'f1'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#第一步，必须先创建一个该类的对象</span></span><br><span class="line">$obj = <span class="keyword">new</span> A;</span><br><span class="line"><span class="comment">#第二步，使用对象来调用非静态成员</span></span><br><span class="line"><span class="comment">//非静态成员属性</span></span><br><span class="line"><span class="keyword">echo</span> $obj-&gt;var1;</span><br><span class="line"><span class="comment">//非静态成员方法</span></span><br><span class="line">$obj-&gt;f1();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的外部访问静态成员（包括静态成员属性和静态成员方法）：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $var1=<span class="string">'var1'</span>;<span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>&#123;<span class="comment">//静态成员方法</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'f1'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用静态成员属性</span></span><br><span class="line"><span class="keyword">echo</span> A::$var1;</span><br><span class="line"><span class="comment">//调用静态成员方法</span></span><br><span class="line">A::f1();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的外部访问类常量：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    <span class="comment">//类常量</span></span><br><span class="line">    <span class="keyword">const</span> PATH=<span class="string">'./source'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用类常量</span></span><br><span class="line"><span class="keyword">echo</span> A::PATH;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="类的内部调用类成员"><a href="#类的内部调用类成员" class="headerlink" title="类的内部调用类成员"></a>类的内部调用类成员</h4><h5 id="成员属性-2"><a href="#成员属性-2" class="headerlink" title="成员属性"></a>成员属性</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在Person类中定义一个静态成员属性，名为”height”，值为”1.78”；</li>
+<li>在Person类中定义一个名为test的非静态成员方法，在test方法中实现输出”name”的值和”height”的值；</li>
+<li>在Person类中定义一个名为test_static的静态成员方法，在test_static方法中实现输出”height”的值，并且尝试输出”name”的值；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code12.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $name=<span class="string">'zhangsan'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $height=<span class="number">1.78</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#测试在类的内部访问成员属性</span></span><br><span class="line">    <span class="comment">#非静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="comment">//非静态属性</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;name . <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="comment">//静态属性</span></span><br><span class="line">        <span class="keyword">echo</span> Person::$height;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test_static</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="comment">//静态属性</span></span><br><span class="line">        <span class="keyword">echo</span> Person::$height;</span><br><span class="line">        <span class="comment">//非静态属性</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> Person;</span><br><span class="line">$obj-&gt;test();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">Person::test_static();</span><br></pre></td></tr></table></figure>
+<p>访问code12.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/5" alt="1540179989794"></p>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li><p>类的内部访问非静态成员属性的方式：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意1:属性名不能加$符号</span></span><br><span class="line"><span class="comment">#注意2:非静态属性只能在类的内部非静态方法里被访问到，不能在静态方法里访问到</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;属性名;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>类的内部访问静态成员属性的方式：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在类的内部访问静态成员属性和在类的外部访问静态成员属性的方式一模一样</span></span><br><span class="line">类名::$属性名;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="成员方法-2"><a href="#成员方法-2" class="headerlink" title="成员方法"></a>成员方法</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个名为singing的非静态成员方法，方法中输出”我会唱歌”；</li>
+<li>在Person类中定义一个名为dancing的静态成员方法，方法中输出”我会跳舞”；</li>
+<li>在Person类中定义一个名为test的非静态成员方法，在test方法中调用singing和dancing方法；</li>
+<li>在Person类中定义一个名为test_static的静态成员方法，在test_static方法中实现dancing方法，并且尝试调用singing；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code13.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">singing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会唱歌'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">dancing</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'我会跳舞'</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#测试在类的内部访问成员方法</span></span><br><span class="line">    <span class="comment">#非静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="comment">//非静态方法</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;singing(); <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="comment">//静态方法</span></span><br><span class="line">        Person::dancing();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test_static</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="comment">//静态方法</span></span><br><span class="line">        Person::dancing(); <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="comment">//非静态方法</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;singing(); </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> Person;</span><br><span class="line">$obj-&gt;test();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">Person::test_static();</span><br></pre></td></tr></table></figure>
+<p>访问code13.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/6" alt="1540180720909"></p>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li><p>类的内部访问非静态方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#注意： 在类的内部静态方法里无法调用非静态方法</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;方法名([参数列表]);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="2">
+<li><p>类的内部访问静态方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名::方法名([参数列表]);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="类常量-2"><a href="#类常量-2" class="headerlink" title="类常量"></a>类常量</h5><p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个类常量，名为”AREA”，值为”广东省广州市”；</li>
+<li>在Person类中定义一个名为test的非静态成员方法，在test方法中输出类常量；</li>
+<li>在Person类中定义一个名为test_static的静态成员方法，在test_static方法中输出类常量；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code14.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//类常量</span></span><br><span class="line">    <span class="keyword">const</span> AREA=<span class="string">'广东省广州市'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#测试在类的内部访问成员方法</span></span><br><span class="line">    <span class="comment">#非静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> Person::AREA; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#静态成员方法中访问</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test_static</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> Person::AREA; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj = <span class="keyword">new</span> Person;</span><br><span class="line">$obj-&gt;test();</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">Person::test_static();</span><br></pre></td></tr></table></figure>
+<p>访问code14.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/7" alt="1540191392302"></p>
+<p><strong>==小结==</strong>：在类的内部访问类常量的方式：直接通过    ==类名::类常量名==   来进行访问。</p>
+<p>==$this的含义==   哪个对象调用，就代表那个对象（空间）；</p>
+<h5 id="类的内部调用类成员总结"><a href="#类的内部调用类成员总结" class="headerlink" title="类的内部调用类成员总结"></a><strong>类的内部调用类成员总结</strong></h5><ol>
+<li><p>类的内部访问非静态成员（非静态成员属性和非静态成员方法）：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">$this</span>-&gt;属性名     <span class="comment">#访问非静态成员属性</span></span><br><span class="line"><span class="keyword">$this</span>-&gt;方法名([参数列表]);     <span class="comment">#访问非静态成员方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">##注意：在静态方法中不能访问非静态成员。</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的内部访问静态成员（包括静态成员属性和静态成员方法）：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">类名::属性名    <span class="comment">#访问静态成员属性</span></span><br><span class="line">类名::方法名([参数列表]);    <span class="comment">#访问静态成员方法</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的内部访问类常量：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名::类常量     <span class="comment">#访问类常量</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="对象创建的原理"><a href="#对象创建的原理" class="headerlink" title="对象创建的原理"></a>对象创建的原理</h3><p><strong>==原理图==</strong>：</p>
+<p><img src="/2019/02/20/PHP15/8" alt="1540193625559"></p>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li>静态成员和类常量属于类；</li>
+<li>非静态成员属于对象（空间）；</li>
+</ol>
+<h3 id="对象的比较"><a href="#对象的比较" class="headerlink" title="对象的比较"></a>对象的比较</h3><p>在程序中，对象是保存在变量中的，变量之间可以使用”==”等于和”\=\=\=”全等于进行比较，也就意味着对象也可以进行这两种比较。</p>
+<p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在类的外部分别对Person类创建两个对象；</li>
+<li>使用”==”等于 和  “\=\=\=”全等于对两个对象进行比较，输出比较的结果；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code15.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $var1=<span class="number">100</span>;</span><br><span class="line">    <span class="keyword">public</span> $age=<span class="number">16</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj1 = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $obj1 ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$obj2 = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $obj2 ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用==做比较</span></span><br><span class="line">$re = ($obj1==$obj2);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'使用==做比较：'</span>;</span><br><span class="line">var_dump( $re ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#使用===做比较</span></span><br><span class="line">$re = ($obj1===$obj2);</span><br><span class="line"><span class="keyword">echo</span> <span class="string">'使用===做比较：'</span>;</span><br><span class="line">var_dump( $re );</span><br></pre></td></tr></table></figure>
+<p>访问code15.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/9" alt="1540195648294"></p>
+<h3 id="self关键字"><a href="#self关键字" class="headerlink" title="self关键字"></a>self关键字</h3><p>self关键字的<strong>作用</strong>是，在==本类的内部==<strong>代替</strong>==本类的类名==。</p>
+<p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义一个静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在Person类中定义一个类常量，名为”AREA”，值为”广东省广州市”；</li>
+<li>在Person类中定义一个名为test的非静态成员方法，在test方法中输出”name”的值和类常量的值；</li>
+<li>在Person类中定义一个名为test_static的静态成员方法，在test_static方法中输出”name”的值和类常量的值；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code16.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $name=<span class="string">'zhangsan'</span>;</span><br><span class="line">    <span class="keyword">const</span> AREA=<span class="string">'广东省广州市'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> Person::$name; <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> Person::AREA; <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;<span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::$name; <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::AREA; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">test_static</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> Person::$name; <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> Person::AREA;  <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;<span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::$name; <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::AREA; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>访问code16.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/10" alt="1540196306734"></p>
+<p><strong>==小结==</strong>：self只在==本类==的内部代替==本类==的类名；</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>==<strong>定义语法</strong>==</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    <span class="comment">//定义类中的构造方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">([形参列表])</span></span>&#123;</span><br><span class="line">    	<span class="comment">#方法体 和 返回值</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>==需求==</strong>：不使用构造方法完成对属性的赋值操作，定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义两个非静态成员属性，名分别为”name”和”age”，不指定值；</li>
+<li>在类的外部基于Person类创建两个对象，第一个对象设置name的值为”zhangsan”，age的值为12，打印该对象；第二个对象设置name的值为lisi，age的值为16，打印该对象；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code18.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $name;</span><br><span class="line">    <span class="keyword">public</span> $age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$zhangsan = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $zhangsan ); <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">$zhangsan-&gt;name = <span class="string">'zhangsan'</span>;</span><br><span class="line">$zhangsan-&gt;age = <span class="number">12</span>;</span><br><span class="line">var_dump( $zhangsan ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$lisi = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $lisi ); <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br><span class="line">$lisi-&gt;name = <span class="string">'lisi'</span>;</span><br><span class="line">$lisi-&gt;age = <span class="number">16</span>;</span><br><span class="line">var_dump( $lisi );</span><br></pre></td></tr></table></figure>
+<p>访问code18.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/11" alt="1540196878573"></p>
+<p><strong>==小结==</strong>：在上面这个案例中，我们每次实例化对象后，都会重新为该对象中的所有属性赋值，当前实例化了两次，所以我们做了两拨赋值操作，那么以后的项目中，属性将会不止2两个，实例化对象后赋值的操作将会大量存在，如果每次都像这样手动的去赋值，显而易见工作效率将会及其低下，那么怎么办呢？</p>
+<p>在PHP中，提供了一种非常便利的方式，可供我们无需做这么多的重复操作就能够达到每次实例化完成就直接为属性赋好值的操作，这个操作需要使用到PHP中类的构造方法！</p>
+<p><strong>==需求==</strong>：使用构造方法完成对属性的赋值操作，定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义两个非静态成员属性，名分别为”name”和”age”，不指定值；</li>
+<li>在类的外部基于Person类创建两个对象，第一个对象设置name的值为”zhangsan”，age的值为12，打印该对象；第二个对象设置name的值为lisi，age的值为16打印该对象；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code19.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $name;</span><br><span class="line">    <span class="keyword">public</span> $age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($v1, $v2)</span></span>&#123; </span><br><span class="line">        <span class="keyword">$this</span>-&gt;name = $v1;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;age = $v2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$zhangsan = <span class="keyword">new</span> Person(<span class="string">'zhangsan'</span>, <span class="number">12</span>);</span><br><span class="line">var_dump( $zhangsan ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$lisi = <span class="keyword">new</span> Person(<span class="string">'lisi'</span>, <span class="number">16</span>);</span><br><span class="line">var_dump( $lisi );</span><br></pre></td></tr></table></figure>
+<p>访问code19.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/12" alt="1540197863630"></p>
+<p><strong>==小结==</strong>：</p>
+<ol>
+<li><p>构造方法的结构是固定的：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">([参数列表])</span></span>&#123;</span><br><span class="line">    方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>PHP不负责定义构造方法，只负责调用构造方法；</p>
+</li>
+<li><p>PHP调用构造方法的实际时：当new一个对象时，将会触发PHP自动调用执行该类中的构造方法执行一次。</p>
+</li>
+</ol>
+<h4 id="老版本的构造方法"><a href="#老版本的构造方法" class="headerlink" title="老版本的构造方法"></a>老版本的构造方法</h4><p><strong>说明</strong>：在php中，早期版本的构造方法的方法名与所在类的类名一致。</p>
+<p><strong>==需求==</strong>：使用老版本的构造方法完成对属性的赋值操作，定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义两个非静态成员属性，名分别为”name”和”age”，不指定值；</li>
+<li>在类的外部基于Person类创建两个对象，第一个对象设置name的值为”zhangsan”，age的值为12，打印该对象；第二个对象设置name的值为lisi，age的值为16打印该对象；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code20.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $name;</span><br><span class="line">    <span class="keyword">public</span> $age;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">($v1, $v2)</span></span>&#123; </span><br><span class="line">        <span class="keyword">$this</span>-&gt;name = $v1;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;age = $v2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$zhangsan = <span class="keyword">new</span> Person(<span class="string">'zhangsan'</span>, <span class="number">12</span>);</span><br><span class="line">var_dump( $zhangsan ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$lisi = <span class="keyword">new</span> Person(<span class="string">'lisi'</span>, <span class="number">16</span>);</span><br><span class="line">var_dump( $lisi );</span><br></pre></td></tr></table></figure>
+<p>访问code20.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/13" alt="1540199449935"></p>
+<p><strong>==小结==</strong>：老版本的构造方法不建议使用。</p>
+<h3 id="析构方法"><a href="#析构方法" class="headerlink" title="析构方法"></a>析构方法</h3><p>==<strong>定义语法</strong>==</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    <span class="comment">//定义类中的析构方法（不能携带形参）</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="comment">#方法体</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>==需求==</strong>：定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义1个非静态成员属性，名为”link”，不指定值；</li>
+<li>在Person类中定义1个构造方法，实现创建一个画布，并且将创建的画布资源保存给”link”；</li>
+<li>在类的外部创建2个基于Person类的对象，将2个对象打印出来；</li>
+<li>然后使用unset删除第一个创建的对象，查看最终效果；</li>
+</ol>
+<p><strong>==解答==</strong>：构建名为code21.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> $link;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">$this</span>-&gt;link = imagecreate(<span class="number">300</span>, <span class="number">200</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//析构方法  当对象被销毁时，将会触发PHP自动调用执行</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span>&#123; </span><br><span class="line">        <span class="keyword">echo</span> <span class="string">'bye~'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$obj1 = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $obj1 ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line">$obj2 = <span class="keyword">new</span> Person;</span><br><span class="line">var_dump( $obj2 ); <span class="keyword">echo</span> <span class="string">'&lt;hr/&gt;'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">unset</span>($obj1); <span class="keyword">echo</span> <span class="string">'&lt;br/&gt;'</span>;</span><br></pre></td></tr></table></figure>
+<p>访问code21.php，输出的内容为：</p>
+<p><img src="/2019/02/20/PHP15/14" alt="1540200281390"></p>
+<p><strong>==小结==</strong>：在程序中，销毁对象的方式有两种：</p>
+<ol>
+<li>手动通过unset删除掉保存对象的变量，以达到销毁对象的目的；</li>
+<li>程序执行结束，保存对象的变量也将会被自动销毁，间接的触发了对象的销毁；</li>
+</ol>
+<p>析构方法的特点：</p>
+<ol>
+<li>PHP不负责定义析构方法，只负责调用析构方法；</li>
+<li>PHP调用析构方法的时机是：当对象被销毁时，将会触发PHP自动调用执行析构方法一次。</li>
+</ol>
+<h3 id="对象的传值"><a href="#对象的传值" class="headerlink" title="对象的传值"></a>对象的传值</h3><p>在程序中，对象是保存在变量中的，变量存在值传递和引用传递，所以对象也就存在值传递和引用传递。 </p>
+<h4 id="对象的引用传递与对象的值传递的效果"><a href="#对象的引用传递与对象的值传递的效果" class="headerlink" title="对象的引用传递与对象的值传递的效果"></a>对象的引用传递与对象的值传递的效果</h4><p><strong>==需求1==</strong>：实现对象的引用传递，定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义1个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在类的外部创建第一个基于Person类的对象保存到变量$obj1中，将$obj1以引用传递赋值的方式赋值给$obj2变量，分别将两个对象都打印出来；</li>
+<li>改变$obj2中的name值为lisi，再次将两个对象打印出来，查看最终效果；</li>
+</ol>
+<p><strong>==解答1==</strong>：构建名为code22.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>访问code22.php，输出的内容为：</p>
+<p><strong>==小结==</strong>：</p>
+<p><strong>==需求1==</strong>：实现对象的值传递，定义名为Person的类，</p>
+<ol>
+<li>在Person类中定义1个非静态成员属性，名为”name”，值为”zhangsan”；</li>
+<li>在类的外部创建第一个基于Person类的对象保存到变量$obj1中，将$obj1以值传递赋值的方式赋值给$obj2变量，分别将两个对象都打印出来；</li>
+<li>改变$obj2中的name值为lisi，再次将两个对象打印出来，查看最终效果；</li>
+</ol>
+<p><strong>==解答1==</strong>：构建名为code23.php的程序文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>访问code23.php，输出的内容为：</p>
+<p><strong>==小结==</strong>：</p>
+<h4 id="对象的引用传递与对象的值传递的原理"><a href="#对象的引用传递与对象的值传递的原理" class="headerlink" title="对象的引用传递与对象的值传递的原理"></a>对象的引用传递与对象的值传递的原理</h4><p>对象的引用传递 原理图：</p>
+<p>对象的值传递 原理图：</p>
+<p><strong>==小结==</strong>：</p>
+<p>所以，到目前为止，我们掌握的技术手段中，能够得到一个全新对象的方式有一种，通过new关键字来实例化出全新的对象。那么，在PHP中，还有没有其他的方式也能够得到全新的对象呢？</p>
+<h3 id="对象的克隆"><a href="#对象的克隆" class="headerlink" title="对象的克隆"></a>对象的克隆</h3><p>==克隆语法==：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;&#125;</span><br><span class="line">$obj1 = <span class="keyword">new</span> A;</span><br><span class="line"></span><br><span class="line"><span class="comment">#基于一个已有的对象克隆出一个新的对象操作如下</span></span><br><span class="line">$obj2 = <span class="keyword">clone</span> $obj1;</span><br></pre></td></tr></table></figure>
+<p><strong>==需求1==</strong>：定义名为soldierPig的类，</p>
+<ol>
+<li>在soldierPig类中定义4个非静态成员属性，名分别为”name、blood、defence、attack”，不指定值；</li>
+<li>在soldierPig类中定义一个构造方法，实现对4个属性的自动赋值；</li>
+<li>在类的外部使用实例化的方式创建一个基于soldierPig类的对象，保存到$z_boss中，值分别为：（烈火，10000， 2000， 1000）；</li>
+<li>在类的外部使用实例化的方式创建一个基于soldierPig类的对象，保存到$z1中，值分别为：（野猪，1000， 200， 100）；</li>
+<li>基于$z1克隆出$z2、$z3对象，同时改名为野猪1和野猪2；</li>
+</ol>
+<p><strong>==解答1==</strong>：构建名为codex1.php的程序文件，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>访问codex1.php，输出的内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：</p>
+<p><strong>提问</strong>：上面这个案例中，每次克隆后都需要手动改名，比较麻烦，有没有方法能够让我们在克隆的同时就自动按照设定好的规则将名字进行修改呢？</p>
+<h3 id="clone魔术方法"><a href="#clone魔术方法" class="headerlink" title="__clone魔术方法"></a>__clone魔术方法</h3><p>==定义语法==：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__clone</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">#方法体</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>==需求1==</strong>：使用克隆魔术方法实现自动改名，定义名为soldierPig的类，</p>
+<ol>
+<li>在soldierPig类中定义4个非静态成员属性，名分别为”name、blood、defence、attack”，不指定值；</li>
+<li>在soldierPig类中定义一个构造方法，实现对4个属性的自动赋值；</li>
+<li>在类的外部使用实例化的方式创建一个基于soldierPig类的对象，保存到$z1中，值分别为：（野猪，1000， 200， 100）；</li>
+<li>基于$z1克隆出$z2、$z3对象，同时实现自动改名为野猪1和野猪2；</li>
+</ol>
+<p><strong>==解答1==</strong>：构建名为codex1.php的程序文件，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>访问codex1.php，输出的内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>==小结==</strong>：</p>
+<h2 id="3-全天总结"><a href="#3-全天总结" class="headerlink" title="3. 全天总结"></a>3. 全天总结</h2><ol>
+<li><p>类成员的分类？</p>
+<p>类成员分为  1）成员属性； 2）成员方法； 3）类常量</p>
+<p>成员属性：1）静态成员属性   2）非静态成员属性</p>
+<p>成员方法：1）静态成员方法  2）非静态成员方法</p>
+<p>类常量</p>
+</li>
+<li><p>类成员的定义？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员属性</span></span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $var1;</span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $var2;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#类常量</span></span><br><span class="line">    <span class="keyword">const</span> URL=<span class="string">'www.itcast.cn'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员方法</span></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">f2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="3">
+<li><p>类成员的调用？</p>
+<p>类的外部调用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员属性</span></span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $var1=<span class="string">'var1'</span>;</span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $var2=<span class="string">'var2'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#类常量</span></span><br><span class="line">    <span class="keyword">const</span> URL=<span class="string">'www.itcast.cn'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员方法</span></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">f2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#类的外部调用</span></span><br><span class="line"><span class="comment">//非静态成员（属性和方法）</span></span><br><span class="line">$obj = <span class="keyword">new</span> A;</span><br><span class="line"><span class="keyword">echo</span> $obj-&gt;var2;<span class="comment">//非静态成员属性</span></span><br><span class="line">$obj-&gt;f2();<span class="comment">//非静态成员方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//静态成员（属性和方法）</span></span><br><span class="line"><span class="keyword">echo</span> A::$var1;<span class="comment">//静态成员属性</span></span><br><span class="line">A::f1();<span class="comment">//静态成员方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//类常量</span></span><br><span class="line"><span class="keyword">echo</span> A::URL;</span><br></pre></td></tr></table></figure>
+<p>类的内部调用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员属性</span></span><br><span class="line">    <span class="comment">//静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> $var1=<span class="string">'var1'</span>;</span><br><span class="line">    <span class="comment">//非静态成员属性</span></span><br><span class="line">    <span class="keyword">public</span> $var2=<span class="string">'var2'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#类常量</span></span><br><span class="line">    <span class="keyword">const</span> URL=<span class="string">'www.itcast.cn'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#成员方法</span></span><br><span class="line">    <span class="comment">//静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">f1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//非静态成员方法</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">f2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">   	<span class="comment">##类的内部调用</span></span><br><span class="line">    <span class="comment">#在非静态测试方法中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">text</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//非静态成员属性</span></span><br><span class="line">       	<span class="keyword">echo</span> <span class="keyword">$this</span>-&gt;var2;</span><br><span class="line">        <span class="comment">//静态成员属性</span></span><br><span class="line">        <span class="keyword">echo</span> A::$var1;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::$var1;</span><br><span class="line">        <span class="comment">//非静态成员方法</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;f2();</span><br><span class="line">        <span class="comment">//静态成员方法</span></span><br><span class="line">        A::f1();</span><br><span class="line">        <span class="keyword">self</span>::f1();</span><br><span class="line">        <span class="comment">//类常量</span></span><br><span class="line">        <span class="keyword">echo</span> A::URL;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::URL;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">#在静态测试方法中</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">text_static</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//静态成员属性</span></span><br><span class="line">        <span class="keyword">echo</span> A::$var1;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::$var1;</span><br><span class="line">        <span class="comment">//静态成员方法</span></span><br><span class="line">        A::f1();</span><br><span class="line">        <span class="keyword">self</span>::f1();</span><br><span class="line">        <span class="comment">//类常量</span></span><br><span class="line">        <span class="keyword">echo</span> A::URL;</span><br><span class="line">        <span class="keyword">echo</span> <span class="keyword">self</span>::URL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用非静态测试方法</span></span><br><span class="line">$obj = <span class="keyword">new</span> A;</span><br><span class="line">$obj-&gt;test();</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用静态测试方法</span></span><br><span class="line">A::test_static();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="4">
+<li><p>构造方法？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">([形参列表])</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="5">
+<li><p>析构方法？</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 类名</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span>&#123;</span><br><span class="line">        </span><br><span class="line">        方法体</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
 
       
@@ -179,6 +658,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -230,7 +720,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、昨日回顾"><span class="toc-number">1.</span> <span class="toc-text">一、昨日回顾</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-知识回顾"><span class="toc-number">1.1.</span> <span class="toc-text">1. 知识回顾</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、知识路径"><span class="toc-number">2.</span> <span class="toc-text">二、知识路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、今日课程内容：面向对象"><span class="toc-number">3.</span> <span class="toc-text">三、今日课程内容：面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-面向对象相关概念"><span class="toc-number">3.1.</span> <span class="toc-text">1. 面向对象相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用面向对象"><span class="toc-number">3.1.1.</span> <span class="toc-text">为什么使用面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#面向过程思想介绍"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">面向过程思想介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#面向对象思想介绍"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">面向对象思想介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#面向过程思想的局限性"><span class="toc-number">3.1.1.3.</span> <span class="toc-text">面向过程思想的局限性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是面向对象"><span class="toc-number">3.1.2.</span> <span class="toc-text">什么是面向对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-PHP中的类与对象"><span class="toc-number">3.2.</span> <span class="toc-text">2. PHP中的类与对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类"><span class="toc-number">3.2.1.</span> <span class="toc-text">类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类成员"><span class="toc-number">3.2.2.</span> <span class="toc-text">类成员</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象"><span class="toc-number">3.2.3.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类成员的定义"><span class="toc-number">3.2.4.</span> <span class="toc-text">类成员的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#成员属性"><span class="toc-number">3.2.4.1.</span> <span class="toc-text">成员属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#成员方法"><span class="toc-number">3.2.4.2.</span> <span class="toc-text">成员方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类常量"><span class="toc-number">3.2.4.3.</span> <span class="toc-text">类常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类成员的调用"><span class="toc-number">3.2.5.</span> <span class="toc-text">类成员的调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类的外部调用类成员"><span class="toc-number">3.2.5.1.</span> <span class="toc-text">类的外部调用类成员</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#成员属性-1"><span class="toc-number">3.2.5.1.1.</span> <span class="toc-text">成员属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#成员方法-1"><span class="toc-number">3.2.5.1.2.</span> <span class="toc-text">成员方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类常量-1"><span class="toc-number">3.2.5.1.3.</span> <span class="toc-text">类常量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类的外部访问类成员总结"><span class="toc-number">3.2.5.1.4.</span> <span class="toc-text">类的外部访问类成员总结</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的内部调用类成员"><span class="toc-number">3.2.5.2.</span> <span class="toc-text">类的内部调用类成员</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#成员属性-2"><span class="toc-number">3.2.5.2.1.</span> <span class="toc-text">成员属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#成员方法-2"><span class="toc-number">3.2.5.2.2.</span> <span class="toc-text">成员方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类常量-2"><span class="toc-number">3.2.5.2.3.</span> <span class="toc-text">类常量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#类的内部调用类成员总结"><span class="toc-number">3.2.5.2.4.</span> <span class="toc-text">类的内部调用类成员总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象创建的原理"><span class="toc-number">3.2.6.</span> <span class="toc-text">对象创建的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的比较"><span class="toc-number">3.2.7.</span> <span class="toc-text">对象的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self关键字"><span class="toc-number">3.2.8.</span> <span class="toc-text">self关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-number">3.2.9.</span> <span class="toc-text">构造方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#老版本的构造方法"><span class="toc-number">3.2.9.1.</span> <span class="toc-text">老版本的构造方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#析构方法"><span class="toc-number">3.2.10.</span> <span class="toc-text">析构方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的传值"><span class="toc-number">3.2.11.</span> <span class="toc-text">对象的传值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的引用传递与对象的值传递的效果"><span class="toc-number">3.2.11.1.</span> <span class="toc-text">对象的引用传递与对象的值传递的效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的引用传递与对象的值传递的原理"><span class="toc-number">3.2.11.2.</span> <span class="toc-text">对象的引用传递与对象的值传递的原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的克隆"><span class="toc-number">3.2.12.</span> <span class="toc-text">对象的克隆</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clone魔术方法"><span class="toc-number">3.2.13.</span> <span class="toc-text">__clone魔术方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-全天总结"><span class="toc-number">3.3.</span> <span class="toc-text">3. 全天总结</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -374,11 +864,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -394,11 +884,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,15 +900,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>
