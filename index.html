@@ -152,6 +152,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MySQL优化-sphinx" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/MySQL优化-sphinx/">MySQL优化-sphinx</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/25/MySQL优化-sphinx/" class="archive-article-date">
+  	<time datetime="2019-02-25T10:40:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="二、全文索引-Sphinx"><a href="#二、全文索引-Sphinx" class="headerlink" title="二、全文索引(Sphinx)"></a>二、全文索引(Sphinx)</h1><h2 id="1、什么是-Sphinx"><a href="#1、什么是-Sphinx" class="headerlink" title="1、什么是 Sphinx"></a>1、什么是 Sphinx</h2><p>​    Sphinx 是由俄罗斯人 Andrew Aksyonoff 开发的一个全文检索引擎。它是基于 C 语言开发出来的。中文翻译为斯芬克司(作者定义这个索引的名字为 Sphinx 据说是为了纪念他的爱情)，Sphinx 最好的应用操作系统是 Linux，在国内我们使用 Sphinx 一般使用其词库分支 Coreseek(这个好比我们使用 Linux 一般使用分支 Centos 一样)。</p>
+<h2 id="2、Sphinx-必须的编译工具-gcc"><a href="#2、Sphinx-必须的编译工具-gcc" class="headerlink" title="2、Sphinx 必须的编译工具 gcc"></a>2、Sphinx 必须的编译工具 gcc</h2><p>​    由于安装 sphinx 必须要使用到 gcc 等编译工具，因此无论你是否已经有安装，为了保证准确性，都应该执行以下安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span># yum -y install make gcc g++ gcc-c++ libtool autoconf automake imake</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/25/MySQL优化-sphinx/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/25/MySQL优化-sphinx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MySQL优化02" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -841,87 +920,6 @@
 
 
   
-    <article id="post-PHP20" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/PHP20/">PHP20</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/PHP20/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:01:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>连库基本操作？</p>
-<p>通过实例化PDO类的对象来实现连库的基本操作。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$dsn = <span class="string">'mysql:host=localhost;port=3306;charset=utf8;dbname=test'</span>;</span><br><span class="line">$obj = <span class="keyword">new</span> PDO($dsn, <span class="string">'root'</span>, <span class="string">'123abc'</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/02/20/PHP20/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/PHP20/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1023,6 +1021,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
@@ -1047,11 +1049,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color1">微信公众号</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,10 +1073,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
@@ -1087,15 +1085,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">svn</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
             
             <div class="clearfix"></div>
