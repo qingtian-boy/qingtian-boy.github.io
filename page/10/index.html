@@ -152,6 +152,240 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-redis" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/18/redis/">redis</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/18/redis/" class="archive-article-date">
+  	<time datetime="2019-02-18T12:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用工具连接 memcached服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> telnet ip  port</span></span><br><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># telnet 127.0.0.1 11211</span></span></span><br></pre></td></tr></table></figure>
+<p>能够运用set、get、add、delete、incr、decr命令</p>
+<p>set 命令</p>
+<p>​    作用：修改，如果key存在修改，否则新增</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加一个 key = php33，value = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> php33 0 0 5</span></span><br><span class="line">php33</span><br><span class="line"><span class="meta">#</span><span class="bash"> 说明</span></span><br><span class="line">php33 代表key</span><br><span class="line">第1个0代表标识符</span><br><span class="line">第2个0代表过期时间</span><br><span class="line">5代表着字节大小</span><br></pre></td></tr></table></figure>
+<p>get 命令</p>
+<p>​    作用：获取一个存在key</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取一个 key = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> get php33</span></span><br></pre></td></tr></table></figure>
+<p>delete 命令</p>
+<p>​    作用：删除一个key</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除一个 key = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> delete php33</span></span><br></pre></td></tr></table></figure>
+<p>incr 自增</p>
+<p>​    作用：自增</p>
+<p>​    如果key不存在？会报错，不会自动新增，key存在它类型必须 int</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 自增 1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> age 0 0 2</span></span><br><span class="line">12</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> incr age 1  <span class="comment">#代表着 age 自增1</span></span></span><br></pre></td></tr></table></figure>
+<p>decr 自减</p>
+<p>​    作用：自减</p>
+<p>​    如果key不存在？会报错，不会自动新增，key存在它类型必须 int</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 自减</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> age 0 0 2</span></span><br><span class="line">12</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">decr age 1 <span class="comment">#代表着 age 自减1</span></span></span><br></pre></td></tr></table></figure>
+<p>flush_all 清空所有缓存</p>
+<p>不建议直接操作该命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> flush_all <span class="comment">#清空所数据</span></span></span><br></pre></td></tr></table></figure>
+<p>能够实现Linux与windows系统上PHP的 memcached 扩展安装</p>
+<p>windows （PHP）</p>
+<p>​    1、首先看我php是几点几(版本)</p>
+<p>​    2、看属性x86(32位)、x86_64(64位)</p>
+<p>​    3、把 php_memcache.dll 文件复制到我php扩展目录(ext)</p>
+<p>​    4、修改php.ini文件</p>
+<p>​    5、重启apache</p>
+<p>Linux </p>
+<p>​    1、执行 phpize 生成一个 configure 文件 /usr/local/php/bin/phpize</p>
+<p>​    2、./configure –with-php-config=/usr/local/php/bin/php-cofnig</p>
+<p>​    3、make</p>
+<p>​    4、make install</p>
+<p>​    5、修改 php.ini  </p>
+<p>​    6、重启php/apache</p>
+<p>能够掌握Linux与windows系统上扩展文件的区别</p>
+<p>​    后缀名一样？</p>
+<p>​    不一样</p>
+<p>​    windows 下memcache扩展文件的后缀名 .dll</p>
+<p>​    Linux 下 memcache 扩展文件的后缀名 .so</p>
+<p>能够实现 php 操作 memcached 服务器</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment"># 1、实例化 memcached 对象</span></span><br><span class="line">    $m = <span class="keyword">new</span> Memcached();</span><br><span class="line">	<span class="comment"># 2、连接 memcached</span></span><br><span class="line">	<span class="comment">#$m-&gt;addServer('ip', 'port');</span></span><br><span class="line">	$m-&gt;addServer(<span class="string">'127.0.0.1'</span>, <span class="number">11211</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 新增一个key = php33 value = php33</span></span><br><span class="line">	<span class="comment"># $m-&gt;set( key, value[, 过期时间]);</span></span><br><span class="line">	$m-&gt;set( <span class="string">'php33'</span>, <span class="string">'php33'</span> ); <span class="comment"># 过期时间默认为 0，代表永久不过期</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 获取一个 key = php33 </span></span><br><span class="line">	<span class="comment"># $m-&gt;get( key );</span></span><br><span class="line">	$data = $m-&gt;get( <span class="string">'php33'</span> );</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 删除一个 key = php33</span></span><br><span class="line">	<span class="comment"># $m-&gt;delete( key );</span></span><br><span class="line">	$m-&gt;delete( <span class="string">'php33'</span> );</span><br></pre></td></tr></table></figure>
+<p>memcached 分布集群</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment"># 1、实例化 memcached 对象</span></span><br><span class="line">    $m = <span class="keyword">new</span> Memcached();</span><br><span class="line">	<span class="comment"># 2、连接</span></span><br><span class="line">	$m-&gt;addServers( <span class="keyword">array</span>(</span><br><span class="line">    	<span class="comment"># array( ip, pot, 权重 ),</span></span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'192.168.82.46'</span>, <span class="number">11211</span>, <span class="number">50</span>),</span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'192.168.82.244'</span>, <span class="number">11211</span>, <span class="number">50</span>),</span><br><span class="line">        <span class="comment"># ...</span></span><br><span class="line">    ) );</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 首先添加 1000条数据</span></span><br><span class="line">    <span class="keyword">for</span>($i = <span class="number">1</span>; $i&lt;=<span class="number">1000</span>; $i++)&#123;</span><br><span class="line">        $m-&gt;set(<span class="string">'i'</span>.$i, $i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/18/redis/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/18/redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-memcached" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/16/memcached/">memcached</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/16/memcached/" class="archive-article-date">
+  	<time datetime="2019-02-16T10:57:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录?"></a>目录?</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用 chmod、chown 命令</p>
+<p>​    chmod 修改文件权限</p>
+<p>​        chmod -R 权限值(777) 文件/目录</p>
+<p>​    chown 修改文件拥有者，同时也可以修改所属组</p>
+<p>​        chown -R 拥有者(用户名):所属组(组名) 文件/目录</p>
+<p>能够运用 sudo、whereis 命令</p>
+<p>​    whereis 查找文件</p>
+<p>​        whereis my.cnf</p>
+<p>​    sudo 提权</p>
+<p>​        sudo yum -y install 需要安装的包名</p>
+<p>​        在其它的Linux下 apt-get install vim</p>
+<p>​            sudo apt-get install 包名</p>
+<p>能够实现FTP客户端连接FTP服务端</p>
+<p>​    FTP分为两个端：客户端、服务端(vsftpd)</p>
+<p>​    客户端：1、把IP地址填写上，2、输入用户名与密码，3、输入端口</p>
+<p>​    服务端：1、安装，2、启动</p>
+<p>​    wget <a href="http://vsftpd.*.rpm" target="_blank" rel="noopener">http://vsftpd.*.rpm</a></p>
+<p>​        报 wget 的指令不存在</p>
+<p>​            yum -y install wget</p>
+<p>​    rpm -ivh vsftpd.*.rpm</p>
+<p>​    启动：service vsftpd start</p>
+<p>​    查看状态：service vsftpd status</p>
+<p>​    停止：service vsftpd stop</p>
+<p>​    重启：service vsftpd restart</p>
+<p>能够运用 tar 命令</p>
+<p>​    作用：解压 .tar  .gz .tar.gz</p>
+<p>​    httpd-2.24.tar.gz</p>
+<p>​    tar -zxhv httpd-2.24.tar.gz</p>
+<p>能够说同源码安装的步骤</p>
+<p>分几步走？ 3步走</p>
+<p>下载</p>
+<p>解压</p>
+<p>进入解压后的目录中</p>
+<p>1、./configure 检查环境，并生成一个makefile文件</p>
+<p>2、make 读取 makefile文件，并生成二进制文件</p>
+<p>3、make install 读取二进制文件，并安装到指定目录</p>
+        
+          <a class="article-more-a" href="/2019/02/16/memcached/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">memcache</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/16/memcached/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-源码编译安装lamp环境" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -871,185 +1105,6 @@
 
 
   
-    <article id="post-浮动" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/浮动/">浮动</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/浮动/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:12:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
-<li><strong>记忆</strong><ul>
-<li>能够说出 CSS 的布局的三种机制</li>
-</ul>
-</li>
-<li><strong>理解</strong><ul>
-<li>能够说出普通流在布局中的特点</li>
-<li>能够说出浮动在布局中的作用</li>
-<li>能够说出在实际布局中浮动的应用方法</li>
-<li>能够说出决定浮动元素大小的两个因素</li>
-</ul>
-</li>
-<li><strong>应用</strong><ul>
-<li>能够实现图文环绕效果</li>
-<li>能够实现浮动案例</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-CSS-布局的三种机制"><a href="#1-CSS-布局的三种机制" class="headerlink" title="1. CSS 布局的三种机制"></a>1. CSS 布局的三种机制</h3><blockquote>
-<p>网页布局的核心——就是<strong>用 CSS 来摆放盒子位置</strong>。</p>
-</blockquote>
-<p>CSS 提供了 <strong>3 种机制</strong>来设置盒子的摆放位置，分别是<strong>普通流</strong>、<strong>浮动</strong>和<strong>定位</strong>，其中：<br></p>
-        
-          <a class="article-more-a" href="/2019/02/03/浮动/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/浮动/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-显示模式-1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/显示模式-1/">显示模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/显示模式-1/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>目标：</p>
-<ul>
-<li>能够理解标准文档流</li>
-</ul>
-<p>我们书写的HTML代码 发现一个现象 在浏览器上面显示的效果是从左到右 从上到下显示的 。比如我们使用PS软件画图  想在画布的任何地方画内容都可以。我们把这种从左到右 从上到下的这种显示方式 称之为流！标准文档流！</p>
-<h2 id="标准文档流中标签的现象"><a href="#标准文档流中标签的现象" class="headerlink" title="标准文档流中标签的现象"></a>标准文档流中标签的现象</h2><h3 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h3><p>如果标签与标签之间有换行 在浏览器上面就会显示一个空白(空格)</p>
-<p><img src="/2019/02/03/显示模式-1/1531969997706.png" alt="1531969997706"><br></p>
-        
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
@@ -1155,6 +1210,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
@@ -1167,15 +1226,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">tp5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1199,11 +1254,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1255,11 +1310,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>

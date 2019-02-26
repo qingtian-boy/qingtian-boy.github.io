@@ -18,7 +18,11 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/1546653212924.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/抽离路由和控制器模块图解.png">
-<meta property="og:updated_time" content="2019-02-26T07:36:40.624Z">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/防翻墙定义中间件执行流程.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/中间件在栈中执行的逻辑.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/中间件的执行流程和特点.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/26/nodejs05/中间件在栈中的执行顺序.png">
+<meta property="og:updated_time" content="2019-02-26T07:46:56.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs05">
 <meta name="twitter:description" content="案例-实现文章列表的curd操作需求： get  / 或 /index：  展示文章列表页 get /add :  展示添加文章的模板 post /add :  添加数据入库操作 get  /upd :   取出数据，回显到模板中 post /upd: 完成编辑入库 get   /del:  用于删除文章的 设计路由12345678910111213141516171819202122232425">
@@ -306,7 +310,11 @@
 <p>1.安装  npm install md5  –save</p>
 <p>2.项目中引入</p>
 <p>3.匹配密码的时候，需要给password进行md5加密</p>
-<p>抽离路由和控制器模块图解<br><img src="/2019/02/26/nodejs05/抽离路由和控制器模块图解.png" alt="1546653212924"></p>
+<p>抽离路由和控制器模块图解:<br><img src="/2019/02/26/nodejs05/抽离路由和控制器模块图解.png" alt="1546653212924"></p>
+<p>防翻墙定义中间件执行流程:<br><img src="/2019/02/26/nodejs05/防翻墙定义中间件执行流程.png" alt="1546653212924"></p>
+<p>中间件在栈中执行的逻辑:<br><img src="/2019/02/26/nodejs05/中间件在栈中执行的逻辑.png" alt="1546653212924"></p>
+<p>中间件的执行流程和特点:<br><img src="/2019/02/26/nodejs05/中间件的执行流程和特点.png" alt="1546653212924"></p>
+<p>中间件在栈中的执行顺序:<br><img src="/2019/02/26/nodejs05/中间件在栈中的执行顺序.png" alt="1546653212924"></p>
 
       
 
@@ -338,6 +346,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/26/apache设置代理访问nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          apache设置代理访问nodejs
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/26/nodejs04/" id="article-nav-older" class="article-nav-link-wrap">
@@ -488,6 +505,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
@@ -500,15 +521,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">tp5</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,11 +605,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>
