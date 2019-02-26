@@ -152,6 +152,837 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-MySQL优化01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/24/MySQL优化01/">MySQL优化01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/24/MySQL优化01/" class="archive-article-date">
+  	<time datetime="2019-02-24T11:04:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p><strong>能够说出innodb存储引擎的索引结构</strong></p>
+<p>InnoDB使用 B+Tree 的方式存储索引。</p>
+<p>InnoDB 的一个表可能包含多个索引，每个索引都使用 B + 树来存储。而索引包括聚集索引和二级索引，聚集索引使用的主键作为索引键，包含表的所有字段。二级索引只包含索引键和聚集索引键(主键)的内容，不包括其他字段。每一个索引都是一棵 B + 树，每棵 B + 树由很多页面组成，而每个页面大小一般为 16k。从 B + 树的组织结构来看，B + 树的页面可分为：<br></p>
+        
+          <a class="article-more-a" href="/2019/02/24/MySQL优化01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/24/MySQL优化01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MySQL优化" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/22/MySQL优化/">MySQL优化</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/22/MySQL优化/" class="archive-article-date">
+  	<time datetime="2019-02-22T10:37:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够说出Nginx的作用</p>
+<p>​    web服务器–&gt;http或https协议</p>
+<p>​    邮件服务器–&gt;imap/pop3/smtp</p>
+<p>​    负载均衡服务器(服务器集群)–&gt;分发任务</p>
+<p>​    高可用服务器–&gt;可以随时替代其它服务器</p>
+<p>能够实现nginx与php-fpm安装<br></p>
+        
+          <a class="article-more-a" href="/2019/02/22/MySQL优化/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/22/MySQL优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Nginx" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/21/Nginx/">Nginx</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/21/Nginx/" class="archive-article-date">
+  	<time datetime="2019-02-21T06:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够实现库、集合的查看</p>
+<p>​    show databases #查看数据库</p>
+<p>​    db #查看集合(表)</p>
+<p>能够实现文档(数据)的写入操作</p>
+<p>​    MongoDB&gt; use php33</p>
+<p>​    MongoDB&gt; db.集合名.insert( { key: value, ….} )</p>
+<p>能够实现文档(数据)的更新操作<br></p>
+        
+          <a class="article-more-a" href="/2019/02/21/Nginx/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/21/Nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客项目2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/博客项目2/">博客项目2</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/博客项目2/" class="archive-article-date">
+  	<time datetime="2019-02-20T09:01:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-昨日回顾"><a href="#1-昨日回顾" class="headerlink" title="1. 昨日回顾"></a>1. 昨日回顾</h2><p>所作的事情：</p>
+<ol>
+<li>部署项目；</li>
+<li>实现后台用户管理系统（列表页，添加页和功能，删除功能）</li>
+</ol>
+<p>实现的步骤：</p>
+<ol>
+<li>部署项目（部署框架，配置一个基于域名的虚拟主机）</li>
+<li>从模板入手，将前端开发好的模板文件转移到项目中对应的目录下；</li>
+<li>构建控制器类，然后在控制器类中创建对应的方法展示不同的模板页面；</li>
+<li>在渲染模板前调用模型操作数据，比如列表页，需要调用模型查询数据，然后将查得的数据回显到相关的页面中；</li></ol>
+        
+          <a class="article-more-a" href="/2019/02/20/博客项目2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/博客项目2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-博客项目1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/博客项目1/">博客项目1</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/博客项目1/" class="archive-article-date">
+  	<time datetime="2019-02-20T09:01:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二、知识路径"><a href="#二、知识路径" class="headerlink" title="二、知识路径"></a>二、知识路径</h1><ul>
+<li><p>web项目开发流程介绍</p>
+</li>
+<li><p>需求分析</p>
+<p>​ 功能分析</p>
+<p>​ ER图设计</p>
+</li>
+<li><p>表设计</p>
+</li>
+<li><p>项目部署</p>
+</li>
+<li><p>项目实现</p>
+<p>​ 实现后台用户管理系统</p>
+</li>
+</ul>
+<p>==目标：能够设计项目所需的表、能够部署自主框架、能够实现后台用户管理系统==</p>
+<h1 id="三、今日课程内容：博客项目"><a href="#三、今日课程内容：博客项目" class="headerlink" title="三、今日课程内容：博客项目"></a>三、今日课程内容：博客项目</h1><h2 id="1-web项目开发流程介绍"><a href="#1-web项目开发流程介绍" class="headerlink" title="1. web项目开发流程介绍"></a>1. web项目开发流程介绍</h2><p>1)制定计划：博客项目(blog33)  开发周期：4天</p>
+<p>2)需求分析：功能分析  ER图设计</p>
+<p>3)软件设计：项目环境  表设计</p>
+<p>4)程序编写</p>
+<p>5)软件测试</p>
+<p>6)运行维护</p>
+<h2 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2. 需求分析"></a>2. 需求分析</h2><h3 id="功能分析"><a href="#功能分析" class="headerlink" title="功能分析"></a>功能分析</h3><ol>
+<li>后台登陆功能和页面（登陆功能、退出和七天免登录功能）</li>
+<li>后台分类管理系统（分类的增删改查功能）</li>
+<li>后台博文管理系统（博文的增删改查功能）</li>
+<li>后台用户管理系统（用户的增删改查功能）</li>
+<li>后台评论管理系统（查询和删除功能）</li>
+<li>前台首页</li>
+<li>前台注册和登陆功能</li>
+<li>前台博文详情页</li>
+<li>前台评论和回显评论功能</li>
+</ol>
+<h3 id="ER图设计"><a href="#ER图设计" class="headerlink" title="ER图设计"></a>ER图设计</h3><p>E-R图也称实体-联系图(Entity Relationship Diagram)，提供了表示实体类型、属性和联系的方法，用来描述现实世界的概念模型。它是描述现实世界概念结构模型的有效方法。是表示概念模型的一种方式，用矩形表示实体型，矩形框内写明实体名；用椭圆表示实体的属性，并用无向边将其与相应的实体型连接起来；用菱形表示实体型之间的联系，在菱形框内写明联系名，并用无向边分别与有关实体型连接起来，同时在无向边旁标上联系的类型（1:1,1:n或m:n）。</p>
+<p>专业的ER图工具：Viso和Power Designer</p>
+<p>==实体== ==》表：矩形表示</p>
+<p>==属性== ==》表字段：椭圆</p>
+<p>==关系== ==》表与表的关系：菱形（1:1表示1对1关系；1:n表示1对多关系；m:n表示多对多关系）</p>
+<p>博客项目的ER关系图如下： </p>
+<p><img src="/2019/02/20/博客项目1/2" alt="1541388632734"></p>
+<h2 id="3-表设计"><a href="#3-表设计" class="headerlink" title="3. 表设计"></a>3. 表设计</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">drop database blog33;</span><br><span class="line">create database blog33;</span><br><span class="line"></span><br><span class="line">#############用户表：</span><br><span class="line">CREATE TABLE `user` (</span><br><span class="line">  `id` int unsigned auto_increment,</span><br><span class="line">  `acc` varchar(50) not null default &apos;&apos; COMMENT &apos;帐号&apos;,</span><br><span class="line">  `nickname` varchar(30) not null default &apos;&apos; COMMENT &apos;昵称&apos;,</span><br><span class="line">  `pwd` char(32) not null default &apos;&apos; COMMENT &apos;密码&apos;,</span><br><span class="line">  `headimg` varchar(255) not null default &apos;&apos; COMMENT &apos;头像&apos;,</span><br><span class="line">  `post_date` int unsigned default 0 COMMENT &apos;注册或添加时间&apos;,</span><br><span class="line">  `type` tinyint unsigned not null default 0 COMMENT &apos;用户类型 0:普通用户 1:管理员&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=MyISAM CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">#############博客文章表：</span><br><span class="line">CREATE TABLE `article` (</span><br><span class="line">  `id` int unsigned AUTO_INCREMENT,</span><br><span class="line">  `title` varchar(100) not null default &apos;&apos; COMMENT &apos;文章标题&apos;,</span><br><span class="line">  `intro` varchar(255) not null default &apos;&apos; COMMENT &apos;文章简介&apos;,</span><br><span class="line">  `content` text not null COMMENT &apos;文章内容&apos;,</span><br><span class="line">  `pubtime` int unsigned not null default 0 COMMENT &apos;发布时间&apos;,</span><br><span class="line">  `user_id` int unsigned not null default 0 COMMENT &apos;发布管理员id&apos;,</span><br><span class="line">  `user_nickname` varchar(30) not null default &apos;&apos; COMMENT &apos;发布管理员昵称&apos;,</span><br><span class="line">  `comment_num` smallint unsigned not null default 0 COMMENT &apos;评论数量&apos;,</span><br><span class="line">  `cat_id` int unsigned not null default 0 COMMENT &apos;所属分类id&apos;,</span><br><span class="line">  `cat_name` varchar(30) not null default &apos;&apos; COMMENT &apos;所属分类名称&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=MyISAM CHARSET=utf8;</span><br><span class="line"></span><br><span class="line">#############博客文章分类表：</span><br><span class="line">CREATE TABLE `cat` (</span><br><span class="line">  `id` int unsigned AUTO_INCREMENT,</span><br><span class="line">  `name` varchar(30) not null COMMENT &apos;分类名称&apos;,</span><br><span class="line">  `parent_id` int unsigned not null default &apos;0&apos; COMMENT &apos;上级分类ID，0表示顶级分类&apos;,</span><br><span class="line">  `user_id` int unsigned not null default 0 COMMENT &apos;发布管理员id&apos;,</span><br><span class="line">  `user_nickname` varchar(30) not null default &apos;&apos; COMMENT &apos;发布管理员昵称&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=MyISAM CHARSET=utf8;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#############评论表：</span><br><span class="line">CREATE TABLE `comment` (</span><br><span class="line">  `id` int unsigned AUTO_INCREMENT,</span><br><span class="line">  `content` text not null,</span><br><span class="line">  `post_date` int unsigned not null default 0 COMMENT &apos;评论时间&apos;,</span><br><span class="line">  `article_id` int unsigned not null default 0 COMMENT &apos;所属文章ID&apos;,</span><br><span class="line">  `article_title` varchar(50)  not null default &apos;&apos; COMMENT &apos;所属文章标题&apos;,</span><br><span class="line">  `user_id` int unsigned not null default 0 COMMENT &apos;用户ID&apos;,</span><br><span class="line">  `user_nickname` varchar(30)  not null default &apos;&apos; COMMENT &apos;用户昵称&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=MyISAM CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<h2 id="4-项目部署"><a href="#4-项目部署" class="headerlink" title="4. 项目部署"></a>4. 项目部署</h2><ol>
+<li><p>在day25/code目录下，将准备好的mvc目录复制一份，并且改名为blog33,</p>
+<p><img src="/2019/02/20/博客项目1/3" alt="1541401480082"></p>
+</li>
+<li><p>配置一个基于域名的虚拟主机  <a href="http://www.blog33.com" target="_blank" rel="noopener">www.blog33.com</a>  指向day25/code/blog33目录，</p>
+<p><img src="/2019/02/20/博客项目1/4" alt="1541401601165"></p>
+<p>然后在操作系统的hosts文件中增加一个指向本地的配置：</p>
+<p><img src="/2019/02/20/博客项目1/5" alt="1541401647749"><br>重启apache,</p>
+<p><img src="/2019/02/20/博客项目1/6" alt="1541401680903"></p>
+</li>
+<li><p>打开框架的主配置文件，blog33/config/conf.php，将下图所示的配置项进行修改，</p>
+<p><img src="/2019/02/20/博客项目1/7" alt="1541401895808"></p>
+<p><img src="/2019/02/20/博客项目1/24" alt="1541407274296"></p>
+</li>
+<li><p>测试使用效果：</p>
+<p>访问 <a href="http://www.blog33.com/index.php" target="_blank" rel="noopener">http://www.blog33.com/index.php</a>  效果为：</p>
+<p><img src="/2019/02/20/博客项目1/8" alt="1541402832531"></p>
+<p>如果出现以上效果，则说明项目部署成功！</p>
+</li>
+</ol>
+<h2 id="5-项目实现"><a href="#5-项目实现" class="headerlink" title="5. 项目实现"></a>5. 项目实现</h2><h3 id="实现后台用户管理系统"><a href="#实现后台用户管理系统" class="headerlink" title="实现后台用户管理系统"></a>实现后台用户管理系统</h3><p><strong>==技巧==</strong>：</p>
+<ol>
+<li>从模板入手，先想办法将模板展示出来；</li>
+<li>实现了展示模板页面，然后再看展示出来的模板页面需要啥，需要啥就做啥；</li>
+</ol>
+<ol>
+<li><p>将day25/code/templates/admin目录中所有的后台模板目录全部复制一份，</p>
+<p><img src="/2019/02/20/博客项目1/9" alt="1541404036667"></p>
+<p>将复制的所有模板目录全部粘贴到blog33/app/admin/view目录中，</p>
+<p><img src="/2019/02/20/博客项目1/10" alt="1541404095844"></p>
+<p>然后继续将day25/code/templates/admin/libs目录中的所有文件全部复制一份，</p>
+<p><img src="/2019/02/20/博客项目1/11" alt="1541404259247"></p>
+<p>将复制的所有文件全部粘贴到blog33/public/admin目录中，</p>
+<p><img src="/2019/02/20/博客项目1/12" alt="1541404300990"></p>
+<p>到目前为止，后台所有的模板及模板用到的资源文件转移完毕。</p>
+</li>
+<li><p>然后我们继续转移前台模板及前台模板所涉及到的资源文件，</p>
+<p>将day25/code/templates/home目录中的所有模板文件复制一份，</p>
+<p><img src="/2019/02/20/博客项目1/13" alt="1541404404030"></p>
+<p>将复制的文件粘贴到blog33/app/home/view目录中，<br><img src="/2019/02/20/博客项目1/14" alt="1541404455252"></p>
+<p>然后再将day25/code/templates/home/libs目录中所有的文件复制一份，</p>
+<p><img src="/2019/02/20/博客项目1/15" alt="1541404513453"></p>
+<p>粘贴到blog33/public/home目录中，</p>
+<p><img src="/2019/02/20/博客项目1/16" alt="1541404563415"></p>
+<p>到目前为止，前台模板及所涉及到的资源文件也全都转移完毕。</p>
+</li>
+</ol>
+<h4 id="实现添加页"><a href="#实现添加页" class="headerlink" title="实现添加页"></a>实现添加页</h4><ol>
+<li><p>在blog33/app/admin/controller目录下创建一个名为UserController.class.php的文件，代码如下，</p>
+<p><img src="/2019/02/20/博客项目1/17" alt="1541405652600"></p>
+<p>测试访问后台用户管理系统添加页：</p>
+<p><img src="/2019/02/20/博客项目1/18" alt="1541405104792"></p>
+<p>我们要进一步调整模板页面引入的资源文件路径，</p>
+</li>
+<li><p>将blog33/app/admin/view/User/userAdd.html中引入资源文件路径的代码全部进行调整，将“../libs”==全部==替换成”<a href="http://www.blog33.com/public/admin&quot;" target="_blank" rel="noopener">http://www.blog33.com/public/admin&quot;</a></p>
+<p><img src="/2019/02/20/博客项目1/19" alt="1541405518475"></p>
+<p>再次测试访问效果：</p>
+<p><img src="/2019/02/20/博客项目1/21" alt="1541405751841"></p>
+<p>页面效果正常了。到目前为止，我们所做的操作到位了。</p>
+</li>
+<li><p>接下来我们需要继续实现添加功能，</p>
+<p>首先在blog33/app/admin/view/User/userAdd.html页面中调整form表单，</p>
+<p><img src="/2019/02/20/博客项目1/22" alt="1541406395733"></p>
+</li>
+<li><p>在blog33/app/model目录下创建操作user表的模型类文件，</p>
+<p><img src="/2019/02/20/博客项目1/23" alt="1541406805711"></p>
+</li>
+<li><p>在blog33/app/admin/controller/UserController.class.php中创建一个名为adh的方法，代码如下：</p>
+<p><img src="/2019/02/20/博客项目1/25" alt="1541407378636"></p>
+</li>
+<li><p>测试使用效果：</p>
+<p><img src="/2019/02/20/博客项目1/26" alt="1541407433634"></p>
+<p>点击提交按钮：</p>
+<p><img src="/2019/02/20/博客项目1/27" alt="1541407460776"></p>
+</li>
+<li><p>我们最后还差一个上传头像的功能，继续实现头像上传功能；</p>
+<p>在blog33/public/admin目录下创建一个名为upload的目录，</p>
+<p><img src="/2019/02/20/博客项目1/28" alt="1541408562092"></p>
+<p>然后将mvc/app/admin/controller/UserController.class.php中的adh方法里增加如下图所示的处理文件上传的代码，将蓝框中的改变为红框中的：</p>
+<p><img src="/2019/02/20/博客项目1/29" alt="1541408878492"></p>
+</li>
+<li><p>测试使用效果：</p>
+<p>在表单页面构建添加的头像，</p>
+<p><img src="/2019/02/20/博客项目1/30" alt="1541408927821"></p>
+<p>点击提交：</p>
+<p><img src="/2019/02/20/博客项目1/31" alt="1541408943834"></p>
+<p>查看数据：</p>
+<p><img src="/2019/02/20/博客项目1/32" alt="1541408996820"></p>
+<p>说明添加头像功能实现成功。</p>
+</li>
+</ol>
+<h4 id="实现列表页"><a href="#实现列表页" class="headerlink" title="实现列表页"></a>实现列表页</h4><ol>
+<li><p>在blog33/app/admin/controller/UserController.class.php中创建一个名为lis的方法，展示列表页模板，</p>
+<p><img src="/2019/02/20/博客项目1/33" alt="1541409302484"></p>
+<p>测试访问效果：</p>
+<p><img src="/2019/02/20/博客项目1/34" alt="1541409335900"></p>
+<p>所以我们需要进一步调整模板页面中引入资源文件的路径，blog33/app/admin/view/User/userIndex.html</p>
+<p><img src="/2019/02/20/博客项目1/35" alt="1541409459732"></p>
+<p>测试访问效果：</p>
+<p><img src="/2019/02/20/博客项目1/36" alt="1541409549980"></p>
+<p>效果正常了，但是数据是死的。</p>
+</li>
+<li><p>所以我们需要在渲染模板之前调用模型将数据查询出来，在UserController中的lis方法里构建如下代码：</p>
+<p><img src="/2019/02/20/博客项目1/37" alt="1541410096710"></p>
+<p>将查询得到的数据回显到列表页的模板中：</p>
+<p><img src="/2019/02/20/博客项目1/38" alt="1541410177399"></p>
+<p>测试页面访问效果：</p>
+<p><img src="/2019/02/20/博客项目1/39" alt="1541410216702"></p>
+<p>效果正常。</p>
+</li>
+</ol>
+<h4 id="实现编辑页"><a href="#实现编辑页" class="headerlink" title="实现编辑页"></a>实现编辑页</h4><ol>
+<li></li>
+</ol>
+<h4 id="实现删除功能"><a href="#实现删除功能" class="headerlink" title="实现删除功能"></a>实现删除功能</h4><ol>
+<li><p>首先调整后台用户管理系统列表页中删除按钮的链接，blog33/app/admin/view/User/userIndex.html</p>
+<p><img src="/2019/02/20/博客项目1/40" alt="1541410843539"></p>
+</li>
+<li><p>然后在 blog33/app/admin/controller/UserController.class.php里构建一个名为del的方法，代码如下：</p>
+<p><img src="/2019/02/20/博客项目1/41" alt="1541410908248"></p>
+</li>
+<li><p>测试删除功能使用效果：</p>
+<p>从列表页点击删除按钮：</p>
+<p><img src="/2019/02/20/博客项目1/42" alt="1541410935115"></p>
+<p>效果为：</p>
+<p><img src="/2019/02/20/博客项目1/43" alt="1541410977784"></p>
+<p>效果正常，说明功能制作成功。</p>
+</li>
+</ol>
+<h2 id="6-全天总结"><a href="#6-全天总结" class="headerlink" title="6. 全天总结"></a>6. 全天总结</h2><ol>
+<li><p>部署项目环境；</p>
+</li>
+<li><p>转移模板文件到项目中；</p>
+</li>
+<li><p>实现后台用户管理系统（添加页和功能、列表页、编辑页和功能、删除功能）</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/博客项目1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MVC3" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/MVC3/">MVC3</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/MVC3/" class="archive-article-date">
+  	<time datetime="2019-02-20T09:01:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
+<li><p>如何引入并配置Smarty？</p>
+<ol>
+<li><p>将smarty的libs核心类库目录拷贝一份到自己的项目目录中，（选做：将名字修改为指定的名字，比如昨天我们修改为smarty这个名字）</p>
+</li>
+<li><p>然后在项目目录中创建一个名为templates的目录，这个目录以后专门存放模板文件；</p></li></ol></li></ol>
+        
+          <a class="article-more-a" href="/2019/02/20/MVC3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/MVC3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MVC2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/MVC2/">MVC2</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/MVC2/" class="archive-article-date">
+  	<time datetime="2019-02-20T09:01:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
+<li><p>如何引入并配置Smarty？</p>
+<ol>
+<li><p>将smarty的libs核心类库目录拷贝一份到自己的项目目录中，（选做：将名字修改为指定的名字，比如昨天我们修改为smarty这个名字）</p>
+</li>
+<li><p>然后在项目目录中创建一个名为templates的目录，这个目录以后专门存放模板文件；</p>
+</li>
+<li><p>最后在程序中引入Smarty3.0核心类文件，代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include</span> <span class="string">'./smarty/Smarty.class.php'</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+        
+          <a class="article-more-a" href="/2019/02/20/MVC2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/MVC2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-MVC1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/MVC1/">MVC1</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/MVC1/" class="archive-article-date">
+  	<time datetime="2019-02-20T09:01:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
+<li><p>如何引入并配置Smarty？</p>
+<ol>
+<li><p>将smarty的libs核心类库目录拷贝一份到自己的项目目录中，（选做：将名字修改为指定的名字，比如昨天我们修改为smarty这个名字）</p>
+</li>
+<li><p>然后在项目目录中创建一个名为templates的目录，这个目录以后专门存放模板文件；</p></li></ol></li></ol>
+        
+          <a class="article-more-a" href="/2019/02/20/MVC1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/MVC1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-smarty模板技术" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -312,663 +1143,9 @@
 
 
   
-    <article id="post-面向对象4" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/面向对象4/">面向对象4</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/面向对象4/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>能够说出最终类和最终方法的特点</p>
-<p>最终类：在普通类前加上关键字final，最终类不能被继承；</p>
-<p>最终方法：在普通方法前加上关键字final，最终方法不能被重写；</p>
-</li>
-<li><p>能够使用__set()、__get()、__isset()、__unset()完成属性重载</p>
-<p>__set()：表示当设置一个不可访问的非静态成员属性时，将会触发PHP自动调用执行该方法执行一次。</p>
-<p>__get()：表示当获取一个不可访问的非静态成员属性时，将会触发PHP自动调用执行该方法执行一次。</p>
-<p>__isset()：表示当使用isset判断一个不可访问的非静态成员属性是否存在时，将会触发PHP自动调用执行该方法执行一次。</p>
-<p>__unset()：表示当删除一个不可访问的非静态成员属性时，将会触发PHP自动调用执行该方法执行一次。</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/面向对象4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/面向对象4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象3" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/面向对象3/">面向对象3</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/面向对象3/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>能够理解并使用三个访问限定修饰符</p>
-<p>public    表示公有的       如果被public所修饰的成员，则可以在类的内部，类的外部和类的继承链中被直接访问；</p>
-<p>protected    表示受保护的    如果被protected所修饰的成员，则可以在类的内部和继承链中被直接访问；</p>
-<p>private   表示私有的    如果被private所修饰的成员，则只能在本类的内部被直接访问；</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/面向对象3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/面向对象3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象2" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/面向对象2/">面向对象2</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/面向对象2/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>类成员的分类？</p>
-<p>类成员分为  1) 成员属性； 2）成员方法； 3）类常量；</p>
-<p>成员属性：1）非静态成员属性； 2）静态成员属性；</p>
-<p>成员方法：1）非静态成员方法； 2）静态成员方法；</p>
-<p>类常量</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/面向对象2/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/面向对象2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/面向对象1/">面向对象1</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/面向对象1/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>能够使用多种方式创建画布资源</p>
-<p>imagecreate函数      根据指定的宽高（单位是像素）创建画布（建议单色系图像使用）</p>
-<p>imagecreatetruecolor函数     根据指定的宽高（单位是像素）创建真彩色画布（建议丰富色系图像使用）</p>
-<p>imagecreatefromjpeg函数    根据一张已有的jpeg格式图片创建画布</p>
-<p>imagecreatefromgif函数    根据一张已有的gif格式图片创建画布</p>
-<p>imagecreatefrompng函数    根据一张已有的png格式图片创建画布</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/面向对象1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/面向对象1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-GD图像处理技术" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/GD图像处理技术/">GD图像处理技术</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/GD图像处理技术/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>能够设置及读取COOKIE的值</p>
-<p>设置(增删改)操作：setcookie函数</p>
-<p>查询操作：$_COOKIE变量</p>
-</li>
-<li><p>理解COOKIE的工作原理</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/GD图像处理技术/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/GD图像处理技术/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-会话技术" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/会话技术/">会话技术</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/会话技术/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>能够解释http协议的概念和特点</p>
-<p>http协议：超文本传输协议。</p>
-<p>特点：1） 不仅支持B/S还支持C/S；2）支持任意类型的数据类型；3）无连接特性；4）无状态特性；</p>
-</li>
-<li><p>能够理解http请求的组成部分</p>
-<p>1）请求行； 2）请求头； 3）空白行； 4）请求数据；</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/会话技术/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/会话技术/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-http协议与文件编程" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/http协议与文件编程/">http协议与文件编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/http协议与文件编程/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>连库基本操作涉及的函数？</p>
-<p>1) mysqli_connect函数     负责连接数据库和选择数据库操作</p>
-<p>2) mysqli_set_charset函数      负责设置字符集操作</p>
-</li>
-<li><p>如何执行设置（增删改）数据操作？</p>
-<p>mysqli_query函数      执行增删改SQL语句的，成功返回true，失败返回false</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/http协议与文件编程/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/http协议与文件编程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MySQLI扩展" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/20/MySQLI扩展/">MySQLI扩展</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/20/MySQLI扩展/" class="archive-article-date">
-  	<time datetime="2019-02-20T09:00:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1-知识回顾"><a href="#1-知识回顾" class="headerlink" title="1. 知识回顾"></a>1. 知识回顾</h2><ol>
-<li><p>表单传值的方式？</p>
-<p>总共两种，1) POST方式； 2）GET方式</p>
-</li>
-<li><p>PHP接收表单数据的方式？</p>
-<p>总共三种，</p></li></ol>
-        
-          <a class="article-more-a" href="/2019/02/20/MySQLI扩展/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/20/MySQLI扩展/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1075,11 +1252,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1127,6 +1304,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">商城项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">正则 JS</a>
               </li>
              
@@ -1135,11 +1316,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">商城项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
               </li>
              
               <li class="article-tag-list-item">

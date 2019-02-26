@@ -152,6 +152,770 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mongodb" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/19/mongodb/">mongodb</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/19/mongodb/" class="archive-article-date">
+  	<time datetime="2019-02-19T10:44:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够记住redis的5种数据结构</p>
+<p>​    string、hash、list、set(无序集合)、zset(有序集合)</p>
+<p>能够运用set、get、incrby、decrby、del命令</p>
+<p>​    操作string</p>
+<p>​        set key value</p>
+<p>​        get key</p>
+<p>​    incrby 作用：自增N</p>
+<p>​        incrby key n</p>
+<p>​        注意：对已经存在key进行，key 的类型必须数字(int)类型，如果不存在会新增</p>
+<p>​    incr 作用：自增1</p>
+<p>​        incr key </p>
+<p>​        注意：对已经存在key进行，key 的类型必须数字(int)类型，如果不存在会新增</p>
+<p>​    decrby 作用：自减 N</p>
+<p>​        decrby key n</p>
+<p>​    注意：对已经存在key进行，key 的类型必须数字(int)类型，如果不存在会新增</p>
+<p>​    decr 作用：自减 1</p>
+<p>​        decr key<br></p>
+        
+          <a class="article-more-a" href="/2019/02/19/mongodb/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mongodb</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/19/mongodb/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-redis" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/18/redis/">redis</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/18/redis/" class="archive-article-date">
+  	<time datetime="2019-02-18T12:17:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用工具连接 memcached服务器</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> telnet ip  port</span></span><br><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># telnet 127.0.0.1 11211</span></span></span><br></pre></td></tr></table></figure>
+<p>能够运用set、get、add、delete、incr、decr命令</p>
+<p>set 命令</p>
+<p>​    作用：修改，如果key存在修改，否则新增</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加一个 key = php33，value = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> php33 0 0 5</span></span><br><span class="line">php33</span><br><span class="line"><span class="meta">#</span><span class="bash"> 说明</span></span><br><span class="line">php33 代表key</span><br><span class="line">第1个0代表标识符</span><br><span class="line">第2个0代表过期时间</span><br><span class="line">5代表着字节大小</span><br></pre></td></tr></table></figure>
+<p>get 命令</p>
+<p>​    作用：获取一个存在key</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 获取一个 key = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> get php33</span></span><br></pre></td></tr></table></figure>
+<p>delete 命令</p>
+<p>​    作用：删除一个key</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 删除一个 key = php33</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> delete php33</span></span><br></pre></td></tr></table></figure>
+<p>incr 自增</p>
+<p>​    作用：自增</p>
+<p>​    如果key不存在？会报错，不会自动新增，key存在它类型必须 int</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 自增 1</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> age 0 0 2</span></span><br><span class="line">12</span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> incr age 1  <span class="comment">#代表着 age 自增1</span></span></span><br></pre></td></tr></table></figure>
+<p>decr 自减</p>
+<p>​    作用：自减</p>
+<p>​    如果key不存在？会报错，不会自动新增，key存在它类型必须 int</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 自减</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> <span class="built_in">set</span> age 0 0 2</span></span><br><span class="line">12</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">decr age 1 <span class="comment">#代表着 age 自减1</span></span></span><br></pre></td></tr></table></figure>
+<p>flush_all 清空所有缓存</p>
+<p>不建议直接操作该命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> flush_all <span class="comment">#清空所数据</span></span></span><br></pre></td></tr></table></figure>
+<p>能够实现Linux与windows系统上PHP的 memcached 扩展安装</p>
+<p>windows （PHP）</p>
+<p>​    1、首先看我php是几点几(版本)</p>
+<p>​    2、看属性x86(32位)、x86_64(64位)</p>
+<p>​    3、把 php_memcache.dll 文件复制到我php扩展目录(ext)</p>
+<p>​    4、修改php.ini文件</p>
+<p>​    5、重启apache</p>
+<p>Linux </p>
+<p>​    1、执行 phpize 生成一个 configure 文件 /usr/local/php/bin/phpize</p>
+<p>​    2、./configure –with-php-config=/usr/local/php/bin/php-cofnig</p>
+<p>​    3、make</p>
+<p>​    4、make install</p>
+<p>​    5、修改 php.ini  </p>
+<p>​    6、重启php/apache</p>
+<p>能够掌握Linux与windows系统上扩展文件的区别</p>
+<p>​    后缀名一样？</p>
+<p>​    不一样</p>
+<p>​    windows 下memcache扩展文件的后缀名 .dll</p>
+<p>​    Linux 下 memcache 扩展文件的后缀名 .so</p>
+<p>能够实现 php 操作 memcached 服务器</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment"># 1、实例化 memcached 对象</span></span><br><span class="line">    $m = <span class="keyword">new</span> Memcached();</span><br><span class="line">	<span class="comment"># 2、连接 memcached</span></span><br><span class="line">	<span class="comment">#$m-&gt;addServer('ip', 'port');</span></span><br><span class="line">	$m-&gt;addServer(<span class="string">'127.0.0.1'</span>, <span class="number">11211</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 新增一个key = php33 value = php33</span></span><br><span class="line">	<span class="comment"># $m-&gt;set( key, value[, 过期时间]);</span></span><br><span class="line">	$m-&gt;set( <span class="string">'php33'</span>, <span class="string">'php33'</span> ); <span class="comment"># 过期时间默认为 0，代表永久不过期</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 获取一个 key = php33 </span></span><br><span class="line">	<span class="comment"># $m-&gt;get( key );</span></span><br><span class="line">	$data = $m-&gt;get( <span class="string">'php33'</span> );</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 删除一个 key = php33</span></span><br><span class="line">	<span class="comment"># $m-&gt;delete( key );</span></span><br><span class="line">	$m-&gt;delete( <span class="string">'php33'</span> );</span><br></pre></td></tr></table></figure>
+<p>memcached 分布集群</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment"># 1、实例化 memcached 对象</span></span><br><span class="line">    $m = <span class="keyword">new</span> Memcached();</span><br><span class="line">	<span class="comment"># 2、连接</span></span><br><span class="line">	$m-&gt;addServers( <span class="keyword">array</span>(</span><br><span class="line">    	<span class="comment"># array( ip, pot, 权重 ),</span></span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'192.168.82.46'</span>, <span class="number">11211</span>, <span class="number">50</span>),</span><br><span class="line">        <span class="keyword">array</span>(<span class="string">'192.168.82.244'</span>, <span class="number">11211</span>, <span class="number">50</span>),</span><br><span class="line">        <span class="comment"># ...</span></span><br><span class="line">    ) );</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 首先添加 1000条数据</span></span><br><span class="line">    <span class="keyword">for</span>($i = <span class="number">1</span>; $i&lt;=<span class="number">1000</span>; $i++)&#123;</span><br><span class="line">        $m-&gt;set(<span class="string">'i'</span>.$i, $i);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/18/redis/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/18/redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-memcached" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/16/memcached/">memcached</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/16/memcached/" class="archive-article-date">
+  	<time datetime="2019-02-16T10:57:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录?"></a>目录?</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用 chmod、chown 命令</p>
+<p>​    chmod 修改文件权限</p>
+<p>​        chmod -R 权限值(777) 文件/目录</p>
+<p>​    chown 修改文件拥有者，同时也可以修改所属组</p>
+<p>​        chown -R 拥有者(用户名):所属组(组名) 文件/目录</p>
+<p>能够运用 sudo、whereis 命令</p>
+<p>​    whereis 查找文件</p>
+<p>​        whereis my.cnf</p>
+<p>​    sudo 提权</p>
+<p>​        sudo yum -y install 需要安装的包名</p>
+<p>​        在其它的Linux下 apt-get install vim</p>
+<p>​            sudo apt-get install 包名</p>
+<p>能够实现FTP客户端连接FTP服务端</p>
+<p>​    FTP分为两个端：客户端、服务端(vsftpd)</p>
+<p>​    客户端：1、把IP地址填写上，2、输入用户名与密码，3、输入端口</p>
+<p>​    服务端：1、安装，2、启动</p>
+<p>​    wget <a href="http://vsftpd.*.rpm" target="_blank" rel="noopener">http://vsftpd.*.rpm</a></p>
+<p>​        报 wget 的指令不存在</p>
+<p>​            yum -y install wget</p>
+<p>​    rpm -ivh vsftpd.*.rpm</p>
+<p>​    启动：service vsftpd start</p>
+<p>​    查看状态：service vsftpd status</p>
+<p>​    停止：service vsftpd stop</p>
+<p>​    重启：service vsftpd restart</p>
+<p>能够运用 tar 命令</p>
+<p>​    作用：解压 .tar  .gz .tar.gz</p>
+<p>​    httpd-2.24.tar.gz</p>
+<p>​    tar -zxhv httpd-2.24.tar.gz</p>
+<p>能够说同源码安装的步骤</p>
+<p>分几步走？ 3步走</p>
+<p>下载</p>
+<p>解压</p>
+<p>进入解压后的目录中</p>
+<p>1、./configure 检查环境，并生成一个makefile文件</p>
+<p>2、make 读取 makefile文件，并生成二进制文件</p>
+<p>3、make install 读取二进制文件，并安装到指定目录</p>
+        
+          <a class="article-more-a" href="/2019/02/16/memcached/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">memcache</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/16/memcached/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-源码编译安装lamp环境" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/15/源码编译安装lamp环境/">源码编译安装lamp环境</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/15/源码编译安装lamp环境/" class="archive-article-date">
+  	<time datetime="2019-02-15T10:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、查看系统信息"><a href="#一、查看系统信息" class="headerlink" title="一、查看系统信息"></a>一、查看系统信息</h1><h2 id="1、主机名"><a href="#1、主机名" class="headerlink" title="1、主机名"></a>1、主机名</h2><p>查看：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># hostname</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/15/源码编译安装lamp环境/1542503658201.png" alt="1542503658201"></p>
+        
+          <a class="article-more-a" href="/2019/02/15/源码编译安装lamp环境/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/15/源码编译安装lamp环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/13/linux01/">linux01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/13/linux01/" class="archive-article-date">
+  	<time datetime="2019-02-13T10:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>能够实现VM虚拟机安装CentOS操作系统</p>
+<p>​    首先创建一个虚拟主机</p>
+<p>​    然后载入光盘( .iso镜像文件)</p>
+<p>​    再然后开机</p>
+<p>能够运用vim编辑器</p>
+<p>​    有几种模式？    3种，分别为：命令行模式、编辑模式、末行模式</p>
+<p>vim 文件 — 直接进到命令行模式</p>
+<p>​    复制一行：yy</p>
+<p>​    复制多行：ny n代表多少行 例如：复制3行，3y</p>
+<p>​    粘贴：p</p>
+<p>​    想去文件末尾：G</p>
+<p>​    想去文件首先：gg或 :1</p>
+<p>​    删除光标所在当前行：dd</p>
+<p>​    删除多行：</p>
+<p>​        nd+回车键，例如：删除6行，默认会删除7行</p>
+<p>​        ndd，例如：删除6行，默认会删除6行</p>
+<p>​    撤销：u</p>
+<p>​    想替换当前光标位置：r</p>
+<p>​    删除光标当前位置的内容：x</p>
+<p>进入编辑模式： i a o I A O</p>
+<p>退出编辑模式：esc</p>
+<p>怎么进入末行模式：首先必须到命令行模式，输入冒号( : )</p>
+<p>:q 退出</p>
+<p>:q! 强制退出</p>
+<p>:w 保存</p>
+<p>:w! 强制保存</p>
+<p>:wq 保存并退出</p>
+<p>:wq! 强制保存并退出</p>
+<p>把3行复制到4行： 3copy4</p>
+<p>把第3行移到第4行：3m4<br></p>
+        
+          <a class="article-more-a" href="/2019/02/13/linux01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/13/linux01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux00" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/12/linux00/">linux00</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/12/linux00/" class="archive-article-date">
+  	<time datetime="2019-02-12T09:30:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>1.1、能够实现接口请求并渲染数据</p>
+<p>1.1.1、接口</p>
+<p>​    创建一个对应控制器、并定义一个方法</p>
+<p>​    获取数据，并返回数据(json)</p>
+<p>1.1.2、渲染数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">block</span> <span class="attr">wx:for</span>=<span class="string">'&#123;&#123;变量&#125;&#125;'</span> <span class="attr">wx:key</span>=<span class="string">"key(键值，自定义)"</span>&gt;</span></span><br><span class="line">	....</span><br><span class="line"><span class="tag">&lt;/<span class="name">block</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/02/12/linux00/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/12/linux00/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/js01/">js01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/js01/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:48:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
+<li>理解数据类型的转换</li>
+<li>能够理解表达式和语句</li>
+<li>能够使用if语句、switch语句、for循环、while循环</li>
+<li>能够理解do..while循环</li>
+<li>能够理解break和continue关键字</li>
+</ul>
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="变量数据类型转换"><a href="#变量数据类型转换" class="headerlink" title="变量数据类型转换"></a>变量数据类型转换</h2><blockquote>
+<p>为什么会有数据类型的转换</p>
+</blockquote>
+<p><img src="/2019/02/03/js01/1537147442236.png" alt="1537147442236"></p>
+        
+          <a class="article-more-a" href="/2019/02/03/js01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/js01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js00" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/03/js00/">js00</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/03/js00/" class="archive-article-date">
+  	<time datetime="2019-02-03T07:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="typora-copy-images-to-media"><a href="#typora-copy-images-to-media" class="headerlink" title="typora-copy-images-to: media"></a>typora-copy-images-to: media</h2><h1 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h1><ul>
+<li>能够说出什么是JavaScript</li>
+<li>能够说出JavaScript的引入方式(书写位置)</li>
+<li>能够使用变量 </li>
+<li>能够理解变量的数据类型</li>
+<li>能够使用运算符</li>
+</ul>
+<h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><h2 id="JavaScript介绍"><a href="#JavaScript介绍" class="headerlink" title="JavaScript介绍"></a>JavaScript介绍</h2><h3 id="JavaScript是什么"><a href="#JavaScript是什么" class="headerlink" title="JavaScript是什么"></a>JavaScript是什么</h3>
+        
+          <a class="article-more-a" href="/2019/02/03/js00/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/03/js00/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-结构伪类选择器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -349,699 +1113,9 @@
 
 
   
-    <article id="post-清除浮动" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/清除浮动/">清除浮动</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/清除浮动/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:16:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h1><p>人生就像乘坐北京地铁一号线：</p>
-<p>途经国贸，羡慕繁华；</p>
-<p>途经天安门，幻想权力；</p>
-<p>途经金融街，梦想发财；</p>
-<p>经过公主坟，遥想华丽家族；</p>
-<p>经过玉泉路，依然雄心勃勃…</p>
-<p>这时，有个声音飘然入耳:乘客你好,八宝山马上就要到了！</p>
-<p>顿时醒悟：人生苦短，有始有终。 </p>
-<p>好比我们的浮动，有浮动开始，则就应该有浮动结束。</p>
-<h2 id="为什么要清除浮动"><a href="#为什么要清除浮动" class="headerlink" title="为什么要清除浮动"></a>为什么要清除浮动</h2>
-        
-          <a class="article-more-a" href="/2019/02/03/清除浮动/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/清除浮动/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-浮动" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/浮动/">浮动</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/浮动/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:12:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="浮动-float"><a href="#浮动-float" class="headerlink" title="浮动(float)"></a>浮动(float)</h2><h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
-<li><strong>记忆</strong><ul>
-<li>能够说出 CSS 的布局的三种机制</li>
-</ul>
-</li>
-<li><strong>理解</strong><ul>
-<li>能够说出普通流在布局中的特点</li>
-<li>能够说出浮动在布局中的作用</li>
-<li>能够说出在实际布局中浮动的应用方法</li>
-<li>能够说出决定浮动元素大小的两个因素</li>
-</ul>
-</li>
-<li><strong>应用</strong><ul>
-<li>能够实现图文环绕效果</li>
-<li>能够实现浮动案例</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-CSS-布局的三种机制"><a href="#1-CSS-布局的三种机制" class="headerlink" title="1. CSS 布局的三种机制"></a>1. CSS 布局的三种机制</h3><blockquote>
-<p>网页布局的核心——就是<strong>用 CSS 来摆放盒子位置</strong>。</p>
-</blockquote>
-<p>CSS 提供了 <strong>3 种机制</strong>来设置盒子的摆放位置，分别是<strong>普通流</strong>、<strong>浮动</strong>和<strong>定位</strong>，其中：<br></p>
-        
-          <a class="article-more-a" href="/2019/02/03/浮动/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/浮动/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-显示模式-1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/显示模式-1/">显示模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/显示模式-1/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>目标：</p>
-<ul>
-<li>能够理解标准文档流</li>
-</ul>
-<p>我们书写的HTML代码 发现一个现象 在浏览器上面显示的效果是从左到右 从上到下显示的 。比如我们使用PS软件画图  想在画布的任何地方画内容都可以。我们把这种从左到右 从上到下的这种显示方式 称之为流！标准文档流！</p>
-<h2 id="标准文档流中标签的现象"><a href="#标准文档流中标签的现象" class="headerlink" title="标准文档流中标签的现象"></a>标准文档流中标签的现象</h2><h3 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h3><p>如果标签与标签之间有换行 在浏览器上面就会显示一个空白(空格)</p>
-<p><img src="/2019/02/03/显示模式-1/1531969997706.png" alt="1531969997706"><br></p>
-        
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-important属性" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/important属性/">important属性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/important属性/" class="archive-article-date">
-  	<time datetime="2019-02-03T06:49:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="important-属性"><a href="#important-属性" class="headerlink" title="!important 属性"></a>!important 属性</h1><p>important 这个英文单词在英文中 表示<strong>重要的</strong></p>
-<p>它在CSS中表示权重最高  某一个属性的权重</p>
-<blockquote>
-<p>语法：</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    属性：值 !important;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">错误的写法：</span><br><span class="line">1. 属性:值;!<span class="selector-tag">important</span>  !<span class="selector-tag">important</span>是写在分号里面</span><br><span class="line">2. 属性:值 <span class="selector-tag">important</span> ; 不能缺少感叹号</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/02/03/important属性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/important属性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-阿里云与linux常用命令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/30/阿里云与linux常用命令/">阿里云与linux常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/30/阿里云与linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-01-30T10:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h1><h2 id="1、背景了解"><a href="#1、背景了解" class="headerlink" title="1、背景了解"></a>1、背景了解</h2><p>linux广义：指linux各个厂商基于linux内核研发的linux产品，例如红帽、Debian、Ubuntu等。我们常用的就是 Centos5 或者 Centos6 基于RedHat公司的产品进行开发。完全免费。</p>
-<p>其主要的版本有</p>
-<p>1、CentOS5.5</p>
-<p>2、CentOS6.5</p>
-<p>3、CentOS6.8</p>
-<p>4、CentOS7.0 (区别还是很明显的 服务器管理方式不一样 基本的命令也有一些不同)</p>
-<p>linux下没有那么多的盘符，linux下只存在一个盘符，叫做 / （根目录），根下存在很多的目录，但是对于linux这些目录都是事先规定好，基本所有的发行版都是一样</p>
-<h2 id="1-2注意：Linux和Windows的重要区别"><a href="#1-2注意：Linux和Windows的重要区别" class="headerlink" title="1-2注意：Linux和Windows的重要区别"></a>1-2注意：Linux和Windows的重要区别</h2><ol>
-<li>Linux没有盘符，windows拥有盘符；在linux下一切都是从 / 根目录开始的</li>
-<li>Linux严格区分大小写，而windows不区分大小写，由于linux严格区分大小写，因此linux认为a.php和A.PHP是两个不同的文件，而在windows当中windows会认为这是2个相同的文件</li>
-<li>windows大部分的工作是通过图形操作界面就能够完成，linux大部分的工作是通过命令行来完成</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/01/30/阿里云与linux常用命令/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/30/阿里云与linux常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信小程序04" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/28/微信小程序04/">微信小程序04</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/28/微信小程序04/" class="archive-article-date">
-  	<time datetime="2019-01-28T03:09:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
-<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>1.能够实现首页的轮播图</p>
-<p>swiper滑块实现轮播图</p>
-<p>*.wxml 文件中构建</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">swiper</span> <span class="attr">class</span>=<span class="string">"swiper-box"</span> <span class="attr">indicator-dots</span>=<span class="string">"&#123;&#123;indicatorDots&#125;&#125;"</span> <span class="attr">autoplay</span>=<span class="string">"&#123;&#123;autoplay&#125;&#125;"</span> <span class="attr">interval</span>=<span class="string">"&#123;&#123;interval&#125;&#125;"</span> <span class="attr">duration</span>=<span class="string">"&#123;&#123;duration&#125;&#125;"</span> <span class="attr">indicator-color</span>=<span class="string">"&#123;&#123;indicatorColor&#125;&#125;"</span> <span class="attr">indicator-active-color</span>=<span class="string">"&#123;&#123;indicatorActiveColor&#125;&#125;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"图片1路径"</span> <span class="attr">class</span>=<span class="string">"slide-image"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">    ......</span><br><span class="line">    <span class="tag">&lt;<span class="name">swiper-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">image</span> <span class="attr">src</span>=<span class="string">"图片N路径"</span> <span class="attr">class</span>=<span class="string">"slide-image"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">swiper-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">swiper</span>&gt;</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/01/28/微信小程序04/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/28/微信小程序04/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信小程序03" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/27/微信小程序03/">微信小程序03</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/27/微信小程序03/" class="archive-article-date">
-  	<time datetime="2019-01-27T11:00:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code># 目录
-</code></pre><p>[TOC]</p>
-<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>能够使用事件</p>
-<p>​    事件分为几种？  2种，bind 与 catch</p>
-<p>​    bind:tap  冒泡</p>
-<p>​    catch:tap 非冒泡</p>
-<p>能够修改配置文件实现底部导航<br></p>
-        
-          <a class="article-more-a" href="/2019/01/27/微信小程序03/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小程序</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/27/微信小程序03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-列表样式" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/27/列表样式/">列表样式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/27/列表样式/" class="archive-article-date">
-  	<time datetime="2019-01-27T01:02:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="列表样式"><a href="#列表样式" class="headerlink" title="列表样式"></a>列表样式</h1><p>在HTML中无序列表、有序列表前面有项目符号 比如小黑点，项目符号会对网页布局产生很大的影响。、</p>
-<p>我们需要将项目符号去除。</p>
-<p>可以使用css对其进行设置</p>
-<p>列表样式属性为：</p>
-<table>
-<thead>
-<tr>
-<th>属性</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="pr_list-style.asp.htm">list-style</a></td>
-<td>简写属性。用于把所有用于列表的属性设置于一个声明中。</td>
-</tr>
-<tr>
-<td><a href="pr_list-style-type.asp.htm">list-style-type</a></td>
-<td>设置列表项标志的类型。   属性值为：none 去除列表前面的项目符号</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">			<span class="comment">/*去除列表前面的项目符号*/</span></span><br><span class="line">			<span class="comment">/* list-style-type: none; */</span></span><br><span class="line">			<span class="attribute">list-style</span>: none; <span class="comment">/*简写属性*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/27/列表样式/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -1148,11 +1222,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1200,6 +1274,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">商城项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">正则 JS</a>
               </li>
              
@@ -1208,11 +1286,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">商城项目</a>
+                <a href="javascript:void(0)" class="js-tag color4">memcache</a>
               </li>
              
               <li class="article-tag-list-item">
