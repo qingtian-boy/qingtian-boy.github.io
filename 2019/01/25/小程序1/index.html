@@ -47,7 +47,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/01/25/小程序1/1548244102457.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/25/小程序1/1548244216103.png">
 <meta property="og:image" content="http://yoursite.com/2019/01/25/小程序1/1548244445065.png">
-<meta property="og:updated_time" content="2019-01-25T07:25:10.888Z">
+<meta property="og:updated_time" content="2019-03-02T11:42:52.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小程序1">
 <meta name="twitter:description" content="目录[TOC] 一、知识路径 小程序基本介绍 帐号和设置 开发工具和模拟器 应用案例：实现第一个小程序 小程序的文件结构与配置 事件 视图结构wxml 小程序样式  ==目标：能够注册小程序帐号，并且掌握小程序中的基本组成结构和相关语法== 7、视图结构 wxml7.1、概述官方开发文档：https://developers.weixin.qq.com/miniprogram/dev/quicks">
@@ -230,7 +230,7 @@
 <h3 id="7-2、数据绑定"><a href="#7-2、数据绑定" class="headerlink" title="7.2、数据绑定"></a>7.2、数据绑定</h3><p>官方开发文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/data.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/data.html</a></p>
 <p>通过 =={ {} }==的语法(插值表达式)把一个变量绑定到界面上，我们称为数据绑定。</p>
 <p>​    小程序提倡把渲染和逻辑分离，简单来说就是不要再让 JS 直接操控 DOM，JS 只需要管理状态即可，然后再通过一种模板语法来描述状态和界面结构的关系即可。</p>
-<p>WXML语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">标签</span>&gt;</span>&#123;&#123;变量名&#125;&#125;<span class="tag">&lt;/<span class="name">标签</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>WXML语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">标签</span>&gt;</span>&#123; &#123;变量名&#125; &#125;<span class="tag">&lt;/<span class="name">标签</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p><strong>示例：</strong></p>
 <ol>
@@ -254,7 +254,7 @@
 <p><img src="/2019/01/25/小程序1/1548235788570.png" alt="1548235788570"></p>
 <h3 id="7-4、条件渲染"><a href="#7-4、条件渲染" class="headerlink" title="7.4、条件渲染"></a>7.4、条件渲染</h3><p>官方开发文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/conditional.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/conditional.html</a></p>
 <p>==语法：wx:if==</p>
-<p>在框架中，使用 wx:if=”“ 来判断是否需要渲染该代码块；也可以用 wx:elif 和 wx:else 来添加一个 else块。</p>
+<p>在框架中，使用 wx:if=”{ {condition}<br>}” 来判断是否需要渲染该代码块；也可以用 wx:elif 和 wx:else 来添加一个 else块。</p>
 <p>==快速生成一个小程序页面的方法：==</p>
 <p>在==微信提供的开发工具==中，打开 <code>app.json</code>，直接在 <code>app.json</code>中的<code>pages</code>配置项里增加一个新页面的路径：</p>
 <p><img src="/2019/01/25/小程序1/1548236052235.png" alt="1548236052235"></p>
@@ -423,17 +423,17 @@
 <p>生命周期</p>
 <p>视图结构</p>
 <p>​    数据绑定</p>
-<p>​          插值表达式</p>
+<p>​        { {变量名} }  插值表达式</p>
 <p>​    列表渲染</p>
 <p>​        wx:for</p>
-<p>​        <block wx:for="" wx:key="唯一标识(自定义)" wx:for-index="自定义下标"></block></p>
+<p>​        <block wx:for="{ {变量} }" wx:key="唯一标识(自定义)" wx:for-index="自定义下标"></block></p>
 <p>​            ….</p>
 <p>​        </p>
 <p>​    条件渲染</p>
-<p>​        <block wx:if=""></block></p>
+<p>​        <block wx:if="{ {条件表达式1} }"></block></p>
 <p>​            <!-- 条件表达式1 --></p>
 <p>​        </p>
-<p>​        <block wx:elif=""></block></p>
+<p>​        <block wx:elif="{ {条件表达式2} }"></block></p>
 <p>​            <!-- 条件表达式2 --></p>
 <p>​        </p>
 <p>​            <block wx:else=""></block></p>
@@ -643,19 +643,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
+                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -747,11 +747,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>

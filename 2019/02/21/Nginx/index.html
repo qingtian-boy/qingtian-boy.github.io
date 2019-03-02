@@ -54,7 +54,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/02/21/Nginx/1545379196642.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/Nginx/1545379765642.png">
 <meta property="og:image" content="http://yoursite.com/2019/02/21/Nginx/1545382195663.png">
-<meta property="og:updated_time" content="2019-02-21T06:27:05.965Z">
+<meta property="og:updated_time" content="2019-03-02T11:40:11.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx">
 <meta name="twitter:description" content="目录[TOC] 一、昨日回顾1、知识点回顾能够实现库、集合的查看 ​    show databases #查看数据库 ​    db #查看集合(表) 能够实现文档(数据)的写入操作 ​    MongoDB&amp;gt; use php33 ​    MongoDB&amp;gt; db.集合名.insert( { key: value, ….} ) 能够实现文档(数据)的更新操作">
@@ -236,11 +236,11 @@
 <p>代码参看：code/delete.php，上传到 /mydata/wwwroot/php33/www/mongodb 下进行测试</p>
 <p>删除之前：</p>
 <p><img src="/2019/02/21/Nginx/1545355616070.png" alt="1545355616070"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MongoDB&gt; db.class3.remove(&#123;_id:&#123;&apos;$in&apos;:[11,33,55]&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MongoDB&gt; db.class3.remove(&#123;_id:&#123;&apos;$in&apos;:[11,33,55]&#125; &#125;)</span><br></pre></td></tr></table></figure>
 <p>代码如下图所示：</p>
 <p><img src="/2019/02/21/Nginx/1545355695718.png" alt="1545355695718"></p>
 <p>删除后如下图所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MongoDB&gt; db.class3.find(&#123;_id:&#123;&apos;$in&apos;:[11,33,55]&#125;&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MongoDB&gt; db.class3.find(&#123;_id:&#123;&apos;$in&apos;:[11,33,55]&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><img src="/2019/02/21/Nginx/1545355673332.png" alt="1545355673332"></p>
 <h1 id="二、Nginx是什么"><a href="#二、Nginx是什么" class="headerlink" title="二、Nginx是什么"></a>二、Nginx是什么</h1><p><a href="http://www.nginx.cn/doc/" target="_blank" rel="noopener">http://www.nginx.cn/doc/</a></p>
 <p><a href="http://tengine.taobao.org/" target="_blank" rel="noopener">http://tengine.taobao.org/</a></p>
@@ -641,19 +641,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
+                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JQ JS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,11 +745,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">svn</a>
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
+                <a href="javascript:void(0)" class="js-tag color4">svn</a>
               </li>
             
             <div class="clearfix"></div>
