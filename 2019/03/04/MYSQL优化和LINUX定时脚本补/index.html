@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: TP5 | 晴天的博客</title>
+  <title>MYSQL优化和LINUX定时脚本补 | 晴天的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="晴天的博客">
-<meta property="og:url" content="http://yoursite.com/tags/TP5/index.html">
+  <meta name="description" content="MYSQL优化和LINUX定时脚本补一、PHP批量入库优化批量插入优化==准备一张测试的空表==: 12345678910测试环境：phpstudy PHP 7.2.10 + mysql+apache 2.4我的表结构如下：create database insert_test;use insert_test;CREATE TABLE `user` (  `id` int(11) NOT NULL">
+<meta name="keywords" content="MySql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MYSQL优化和LINUX定时脚本补">
+<meta property="og:url" content="http://yoursite.com/2019/03/04/MYSQL优化和LINUX定时脚本补/index.html">
 <meta property="og:site_name" content="晴天的博客">
+<meta property="og:description" content="MYSQL优化和LINUX定时脚本补一、PHP批量入库优化批量插入优化==准备一张测试的空表==: 12345678910测试环境：phpstudy PHP 7.2.10 + mysql+apache 2.4我的表结构如下：create database insert_test;use insert_test;CREATE TABLE `user` (  `id` int(11) NOT NULL">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://mmbiz.qpic.cn/mmbiz_png/OvnShhIvBxS8uz9hCiaMnFEAicKajeE5nQrPEIIsa6V8fK9QRDYkQw1UoSzMMllLcaEjkF5bOxIObIocOXFqyrFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
+<meta property="og:updated_time" content="2019-03-04T09:11:28.364Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="晴天的博客">
+<meta name="twitter:title" content="MYSQL优化和LINUX定时脚本补">
+<meta name="twitter:description" content="MYSQL优化和LINUX定时脚本补一、PHP批量入库优化批量插入优化==准备一张测试的空表==: 12345678910测试环境：phpstudy PHP 7.2.10 + mysql+apache 2.4我的表结构如下：create database insert_test;use insert_test;CREATE TABLE `user` (  `id` int(11) NOT NULL">
+<meta name="twitter:image" content="https://mmbiz.qpic.cn/mmbiz_png/OvnShhIvBxS8uz9hCiaMnFEAicKajeE5nQrPEIIsa6V8fK9QRDYkQw1UoSzMMllLcaEjkF5bOxIObIocOXFqyrFA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1">
   
     <link rel="alternative" href="/atom.xml" title="晴天的博客" type="application/atom+xml">
   
@@ -150,174 +157,271 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MYSQL优化和LINUX定时脚本补" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MYSQL优化和LINUX定时脚本补
+    </h1>
+  
+
+        
+        <a href="/2019/03/04/MYSQL优化和LINUX定时脚本补/" class="archive-article-date">
+  	<time datetime="2019-03-04T09:10:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="MYSQL优化和LINUX定时脚本补"><a href="#MYSQL优化和LINUX定时脚本补" class="headerlink" title="MYSQL优化和LINUX定时脚本补"></a>MYSQL优化和LINUX定时脚本补</h1><h2 id="一、PHP批量入库优化"><a href="#一、PHP批量入库优化" class="headerlink" title="一、PHP批量入库优化"></a>一、PHP批量入库优化</h2><h3 id="批量插入优化"><a href="#批量插入优化" class="headerlink" title="批量插入优化"></a>批量插入优化</h3><p>==准备一张测试的空表==:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">测试环境：phpstudy </span><br><span class="line">PHP 7.2.10 + mysql+apache 2.4</span><br><span class="line">我的表结构如下：</span><br><span class="line">create database insert_test;</span><br><span class="line">use insert_test;</span><br><span class="line">CREATE TABLE `user` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `userindex` int(11) NOT NULL,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=MyISAM DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="1、-传统for循环插入-需要设置对应php版本的最大可执行时间：max-execution-time-默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max-execution-time-60-，重启服务器"><a href="#1、-传统for循环插入-需要设置对应php版本的最大可执行时间：max-execution-time-默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max-execution-time-60-，重启服务器" class="headerlink" title="1、==传统for循环插入==(需要设置对应php版本的最大可执行时间：max_execution_time 默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max_execution_time = 60)，重启服务器"></a>1、==传统for循环插入==(需要设置对应php版本的最大可执行时间：max_execution_time 默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max_execution_time = 60)，重启服务器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$servername = &quot;localhost&quot;;</span><br><span class="line">$username = &quot;root&quot;;</span><br><span class="line">$password = &quot;root&quot;;</span><br><span class="line">$dbname  = &apos;insert_test&apos;;</span><br><span class="line">// 创建连接</span><br><span class="line"></span><br><span class="line">$conn = new mysqli($servername,$username,$password,$dbname);</span><br><span class="line">$start = time();</span><br><span class="line">// 传统插入</span><br><span class="line">for ($x=1; $x&lt;=100000; $x++) &#123;</span><br><span class="line">        $sql = &apos;insert into user (userindex) values (&apos;.$x.&apos;)&apos;;</span><br><span class="line">        $conn-&gt;query($sql);</span><br><span class="line">&#125;</span><br><span class="line">$end = time();</span><br><span class="line">echo &apos;传统插入耗时：&apos;.($end-$start);</span><br><span class="line">//关闭连接</span><br><span class="line">$conn-&gt;close();</span><br></pre></td></tr></table></figure>
+<h4 id="2、使用-分段事务提交"><a href="#2、使用-分段事务提交" class="headerlink" title="2、使用==分段事务提交=="></a>2、使用==分段事务提交==</h4><p>批量插入数据库(每隔2W条提交下) </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$servername = &quot;localhost&quot;;</span><br><span class="line">$username = &quot;root&quot;;</span><br><span class="line">$password = &quot;root&quot;;</span><br><span class="line">$dbname  = &apos;insert_test&apos;;</span><br><span class="line">// 创建连接</span><br><span class="line">$conn = new mysqli($servername,$username,$password,$dbname);</span><br><span class="line">$start = time();</span><br><span class="line"></span><br><span class="line">$conn-&gt;query(&apos;BEGIN&apos;);</span><br><span class="line">for($i=1;$i&lt;100000;$i++)&#123; </span><br><span class="line">        $sql = &apos;insert into user (userindex) values (&apos;.$i.&apos;)&apos;;</span><br><span class="line">        $conn-&gt;query($sql);</span><br><span class="line">        if($i%20000===0)&#123;</span><br><span class="line">                $conn-&gt;query(&apos;COMMIT&apos;);</span><br><span class="line">                $conn-&gt;query(&apos;BEGIN&apos;);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$end = time();</span><br><span class="line">echo &apos;分段事务插入耗时：&apos;.($end-$start);</span><br><span class="line">//关闭连接</span><br><span class="line">$conn-&gt;close();</span><br></pre></td></tr></table></figure>
+<h4 id="3、-拼接sql语句"><a href="#3、-拼接sql语句" class="headerlink" title="3、==拼接sql语句=="></a>3、==拼接sql语句==</h4><p>(注意：可执行的sql语句的长度是有限制的,可自行修改mysql配置文件my.cnf/my.ini的参数max_allowed_packet  = x的值修改限制,查看默认设置的sql长度限制命令: ==show VARIABLES WHERE Variable_name LIKE ‘max_allowed_packet’;== )[查看，修改设置，查看]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">$servername = &quot;localhost&quot;;</span><br><span class="line">$username = &quot;root&quot;;</span><br><span class="line">$password = &quot;root&quot;;</span><br><span class="line">$dbname  = &apos;insert_test&apos;;</span><br><span class="line">// 创建连接</span><br><span class="line">$conn = new mysqli($servername,$username,$password,$dbname);</span><br><span class="line">$start = time();</span><br><span class="line"></span><br><span class="line">$sql= &quot;insert into user (userindex) values&quot;;</span><br><span class="line">for($i=0;$i&lt;100000;$i++)&#123; </span><br><span class="line">        $sql.=&quot;(&apos;$i&apos;),&quot;;</span><br><span class="line">&#125;</span><br><span class="line">// 去除最后一个逗号</span><br><span class="line">$sql = substr($sql,0,strlen($sql)-1);</span><br><span class="line"></span><br><span class="line">$conn-&gt;query($sql);</span><br><span class="line"></span><br><span class="line">$end = time();</span><br><span class="line">echo &apos;sql语句拼接插入耗时：&apos;.($end-$start);</span><br><span class="line">//关闭连接</span><br><span class="line">$conn-&gt;close();</span><br></pre></td></tr></table></figure>
+<p>==因为数据库插入时。须要维护索引数据，无序的记录会增大维护索引的成本。所以我们的表是有主键id的== </p>
+<p>==执行效率高的主要原因是合并后日志量(MySQL的binlog和innodb的事务让日志)减少了，降低日志刷盘的数据量和频率，从而提高效率。通过合并SQL语句，同时也能减少SQL语句解析的次数，减少网络传输的IO== </p>
+<h2 id="二、查询优化"><a href="#二、查询优化" class="headerlink" title="二、查询优化"></a>二、查询优化</h2><h3 id="1、SELECT语句务必指明字段名称"><a href="#1、SELECT语句务必指明字段名称" class="headerlink" title="1、SELECT语句务必指明字段名称"></a>1、<strong>SELECT语句务必指明字段名称</strong></h3><p>SELECT*增加很多不必要的消耗（CPU、IO、内存、网络带宽）；增加了使用覆盖索引的可能性；当表结构发生改变时，前断也需要更新。所以要求直接在select后面接上字段名。</p>
+<h3 id="2、当只需要一条数据的时候，使用limit-1"><a href="#2、当只需要一条数据的时候，使用limit-1" class="headerlink" title="2、当只需要一条数据的时候，使用limit 1"></a>2、<strong>当只需要一条数据的时候，使用limit 1</strong></h3><p>这是为了使EXPLAIN中type列达到const类型</p>
+<h3 id="3、如果排序字段没有用到索引，就尽量少排序"><a href="#3、如果排序字段没有用到索引，就尽量少排序" class="headerlink" title="3、如果排序字段没有用到索引，就尽量少排序"></a>3、<strong>如果排序字段没有用到索引，就尽量少排序</strong></h3><h3 id="4、如果限制条件中其他字段没有索引，尽量少用or"><a href="#4、如果限制条件中其他字段没有索引，尽量少用or" class="headerlink" title="4、如果限制条件中其他字段没有索引，尽量少用or"></a>4、<strong>如果限制条件中其他字段没有索引，尽量少用or</strong></h3><p>or两边的字段中，如果有一个不是索引字段，而其他条件也不是索引字段，会造成该查询不走索引的情况。很多时候使用union all或者是union（必要的时候）的方式来代替“or”会得到更好的效果</p>
+<h3 id="5、尽量用union-all代替union"><a href="#5、尽量用union-all代替union" class="headerlink" title="5、尽量用union all代替union"></a>5、<strong>尽量用union all代替union</strong></h3><p>union和union all的差异主要是前者需要将结果集合并后再进行唯一性过滤操作，这就会涉及到排序，增加大量的CPU运算，加大资源消耗及延迟。当然，union all的前提条件是两个结果集没有重复数据</p>
+<h3 id="6、不使用ORDER-BY-RAND"><a href="#6、不使用ORDER-BY-RAND" class="headerlink" title="6、不使用ORDER BY RAND()"></a>6、<strong>不使用ORDER BY RAND()</strong></h3><p>select id from <code>dynamic</code> order by rand() limit 1000;</p>
+<p>上面的SQL语句，可优化为：</p>
+<p>select id from <code>dynamic</code> t1 join (select rand() * (select max(id) from <code>dynamic</code>) as nid) t2 on t1.id &gt; t2.nidlimit 1000;</p>
+<h3 id="7、区分in和exists、not-in和not-exists"><a href="#7、区分in和exists、not-in和not-exists" class="headerlink" title="7、区分in和exists、not in和not exists"></a>7、<strong>区分in和exists、not in和not exists</strong></h3><p>select * from 表A where id in (select id from 表B)</p>
+<p>上面SQL语句相当于</p>
+<p>select <em> from 表A where exists(select </em> from 表B where 表B.id=表A.id)</p>
+<p>区分in和exists主要是造成了驱动顺序的改变（这是性能变化的关键），如果是exists，那么以外层表为驱动表，先被访问，如果是IN，那么先执行子查询。所以IN适合于外表大而内表小的情况；EXISTS适合于外表小而内表大的情况。</p>
+<p>关于not in和not exists，推荐使用not exists，不仅仅是效率问题，not in可能存在逻辑问题。如何高效的写出一个替代not exists的SQL语句？</p>
+<p>原SQL语句：</p>
+<p>select colname … from A表 where a.id not in (select b.id from B表)</p>
+<p>高效的SQL语句：</p>
+<p>select colname … from A表 Left join B表 on where a.id = b.id where b.id is null</p>
+<h3 id="8、使用合理的分页方式以提高分页的效率"><a href="#8、使用合理的分页方式以提高分页的效率" class="headerlink" title="8、使用合理的分页方式以提高分页的效率"></a>8、<strong>使用合理的分页方式以提高分页的效率</strong></h3><p>select id,name from product limit 866613, 20</p>
+<p>使用上述SQL语句做分页的时候，可能有人会发现，随着表数据量的增加，直接使用limit分页查询会越来越慢。</p>
+<p>优化的方法如下：可以取前一页的最大行数的id，然后根据这个最大的id来限制下一页的起点。比如此列中，上一页最大的id是866612。SQL可以采用如下的写法：</p>
+<p>select id,name from product where id&gt; 866612 limit 20</p>
+<h3 id="9、避免在where子句中对字段进行null值判断"><a href="#9、避免在where子句中对字段进行null值判断" class="headerlink" title="9、避免在where子句中对字段进行null值判断"></a>9、<strong>避免在where子句中对字段进行null值判断</strong></h3><p>对于null的判断会导致引擎放弃使用索引而进行全表扫描。</p>
+<h3 id="10、不建议使用-前缀模糊查询"><a href="#10、不建议使用-前缀模糊查询" class="headerlink" title="10、不建议使用%前缀模糊查询"></a>10、<strong>不建议使用%前缀模糊查询</strong></h3><p>例如LIKE“%name”或者LIKE“%name%”，这种查询会导致索引失效而进行全表扫描。但是可以使用LIKE “name%”。</p>
+<p>那如何查询%name%？</p>
+<p><strong>如何解决这个问题呢，答案：使用全文索引。</strong> </p>
+<h3 id="11、避免在where子句中对字段进行表达式操作"><a href="#11、避免在where子句中对字段进行表达式操作" class="headerlink" title="11、避免在where子句中对字段进行表达式操作"></a>11、<strong>避免在where子句中对字段进行表达式操作</strong></h3><p>比如：</p>
+<p>select user_id,user_project from user_base where age*2=36;</p>
+<p>中对字段就行了算术运算，这会造成引擎放弃使用索引，建议改成：</p>
+<p>select user_id,user_project from user_base where age=36/2;</p>
+<h3 id="12、避免隐式类型转换"><a href="#12、避免隐式类型转换" class="headerlink" title="12、避免隐式类型转换"></a>12、<strong>避免隐式类型转换</strong></h3><p>where子句中出现column字段的类型和传入的参数类型不一致的时候发生的类型转换，建议先确定where中的参数类型</p>
+<h3 id="13、对于联合索引来说，要遵守最左前缀法则"><a href="#13、对于联合索引来说，要遵守最左前缀法则" class="headerlink" title="13、对于联合索引来说，要遵守最左前缀法则"></a>13、<strong>对于联合索引来说，要遵守最左前缀法则</strong></h3><p>举列来说索引含有字段id、name、school，可以直接用id字段，也可以id、name这样的顺序，但是name;school都无法使用这个索引。所以在创建联合索引的时候一定要注意索引字段顺序，常用的查询字段放在最前面。</p>
+<h3 id="14、注意范围查询语句"><a href="#14、注意范围查询语句" class="headerlink" title="14、注意范围查询语句"></a>14、<strong>注意范围查询语句</strong></h3><p>对于联合索引来说，如果存在范围查询，比如between、&gt;、&lt;等条件时，会造成后面的索引字段失效。</p>
+<h3 id="15、关于JOIN优化"><a href="#15、关于JOIN优化" class="headerlink" title="15、关于JOIN优化"></a>15、<strong>关于JOIN优化</strong></h3><p><strong>1）MySQL中没有full join，可以用以下方式来解决：</strong></p>
+<p>select <em> from A left join B on B.name = A.name where B.name is null union all select </em> from B;</p>
+<p><strong>2）尽量使用inner join，避免left join：</strong></p>
+<p>参与联合查询的表至少为2张表，一般都存在大小之分。如果连接方式是inner join，在没有其他过滤条件的情况下MySQL会自动选择小表作为驱动表，但是left join在驱动表的选择上遵循的是左边驱动右边的原则，即left join左边的表名为驱动表。</p>
+<p><strong>3）合理利用索引：</strong></p>
+<p>被驱动表的索引字段作为on的限制字段。</p>
+<p><strong>4）利用小表去驱动大表：</strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_png/OvnShhIvBxS8uz9hCiaMnFEAicKajeE5nQrPEIIsa6V8fK9QRDYkQw1UoSzMMllLcaEjkF5bOxIObIocOXFqyrFA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img"></strong></p>
+<p>从原理图能够直观的看出如果能够减少驱动表的话，减少嵌套循环中的循环次数，以减少 IO总量及CPU运算的次数</p>
+<p>5</p>
+<h2 id="三、linux定时任务"><a href="#三、linux定时任务" class="headerlink" title="三、linux定时任务"></a>三、linux定时任务</h2><h4 id="1、使用场景"><a href="#1、使用场景" class="headerlink" title="1、使用场景"></a>1、使用场景</h4><p>在linux服务器里面，一般来说我们都要定期的去做某些操作，例如数据库的备份【1. 全量备份，但是一般这个需要消耗很大的系统资源，一般周期长，一般选择在凌晨3-5点左右完成，不能在人多的时候完成,这个时候就需要使用linux的系统定时任务来进行操作。例如让定时任务定期执行某个PHP脚本，来做一些操作，例如每周五下午五点统计该网站注册的的用户总人数发送给相关人员。</p>
+<h4 id="2、使用格式"><a href="#2、使用格式" class="headerlink" title="2、使用格式"></a>2、使用格式</h4><p>在LINUX中你应该先输入crontab -e，然后就会有个vi编辑界面，再输入0 3 <em> </em> 1 /clearigame2内容到里面 :wq 保存退出。 </p>
+<p>在LINUX中，周期执行的任务一般由cron这个守护进程来处理[ps -ef|grep cron]。cron读取一个或多个配置文件，这些配置文件中包含了命令行及其调用时间。</p>
+<p>cron的配置文件称为“crontab”，是“cron table”的简写。</p>
+<p>如何编写定时任务呢</p>
+<p>第一步： crontab -e 进入vi编辑定时器脚本</p>
+<p>* <em> </em> <em> </em> 执行程序，一般来说是一个shell脚本【shell编程】</p>
+<p>格式例如：<em> </em> <em> </em> * sleep 1; /bin/date &gt;&gt;/tmp/date.txt</p>
+<p>其中这个五个星分别代表：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>含义</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一个*</td>
+<td>一小时当中的第几分钟</td>
+<td>1-59</td>
+</tr>
+<tr>
+<td>第二个*</td>
+<td>一天中的第几个小时</td>
+<td>0-23</td>
+</tr>
+<tr>
+<td>第三个*</td>
+<td>一个月中的第几个天</td>
+<td>1-31</td>
+</tr>
+<tr>
+<td>第四个*</td>
+<td>一年中的第几个月</td>
+<td>1-12</td>
+</tr>
+<tr>
+<td>第五个*</td>
+<td>一个星期中的星期几</td>
+<td>0-7（0和7都代表星期天）</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*</td>
+<td>代表任何时间，比如第一个*，代表一个小时里面的每分钟都执行一次命令</td>
+</tr>
+<tr>
+<td>,</td>
+<td>代表不连续的时间，比如  0     9,12              <em> </em> * ，代表每天的9点0分，12点0分执行一次命令</td>
+</tr>
+<tr>
+<td>-</td>
+<td>代表连续的范围，比如  0   10   <em> </em>     1-6 ，代表周一到周六的每天上午10点执行一次命令</td>
+</tr>
+<tr>
+<td>*/n</td>
+<td>代表每隔多久执行一次，比如 <em>/10 </em> <em> </em> *，代表每隔10分钟执行一次命令</td>
+</tr>
+</tbody>
+</table>
+<h4 id="3、服务安装与案例"><a href="#3、服务安装与案例" class="headerlink" title="3、服务安装与案例"></a>3、服务安装与案例</h4><p>如果没有crontab指令的同学需要安装一下，一般的linux系统都会有的</p>
+<h5 id="安装crontab"><a href="#安装crontab" class="headerlink" title="安装crontab:"></a><strong>安装crontab:</strong></h5><p>yum -y install crontabs</p>
+<p>说明：<br>/sbin/service crond start //启动服务<br>/sbin/service crond stop //关闭服务<br>/sbin/service crond restart //重启服务<br>/sbin/service crond reload //重新载入配置</p>
+<p>查看crontab服务状态：service crond status</p>
+<p>手动启动crontab服务：service crond start</p>
+<p>查看crontab服务是否已设置为开机启动，执行命令：ntsysv</p>
+<p>加入开机自动启动:<br>chkconfig –level 35 crond on</p>
+<p>注意：crontab -e 本质其实就是向 /etc/crontab 文件里面写入上面的定时任务信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#编辑</span><br><span class="line"># vim /etc/crontab</span><br><span class="line">查看</span><br><span class="line"># crontab -l</span><br><span class="line"># 清除</span><br><span class="line"># crontab -r</span><br></pre></td></tr></table></figure>
+<p>在linux下建立文件夹/var/test专门用来学习crontab测试用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1: cd /var</span><br><span class="line"></span><br><span class="line">2: mkdir test</span><br></pre></td></tr></table></figure>
+<h5 id="1-案例1：调用系统date指令，每一分钟在-var-date-log文件里面记录下当前时间"><a href="#1-案例1：调用系统date指令，每一分钟在-var-date-log文件里面记录下当前时间" class="headerlink" title="1) 案例1：调用系统date指令，每一分钟在 /var/date.log文件里面记录下当前时间"></a>1) 案例1：调用系统date指令，每一分钟在 /var/date.log文件里面记录下当前时间</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># crontab -e</span><br><span class="line">* * * * * date &gt;&gt; /var/test/date.log</span><br></pre></td></tr></table></figure>
+<p>赋予date.log文件可执行权限</p>
+<p>chmod -R 777 /var/test/date.log</p>
+<p>重新启动 crond</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond restart</span><br></pre></td></tr></table></figure>
+<h5 id="2-案例二：通过定时任务执行我们的自定义shell脚本"><a href="#2-案例二：通过定时任务执行我们的自定义shell脚本" class="headerlink" title="2) 案例二：通过定时任务执行我们的自定义shell脚本"></a>2) 案例二：通过定时任务执行我们的自定义shell脚本</h5><p>增加一个普通的定时器脚本<code>dateTime.sh</code>，放于<code>/</code>根目录 </p>
+<p>1:  新增自定义shell脚本： vim /dateTime.sh ，输入一下内容，保存  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">   date</span><br></pre></td></tr></table></figure>
+<p>2: 增加可执行权限 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 /dateTime.sh</span><br></pre></td></tr></table></figure>
+<p>3: 编写定时任务 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+<p>4: 编写脚本内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * * /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 5 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 10 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 15 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 20 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 25 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 30 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 35 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 40 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 45 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 50 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 55 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br><span class="line">*/1 * * * * sleep 60 &amp;&amp; /dateTime.sh &gt;&gt; /var/test/dateTime.log</span><br></pre></td></tr></table></figure>
+<p>重新启动 crond</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond restart</span><br></pre></td></tr></table></figure>
+<p>2分钟后查看效果</p>
+<p>==// linux定时任务执行某个php脚本,可以通过指定目录下的php文件或则支持curl调用的http完整路径==</p>
+<h5 id="3-案例3：定时任务执行php文件"><a href="#3-案例3：定时任务执行php文件" class="headerlink" title="3) 案例3：定时任务执行php文件"></a>3) 案例3：定时任务执行php文件</h5><p>1、在网站根目录(我是yum安装方式，每个人的服务器网站根目录不一样，根据自己的实际情况新建文件)新建一个test.txt文件，赋予可以操作权限chmod 777 test.txt</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /mydata/wwwroot/php33/www/test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 777 /mydata/wwwroot/php33/www/test.txt</span><br></pre></td></tr></table></figure>
+<p>2、网站根目录下新建cron.php文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$filename=&quot;./test.txt&quot;;</span><br><span class="line">$handle=fopen($filename,&quot;a+&quot;);</span><br><span class="line">$str=fwrite($handle,&apos;当前时间是:&apos;.date(&apos;Y-m-d H:i:s&apos;).&quot;\n&quot;);</span><br><span class="line">fclose($handle);</span><br></pre></td></tr></table></figure>
+<p>3、编写定时任务 (运行httpd：/usr/local/httpd/bin/apachectl start　)</p>
+<p><code>crontab -e</code></p>
+<p>下面的例子是使用CURL访问URL来每1分执行PHP脚本。Curl默认在标准输出显示输出。使用”curl -o”选项，你也可以把脚本的输出转储到临时文件。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*/1 * * * * /usr/bin/curl -o /mydata/wwwroot/php33/www/test.txt 192.168.82.45/cron.php</span><br></pre></td></tr></table></figure>
+<p>4、重新启动crond服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service crond restart</span><br></pre></td></tr></table></figure>
+<p>5、查看效果(打开对应目录下的txt文件内容)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim  /mydata/wwwroot/php33/www/test.txt</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/tp5-4/" class="archive-article-date">
-  	<time datetime="2019-02-26T03:59:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/tp5-4/">tp5-4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TP5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/tp5-3/" class="archive-article-date">
-  	<time datetime="2019-02-26T03:57:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/03/laravel框架03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">laravel框架03</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/tp5-3/">tp5-3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TP5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MYSQL优化和LINUX定时脚本补"><span class="toc-number">1.</span> <span class="toc-text">MYSQL优化和LINUX定时脚本补</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、PHP批量入库优化"><span class="toc-number">1.1.</span> <span class="toc-text">一、PHP批量入库优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#批量插入优化"><span class="toc-number">1.1.1.</span> <span class="toc-text">批量插入优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、-传统for循环插入-需要设置对应php版本的最大可执行时间：max-execution-time-默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max-execution-time-60-，重启服务器"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1、==传统for循环插入==(需要设置对应php版本的最大可执行时间：max_execution_time 默认为30，可根据实际项目测试改参数值，我们下面的案例设置：max_execution_time = 60)，重启服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、使用-分段事务提交"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2、使用==分段事务提交==</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、-拼接sql语句"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3、==拼接sql语句==</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、查询优化"><span class="toc-number">1.2.</span> <span class="toc-text">二、查询优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、SELECT语句务必指明字段名称"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、SELECT语句务必指明字段名称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、当只需要一条数据的时候，使用limit-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、当只需要一条数据的时候，使用limit 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、如果排序字段没有用到索引，就尽量少排序"><span class="toc-number">1.2.3.</span> <span class="toc-text">3、如果排序字段没有用到索引，就尽量少排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、如果限制条件中其他字段没有索引，尽量少用or"><span class="toc-number">1.2.4.</span> <span class="toc-text">4、如果限制条件中其他字段没有索引，尽量少用or</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、尽量用union-all代替union"><span class="toc-number">1.2.5.</span> <span class="toc-text">5、尽量用union all代替union</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、不使用ORDER-BY-RAND"><span class="toc-number">1.2.6.</span> <span class="toc-text">6、不使用ORDER BY RAND()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、区分in和exists、not-in和not-exists"><span class="toc-number">1.2.7.</span> <span class="toc-text">7、区分in和exists、not in和not exists</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、使用合理的分页方式以提高分页的效率"><span class="toc-number">1.2.8.</span> <span class="toc-text">8、使用合理的分页方式以提高分页的效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9、避免在where子句中对字段进行null值判断"><span class="toc-number">1.2.9.</span> <span class="toc-text">9、避免在where子句中对字段进行null值判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10、不建议使用-前缀模糊查询"><span class="toc-number">1.2.10.</span> <span class="toc-text">10、不建议使用%前缀模糊查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11、避免在where子句中对字段进行表达式操作"><span class="toc-number">1.2.11.</span> <span class="toc-text">11、避免在where子句中对字段进行表达式操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12、避免隐式类型转换"><span class="toc-number">1.2.12.</span> <span class="toc-text">12、避免隐式类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13、对于联合索引来说，要遵守最左前缀法则"><span class="toc-number">1.2.13.</span> <span class="toc-text">13、对于联合索引来说，要遵守最左前缀法则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14、注意范围查询语句"><span class="toc-number">1.2.14.</span> <span class="toc-text">14、注意范围查询语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15、关于JOIN优化"><span class="toc-number">1.2.15.</span> <span class="toc-text">15、关于JOIN优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、linux定时任务"><span class="toc-number">1.3.</span> <span class="toc-text">三、linux定时任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、使用场景"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">1、使用场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、使用格式"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">2、使用格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、服务安装与案例"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">3、服务安装与案例</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装crontab"><span class="toc-number">1.3.0.3.1.</span> <span class="toc-text">安装crontab:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-案例1：调用系统date指令，每一分钟在-var-date-log文件里面记录下当前时间"><span class="toc-number">1.3.0.3.2.</span> <span class="toc-text">1) 案例1：调用系统date指令，每一分钟在 /var/date.log文件里面记录下当前时间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-案例二：通过定时任务执行我们的自定义shell脚本"><span class="toc-number">1.3.0.3.3.</span> <span class="toc-text">2) 案例二：通过定时任务执行我们的自定义shell脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-案例3：定时任务执行php文件"><span class="toc-number">1.3.0.3.4.</span> <span class="toc-text">3) 案例3：定时任务执行php文件</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/tp5-2/" class="archive-article-date">
-  	<time datetime="2019-02-26T03:53:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/tp5-2/">tp5-2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TP5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/26/tp5-1/" class="archive-article-date">
-  	<time datetime="2019-02-26T03:52:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/tp5-1/">tp5-1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">TP5</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -340,9 +444,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
