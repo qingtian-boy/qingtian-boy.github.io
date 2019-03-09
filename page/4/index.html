@@ -152,6 +152,94 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-restful" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/restful/">restful</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/restful/" class="archive-article-date">
+  	<time datetime="2019-02-26T06:39:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="RESTful-Api架构风格概述"><a href="#RESTful-Api架构风格概述" class="headerlink" title="RESTful Api架构风格概述"></a>RESTful Api架构风格概述</h1><h2 id="什么是RESTful"><a href="#什么是RESTful" class="headerlink" title="什么是RESTful"></a>什么是RESTful</h2><p>REST即<code>Representational State Transfer</code>的缩写，可译为”表现层状态转化”。（先不管此鸟语），其中ful是形容词风格。</p>
+<p><code>RESTful</code>是目前最流行的 API 设计规范，主要用于web中前后端数据接口的设计。</p>
+<h2 id="使用RESTful目的"><a href="#使用RESTful目的" class="headerlink" title="使用RESTful目的"></a>使用RESTful目的</h2><ul>
+<li><p>可以正确的使用web标准，优雅的使用HTTP本身的特性。 </p>
+</li>
+<li><p>使用合适的HTTP的方法（get|post|put|delete）对资源（URI）进行操作(增删改查)</p>
+</li>
+<li><p>一个URl定位服务器中的一个资源(数据)，</p>
+</li>
+<li><p>HTTP中的方法（get|post|put|delete）进行资源的操作</p>
+</li>
+</ul>
+<p>图一：</p>
+        
+          <a class="article-more-a" href="/2019/02/26/restful/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">restful</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/restful/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-tp5-5" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -870,86 +958,6 @@
 
 
   
-    <article id="post-MySQL优化02" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/MySQL优化02/">MySQL优化02</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/25/MySQL优化02/" class="archive-article-date">
-  	<time datetime="2019-02-25T10:19:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
-<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p><strong>能够说出慢日志查询的作用</strong></p>
-<p>​    MySQL的慢查询日志是MySQL提供的一种日志记录，它用来记录在MySQL中响应时间超过阀值的语句，具体指运行时间超过long_query_time值的SQL。默认情况下，MySQL数据库并不启动慢查询日志，需要我们手动来设置这个参数，当然，不是调优需要的话，一般不建议启动该参数，因为开启后会影响性能。</p>
-<p><strong>能够说出SQL语句缓存的作用</strong></p>
-<p>​    缓存，减少对sql语句的访问<br></p>
-        
-          <a class="article-more-a" href="/2019/02/25/MySQL优化02/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/MySQL优化02/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1075,11 +1083,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
+                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
