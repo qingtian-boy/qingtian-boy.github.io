@@ -152,6 +152,191 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-源码编译安装lamp环境" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/15/源码编译安装lamp环境/">源码编译安装lamp环境</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/15/源码编译安装lamp环境/" class="archive-article-date">
+  	<time datetime="2019-02-15T10:57:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、查看系统信息"><a href="#一、查看系统信息" class="headerlink" title="一、查看系统信息"></a>一、查看系统信息</h1><h2 id="1、主机名"><a href="#1、主机名" class="headerlink" title="1、主机名"></a>1、主机名</h2><p>查看：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">shell&gt;</span><span class="bash"><span class="comment"># hostname</span></span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/02/15/源码编译安装lamp环境/1542503658201.png" alt="1542503658201"></p>
+        
+          <a class="article-more-a" href="/2019/02/15/源码编译安装lamp环境/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/15/源码编译安装lamp环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-linux01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/13/linux01/">linux01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/13/linux01/" class="archive-article-date">
+  	<time datetime="2019-02-13T10:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识回顾"><a href="#1、知识回顾" class="headerlink" title="1、知识回顾"></a>1、知识回顾</h2><p>能够实现VM虚拟机安装CentOS操作系统</p>
+<p>​    首先创建一个虚拟主机</p>
+<p>​    然后载入光盘( .iso镜像文件)</p>
+<p>​    再然后开机</p>
+<p>能够运用vim编辑器</p>
+<p>​    有几种模式？    3种，分别为：命令行模式、编辑模式、末行模式</p>
+<p>vim 文件 — 直接进到命令行模式</p>
+<p>​    复制一行：yy</p>
+<p>​    复制多行：ny n代表多少行 例如：复制3行，3y</p>
+<p>​    粘贴：p</p>
+<p>​    想去文件末尾：G</p>
+<p>​    想去文件首先：gg或 :1</p>
+<p>​    删除光标所在当前行：dd</p>
+<p>​    删除多行：</p>
+<p>​        nd+回车键，例如：删除6行，默认会删除7行</p>
+<p>​        ndd，例如：删除6行，默认会删除6行</p>
+<p>​    撤销：u</p>
+<p>​    想替换当前光标位置：r</p>
+<p>​    删除光标当前位置的内容：x</p>
+<p>进入编辑模式： i a o I A O</p>
+<p>退出编辑模式：esc</p>
+<p>怎么进入末行模式：首先必须到命令行模式，输入冒号( : )</p>
+<p>:q 退出</p>
+<p>:q! 强制退出</p>
+<p>:w 保存</p>
+<p>:w! 强制保存</p>
+<p>:wq 保存并退出</p>
+<p>:wq! 强制保存并退出</p>
+<p>把3行复制到4行： 3copy4</p>
+<p>把第3行移到第4行：3m4<br></p>
+        
+          <a class="article-more-a" href="/2019/02/13/linux01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/13/linux01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-linux00" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -865,177 +1050,9 @@
 
 
   
-    <article id="post-important属性" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/important属性/">important属性</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/important属性/" class="archive-article-date">
-  	<time datetime="2019-02-03T06:49:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="important-属性"><a href="#important-属性" class="headerlink" title="!important 属性"></a>!important 属性</h1><p>important 这个英文单词在英文中 表示<strong>重要的</strong></p>
-<p>它在CSS中表示权重最高  某一个属性的权重</p>
-<blockquote>
-<p>语法：</p>
-</blockquote>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123;</span><br><span class="line">    属性：值 !important;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">错误的写法：</span><br><span class="line">1. 属性:值;!<span class="selector-tag">important</span>  !<span class="selector-tag">important</span>是写在分号里面</span><br><span class="line">2. 属性:值 <span class="selector-tag">important</span> ; 不能缺少感叹号</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/02/03/important属性/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/important属性/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-阿里云与linux常用命令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/30/阿里云与linux常用命令/">阿里云与linux常用命令</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/30/阿里云与linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-01-30T10:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h1><h2 id="1、背景了解"><a href="#1、背景了解" class="headerlink" title="1、背景了解"></a>1、背景了解</h2><p>linux广义：指linux各个厂商基于linux内核研发的linux产品，例如红帽、Debian、Ubuntu等。我们常用的就是 Centos5 或者 Centos6 基于RedHat公司的产品进行开发。完全免费。</p>
-<p>其主要的版本有</p>
-<p>1、CentOS5.5</p>
-<p>2、CentOS6.5</p>
-<p>3、CentOS6.8</p>
-<p>4、CentOS7.0 (区别还是很明显的 服务器管理方式不一样 基本的命令也有一些不同)</p>
-<p>linux下没有那么多的盘符，linux下只存在一个盘符，叫做 / （根目录），根下存在很多的目录，但是对于linux这些目录都是事先规定好，基本所有的发行版都是一样</p>
-<h2 id="1-2注意：Linux和Windows的重要区别"><a href="#1-2注意：Linux和Windows的重要区别" class="headerlink" title="1-2注意：Linux和Windows的重要区别"></a>1-2注意：Linux和Windows的重要区别</h2><ol>
-<li>Linux没有盘符，windows拥有盘符；在linux下一切都是从 / 根目录开始的</li>
-<li>Linux严格区分大小写，而windows不区分大小写，由于linux严格区分大小写，因此linux认为a.php和A.PHP是两个不同的文件，而在windows当中windows会认为这是2个相同的文件</li>
-<li>windows大部分的工作是通过图形操作界面就能够完成，linux大部分的工作是通过命令行来完成</li>
-</ol>
-        
-          <a class="article-more-a" href="/2019/01/30/阿里云与linux常用命令/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/30/阿里云与linux常用命令/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/11/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/13/">Next &raquo;</a>
     </nav>
   
 
@@ -1138,11 +1155,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1158,11 +1175,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
+                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1251,6 +1268,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">socket</a>
               </li>
             
             <div class="clearfix"></div>

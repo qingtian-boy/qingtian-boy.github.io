@@ -152,6 +152,168 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-在线教育平台01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/在线教育平台01/">在线教育平台01</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/06/在线教育平台01/" class="archive-article-date">
+  	<time datetime="2019-03-06T11:30:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p><strong>能够使用模型类的 paginate 方法实现分页</strong></p>
+<p>​    $data = $model-&gt;pageinate(5);    //默认值是15</p>
+<p>​    模板中怎么显示页码：$data-&gt;links();</p>
+<p><strong>能够了解 Laravel 中文件上传功能</strong></p>
+<p>​    $fileObj = $request-&gt;file( key );</p>
+<p>​    $fileObj-&gt;storage(‘存储路径’, ‘磁盘存储空间’);</p>
+<p>​    $fileObj-&gt;storageAs(‘存储路径’, ‘新的文件名称’, ‘磁盘存储空间’);</p>
+<p>​    文件上传返回文件名称<br></p>
+        
+          <a class="article-more-a" href="/2019/03/06/在线教育平台01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/06/在线教育平台01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-laravel框架04" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/laravel框架04/">laravel框架04</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/05/laravel框架04/" class="archive-article-date">
+  	<time datetime="2019-03-05T11:11:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p><strong>能够使用路由群组进行模块(前后台)划分</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="comment">// 后台</span></span><br><span class="line">    Route::group([<span class="string">'namespace'</span>=&gt;<span class="string">'Admin'</span>, <span class="string">'prefix'</span>=&gt;<span class="string">'admin'</span>],<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//......</span></span><br><span class="line">    &#125;);</span><br><span class="line">	<span class="comment">//前台</span></span><br><span class="line">Route::group([<span class="string">'namespace'</span>=&gt;<span class="string">'Home'</span>], <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//......</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/03/05/laravel框架04/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">laravel</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/05/laravel框架04/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MYSQL优化和LINUX定时脚本补" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -800,169 +962,9 @@
 
 
   
-    <article id="post-nodejs05" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/nodejs05/">nodejs05</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/nodejs05/" class="archive-article-date">
-  	<time datetime="2019-02-26T07:26:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="案例-实现文章列表的curd操作"><a href="#案例-实现文章列表的curd操作" class="headerlink" title="案例-实现文章列表的curd操作"></a>案例-实现文章列表的curd操作</h1><p>需求：</p>
-<p>get  / 或 /index：  展示文章列表页</p>
-<p>get /add :  展示添加文章的模板</p>
-<p>post /add :  添加数据入库操作</p>
-<p>get  /upd :   取出数据，回显到模板中</p>
-<p>post /upd: 完成编辑入库</p>
-<p>get   /del:  用于删除文章的</p>
-<h2 id="设计路由"><a href="#设计路由" class="headerlink" title="设计路由"></a>设计路由</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//搭建一个web服务</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="comment">//定义路由  正则匹配 /  或  /index</span></span><br><span class="line">app.get(<span class="regexp">/^\/$|^\/index$/</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="string">'index'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// app.get('/index',function(req,res)&#123;</span></span><br><span class="line"><span class="comment">//   //重定向到路由 '/'</span></span><br><span class="line"><span class="comment">//   res.redirect('/');</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/del'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="string">'del'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/upd'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="string">'upd'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">'/add'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">  res.send(<span class="string">'add'</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'项目已启动'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/02/26/nodejs05/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/nodejs05/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-nodejs04" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/nodejs04/">nodejs04</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/nodejs04/" class="archive-article-date">
-  	<time datetime="2019-02-26T07:25:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="中间件-middleware"><a href="#中间件-middleware" class="headerlink" title="中间件 middleware"></a>中间件 middleware</h1><h2 id="生活中的中间件"><a href="#生活中的中间件" class="headerlink" title="生活中的中间件"></a>生活中的中间件</h2><p><img src="/2019/02/26/nodejs04/middleware01.jpg" alt="中间件1"></p>
-<p>从水库取水最终到用户家庭的整个过程，中间经过了很多环节，如反应沉淀池-&gt;过滤池-&gt;活性炭等。其中每个环节都可以当做是==中间件==，这样取水的环节非常清晰明了，同时也有利于工人的分工合作，当某个环节有问题时，也只需修复它本身的问题，不会影响到其他环节。</p>
-        
-          <a class="article-more-a" href="/2019/02/26/nodejs04/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/nodejs04/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1065,11 +1067,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1085,11 +1087,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
+                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1178,6 +1180,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">socket</a>
               </li>
             
             <div class="clearfix"></div>

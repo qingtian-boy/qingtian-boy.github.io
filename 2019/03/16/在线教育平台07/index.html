@@ -120,7 +120,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/03/16/在线教育平台07/1552649301871.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/16/在线教育平台07/1552649335537.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/16/在线教育平台07/1552649675808.png">
-<meta property="og:updated_time" content="2019-03-16T02:38:58.167Z">
+<meta property="og:updated_time" content="2019-03-17T00:52:41.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在线教育平台07">
 <meta name="twitter:description" content="目录[TOC] 二、点播课程1、订单页面1.1、创建订单控制器1php artisan make:controller Home\OrderController">
@@ -547,7 +547,7 @@
 <p>视图代码:resources/views/home/order/qrcode.blade.php</p>
 <p><img src="/2019/03/16/在线教育平台07/1552643047727.png" alt="1552643047727"></p>
 <p><img src="/2019/03/16/在线教育平台07/1552643071779.png" alt="1552643071779"></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//layer.msg('fdsk', &#123;icon:1,time:3000&#125;);</span></span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = &#123;</span><br><span class="line">            _token: <span class="string">'&#123;&#123; csrf_token() &#125;&#125;'</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">var</span> url = <span class="string">'&#123;&#123; url('</span>order/orderquery/<span class="string">'.$orderInfo-&gt;id) &#125;&#125;'</span>;</span><br><span class="line">        <span class="keyword">var</span> t = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $.post(url, data, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>( res.status )&#123;</span><br><span class="line">                    clearInterval(t);</span><br><span class="line">                    layer.msg(<span class="string">'支付成功'</span>, &#123;<span class="attr">icon</span>:<span class="number">1</span>,<span class="attr">time</span>:<span class="number">3000</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">//跳转会员中心</span></span><br><span class="line">                        parent.location.href = <span class="string">'&#123;&#123; url('</span>member/index<span class="string">') &#125;&#125;'</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;, <span class="number">3000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">//layer.msg('fdsk', &#123;icon:1,time:3000&#125;);</span></span><br><span class="line">    $(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> data = &#123;</span><br><span class="line">            _token: <span class="string">'&#123; &#123; csrf_token() &#125; &#125;'</span></span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">var</span> url = <span class="string">'&#123; &#123; url('</span>order/orderquery/<span class="string">'.$orderInfo-&gt;id) &#125; &#125;'</span>;</span><br><span class="line">        <span class="keyword">var</span> t = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            $.post(url, data, <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>( res.status )&#123;</span><br><span class="line">                    clearInterval(t);</span><br><span class="line">                    layer.msg(<span class="string">'支付成功'</span>, &#123;<span class="attr">icon</span>:<span class="number">1</span>,<span class="attr">time</span>:<span class="number">3000</span>&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="comment">//跳转会员中心</span></span><br><span class="line">                        parent.location.href = <span class="string">'&#123; &#123; url('</span>member/index<span class="string">') &#125; &#125;'</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;, <span class="number">3000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <p>效果如下：</p>
 <p><img src="/2019/03/16/在线教育平台07/1547208143462.png" alt="1547208143462"></p>
 <p>上面就是整个购买课程的流程，接下来，在会员购买课程完成以后，我们应该记录==会员购买课程的记录和订单状态==。以方便在会员中心里面显示。</p>
@@ -612,6 +612,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/03/18/在线教育平台08/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在线教育平台08
+        
+      </div>
+    </a>
   
   
     <a href="/2019/03/14/在线教育平台06/" id="article-nav-older" class="article-nav-link-wrap">
@@ -762,11 +771,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
+                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
+                <a href="javascript:void(0)" class="js-tag color1">bloge</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -782,11 +791,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
+                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">var-let-const区别</a>
+                <a href="javascript:void(0)" class="js-tag color4">tp5</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,6 +884,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">svn</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">socket</a>
               </li>
             
             <div class="clearfix"></div>
