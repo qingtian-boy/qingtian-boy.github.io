@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js09" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/20/js09/">js09</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/20/js09/" class="archive-article-date">
+  	<time datetime="2019-02-20T06:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript从入门到精通（八）</p>
+<h1 id="一、JS原型链"><a href="#一、JS原型链" class="headerlink" title="一、JS原型链"></a>一、JS原型链</h1><h2 id="1、原型对象"><a href="#1、原型对象" class="headerlink" title="1、原型对象"></a>1、原型对象</h2><p>当系统加载构造函数的同时，会自动在内存中生成一个对象。我们把这个对象就称之为“原型对象”。</p>
+<p><img src="/2019/02/20/js09/wps3A9C.tmp.jpg" alt="img"> </p>
+<p>由以上图解可知，Person构造函数与Person原型对象是相对独立，不存在谁包含谁。但是两者之间又有一定的联系：</p>
+<p>① Person构造函数中存在一个属性：prototype指向了Person的原型对象</p>
+<p>② Person原型对象中存在一个属性：constructor指向了Person的构造函数<br></p>
+        
+          <a class="article-more-a" href="/2019/02/20/js09/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">JS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/20/js09/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js08" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -918,118 +999,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/18/redis/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-memcached" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/16/memcached/">memcached</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/16/memcached/" class="archive-article-date">
-  	<time datetime="2019-02-16T10:57:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录?"></a>目录?</h1><p>[TOC]</p>
-<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用 chmod、chown 命令</p>
-<p>​    chmod 修改文件权限</p>
-<p>​        chmod -R 权限值(777) 文件/目录</p>
-<p>​    chown 修改文件拥有者，同时也可以修改所属组</p>
-<p>​        chown -R 拥有者(用户名):所属组(组名) 文件/目录</p>
-<p>能够运用 sudo、whereis 命令</p>
-<p>​    whereis 查找文件</p>
-<p>​        whereis my.cnf</p>
-<p>​    sudo 提权</p>
-<p>​        sudo yum -y install 需要安装的包名</p>
-<p>​        在其它的Linux下 apt-get install vim</p>
-<p>​            sudo apt-get install 包名</p>
-<p>能够实现FTP客户端连接FTP服务端</p>
-<p>​    FTP分为两个端：客户端、服务端(vsftpd)</p>
-<p>​    客户端：1、把IP地址填写上，2、输入用户名与密码，3、输入端口</p>
-<p>​    服务端：1、安装，2、启动</p>
-<p>​    wget <a href="http://vsftpd.*.rpm" target="_blank" rel="noopener">http://vsftpd.*.rpm</a></p>
-<p>​        报 wget 的指令不存在</p>
-<p>​            yum -y install wget</p>
-<p>​    rpm -ivh vsftpd.*.rpm</p>
-<p>​    启动：service vsftpd start</p>
-<p>​    查看状态：service vsftpd status</p>
-<p>​    停止：service vsftpd stop</p>
-<p>​    重启：service vsftpd restart</p>
-<p>能够运用 tar 命令</p>
-<p>​    作用：解压 .tar  .gz .tar.gz</p>
-<p>​    httpd-2.24.tar.gz</p>
-<p>​    tar -zxhv httpd-2.24.tar.gz</p>
-<p>能够说同源码安装的步骤</p>
-<p>分几步走？ 3步走</p>
-<p>下载</p>
-<p>解压</p>
-<p>进入解压后的目录中</p>
-<p>1、./configure 检查环境，并生成一个makefile文件</p>
-<p>2、make 读取 makefile文件，并生成二进制文件</p>
-<p>3、make install 读取二进制文件，并安装到指定目录</p>
-        
-          <a class="article-more-a" href="/2019/02/16/memcached/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">memcache</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/16/memcached/">展开全文 >></a>
         </p>
       
 

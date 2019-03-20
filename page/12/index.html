@@ -152,6 +152,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-memcached" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/16/memcached/">memcached</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/16/memcached/" class="archive-article-date">
+  	<time datetime="2019-02-16T10:57:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录?"></a>目录?</h1><p>[TOC]</p>
+<h1 id="一、昨日回顾"><a href="#一、昨日回顾" class="headerlink" title="一、昨日回顾"></a>一、昨日回顾</h1><h2 id="1、知识点回顾"><a href="#1、知识点回顾" class="headerlink" title="1、知识点回顾"></a>1、知识点回顾</h2><p>能够运用 chmod、chown 命令</p>
+<p>​    chmod 修改文件权限</p>
+<p>​        chmod -R 权限值(777) 文件/目录</p>
+<p>​    chown 修改文件拥有者，同时也可以修改所属组</p>
+<p>​        chown -R 拥有者(用户名):所属组(组名) 文件/目录</p>
+<p>能够运用 sudo、whereis 命令</p>
+<p>​    whereis 查找文件</p>
+<p>​        whereis my.cnf</p>
+<p>​    sudo 提权</p>
+<p>​        sudo yum -y install 需要安装的包名</p>
+<p>​        在其它的Linux下 apt-get install vim</p>
+<p>​            sudo apt-get install 包名</p>
+<p>能够实现FTP客户端连接FTP服务端</p>
+<p>​    FTP分为两个端：客户端、服务端(vsftpd)</p>
+<p>​    客户端：1、把IP地址填写上，2、输入用户名与密码，3、输入端口</p>
+<p>​    服务端：1、安装，2、启动</p>
+<p>​    wget <a href="http://vsftpd.*.rpm" target="_blank" rel="noopener">http://vsftpd.*.rpm</a></p>
+<p>​        报 wget 的指令不存在</p>
+<p>​            yum -y install wget</p>
+<p>​    rpm -ivh vsftpd.*.rpm</p>
+<p>​    启动：service vsftpd start</p>
+<p>​    查看状态：service vsftpd status</p>
+<p>​    停止：service vsftpd stop</p>
+<p>​    重启：service vsftpd restart</p>
+<p>能够运用 tar 命令</p>
+<p>​    作用：解压 .tar  .gz .tar.gz</p>
+<p>​    httpd-2.24.tar.gz</p>
+<p>​    tar -zxhv httpd-2.24.tar.gz</p>
+<p>能够说同源码安装的步骤</p>
+<p>分几步走？ 3步走</p>
+<p>下载</p>
+<p>解压</p>
+<p>进入解压后的目录中</p>
+<p>1、./configure 检查环境，并生成一个makefile文件</p>
+<p>2、make 读取 makefile文件，并生成二进制文件</p>
+<p>3、make install 读取二进制文件，并安装到指定目录</p>
+        
+          <a class="article-more-a" href="/2019/02/16/memcached/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">memcache</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/16/memcached/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-源码编译安装lamp环境" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -939,88 +1051,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/03/浮动/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-显示模式-1" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/03/显示模式-1/">显示模式</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/03/显示模式-1/" class="archive-article-date">
-  	<time datetime="2019-02-03T07:07:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="标准文档流"><a href="#标准文档流" class="headerlink" title="标准文档流"></a>标准文档流</h1><p>目标：</p>
-<ul>
-<li>能够理解标准文档流</li>
-</ul>
-<p>我们书写的HTML代码 发现一个现象 在浏览器上面显示的效果是从左到右 从上到下显示的 。比如我们使用PS软件画图  想在画布的任何地方画内容都可以。我们把这种从左到右 从上到下的这种显示方式 称之为流！标准文档流！</p>
-<h2 id="标准文档流中标签的现象"><a href="#标准文档流中标签的现象" class="headerlink" title="标准文档流中标签的现象"></a>标准文档流中标签的现象</h2><h3 id="空白折叠现象"><a href="#空白折叠现象" class="headerlink" title="空白折叠现象"></a>空白折叠现象</h3><p>如果标签与标签之间有换行 在浏览器上面就会显示一个空白(空格)</p>
-<p><img src="/2019/02/03/显示模式-1/1531969997706.png" alt="1531969997706"><br></p>
-        
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/03/显示模式-1/">展开全文 >></a>
         </p>
       
 
