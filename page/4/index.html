@@ -152,6 +152,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nodejs02" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/nodejs02/">nodejs02</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/nodejs02/" class="archive-article-date">
+  	<time datetime="2019-02-26T07:16:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="模拟-Apache-实现静态资源服务器，响应html内容"><a href="#模拟-Apache-实现静态资源服务器，响应html内容" class="headerlink" title="模拟 Apache 实现静态资源服务器，响应html内容"></a>模拟 Apache 实现静态资源服务器，响应html内容</h1><blockquote>
+<p>这里我们使用http模块模拟 <code>Apache服务器</code>响应静态资源（html、img、css、js、…）响应给用户。</p>
+</blockquote>
+<p>需求：</p>
+<p>请求 / 或 /index, 展示对应index.html的内容</p>
+<p>请求  /login展示对应login.html的内容</p>
+<p>请求 / 或 /register, 展示对应register.html的内容</p>
+        
+          <a class="article-more-a" href="/2019/02/26/nodejs02/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/nodejs02/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-nodejs01" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -824,94 +906,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/02/26/商城项目01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-restful" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/restful/">restful</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/26/restful/" class="archive-article-date">
-  	<time datetime="2019-02-26T06:39:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="RESTful-Api架构风格概述"><a href="#RESTful-Api架构风格概述" class="headerlink" title="RESTful Api架构风格概述"></a>RESTful Api架构风格概述</h1><h2 id="什么是RESTful"><a href="#什么是RESTful" class="headerlink" title="什么是RESTful"></a>什么是RESTful</h2><p>REST即<code>Representational State Transfer</code>的缩写，可译为”表现层状态转化”。（先不管此鸟语），其中ful是形容词风格。</p>
-<p><code>RESTful</code>是目前最流行的 API 设计规范，主要用于web中前后端数据接口的设计。</p>
-<h2 id="使用RESTful目的"><a href="#使用RESTful目的" class="headerlink" title="使用RESTful目的"></a>使用RESTful目的</h2><ul>
-<li><p>可以正确的使用web标准，优雅的使用HTTP本身的特性。 </p>
-</li>
-<li><p>使用合适的HTTP的方法（get|post|put|delete）对资源（URI）进行操作(增删改查)</p>
-</li>
-<li><p>一个URl定位服务器中的一个资源(数据)，</p>
-</li>
-<li><p>HTTP中的方法（get|post|put|delete）进行资源的操作</p>
-</li>
-</ul>
-<p>图一：</p>
-        
-          <a class="article-more-a" href="/2019/02/26/restful/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">restful</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/26/restful/">展开全文 >></a>
         </p>
       
 
